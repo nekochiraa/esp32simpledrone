@@ -1,0 +1,2 @@
+source /home/nekochira/code/drone/hello_world/build/bootloader/gdbinit/symbols
+source /home/nekochira/code/drone/hello_world/build/bootloader/gdbinit/connect

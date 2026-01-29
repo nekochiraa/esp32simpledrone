@@ -1,0 +1,479 @@
+Command: /home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python /home/nekochira/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/nekochira/code/drone/hello_world/build/hello_world.elf /home/nekochira/code/drone/hello_world/build/bootloader/bootloader.elf -m '/home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python' '/home/nekochira/esp/esp-idf/tools/idf.py'
+�hip �ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x2a (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jan 19 2026 17:11:36[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09ba8h ( 39848) map[0m
+[0;32mI (93) esp_image: segment 1: paddr=00019bd0 vaddr=3fc93600 size=029f8h ( 10744) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=0001c5d0 vaddr=40374000 size=03a48h ( 14920) load[0m
+[0;32mI (105) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18a78h (100984) map[0m
+[0;32mI (127) esp_image: segment 4: paddr=00038aa0 vaddr=40377a48 size=0bb38h ( 47928) load[0m
+[0;32mI (137) esp_image: segment 5: paddr=000445e0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (144) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (144) boot: Disabling RNG early entropy source...[0m
+[0;32mI (155) cpu_start: Multicore app[0m
+[0;32mI (164) cpu_start: Pro cpu start user code[0m
+[0;32mI (164) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (164) app_init: Application information:[0m
+[0;32mI (164) app_init: Project name:     hello_world[0m
+[0;32mI (168) app_init: App version:      1[0m
+[0;32mI (172) app_init: Compile time:     Jan 19 2026 17:11:27[0m
+[0;32mI (177) app_init: ELF file SHA256:  562b91526...[0m
+[0;32mI (181) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (185) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (189) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (193) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (197) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (203) heap_init: At 3FC96918 len 00052DF8 (331 KiB): RAM[0m
+[0;32mI (208) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (213) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (219) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (224) spi_flash: detected chip: generic[0m
+[0;32mI (228) spi_flash: flash io: dio[0m
+[0;33mW (230) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (243) mcpwm(legacy): legacy driver is deprecated, please migrate to `driver/mcpwm_prelude.h`[0m
+[0;32mI (251) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (257) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (264) main_task: Started on CPU0[0m
+[0;32mI (274) main_task: Calling app_main()[0m
+[0;32mI (274) MyModule: app_main[0m
+[0;32mI (274) MyModule: ARMING avant[0m
+[0;32mI (5274) MyModule: ARMING DES ESC[0m
+[0;32mI (9274) MyModule: ARMING DES ESC[0m
+[0;32mI (9274) MyModule: CH: 1653.000000,[0m
+[0;32mI (9374) MyModule: CH: 1653.000000,[0m
+[0;32mI (9474) MyModule: CH: 1653.000000,[0m
+[0;32mI (9574) MyModule: CH: 1653.000000,[0m
+[0;32mI (9674) MyModule: CH: 1653.000000,[0m
+[0;32mI (9774) MyModule: CH: 1653.000000,[0m
+[0;32mI (9874) MyModule: CH: 1655.000000,[0m
+[0;32mI (9974) MyModule: CH: 1694.000000,[0m
+[0;32mI (10074) MyModule: CH: 1692.000000,[0m
+[0;32mI (10174) MyModule: CH: 1692.000000,[0m
+[0;32mI (10274) MyModule: CH: 1692.000000,[0m
+[0;32mI (10374) MyModule: CH: 1692.000000,[0m
+[0;32mI (10474) MyModule: CH: 1692.000000,[0m
+[0;32mI (10574) MyModule: CH: 1693.000000,[0m
+[0;32mI (10674) MyModule: CH: 1749.000000,[0m
+[0;32mI (10774) MyModule: CH: 1852.000000,[0m
+[0;32mI (10874) MyModule: CH: 1936.000000,[0m
+[0;32mI (10974) MyModule: CH: 1993.000000,[0m
+[0;32mI (11074) MyModule: CH: 1998.000000,[0m
+[0;32mI (11174) MyModule: CH: 1998.000000,[0m
+[0;32mI (11274) MyModule: CH: 1998.000000,[0m
+[0;32mI (11374) MyModule: CH: 1998.000000,[0m
+[0;32mI (11474) MyModule: CH: 1998.000000,[0m
+[0;32mI (11574) MyModule: CH: 1998.000000,[0m
+[0;32mI (11674) MyModule: CH: 1998.000000,[0m
+[0;32mI (11774) MyModule: CH: 1998.000000,[0m
+[0;32mI (11874) MyModule: CH: 1998.000000,[0m
+[0;32mI (11974) MyModule: CH: 1998.000000,[0m
+[0;32mI (12074) MyModule: CH: 1998.000000,[0m
+[0;32mI (12174) MyModule: CH: 1998.000000,[0m
+[0;32mI (12274) MyModule: CH: 1932.000000,[0m
+[0;32mI (12374) MyModule: CH: 1737.000000,[0m
+[0;32mI (12474) MyModule: CH: 1654.000000,[0m
+[0;32mI (12574) MyModule: CH: 1458.000000,[0m
+[0;32mI (12674) MyModule: CH: 1296.000000,[0m
+[0;32mI (12774) MyModule: CH: 1171.000000,[0m
+[0;32mI (12874) MyModule: CH: 1120.000000,[0m
+[0;32mI (12974) MyModule: CH: 1035.000000,[0m
+[0;32mI (13074) MyModule: CH: 1002.000000,[0m
+[0;32mI (13174) MyModule: CH: 1001.000000,[0m
+[0;32mI (13274) MyModule: CH: 1001.000000,[0m
+[0;32mI (13374) MyModule: CH: 1001.000000,[0m
+[0;32mI (13474) MyModule: CH: 1000.000000,[0m
+[0;32mI (13574) MyModule: CH: 1000.000000,[0m
+[0;32mI (13674) MyModule: CH: 1000.000000,[0m
+[0;32mI (13774) MyModule: CH: 1000.000000,[0m
+[0;32mI (13874) MyModule: CH: 1000.000000,[0m
+[0;32mI (13974) MyModule: CH: 1000.000000,[0m
+[0;32mI (14074) MyModule: CH: 1000.000000,[0m
+[0;32mI (14174) MyModule: CH: 1000.000000,[0m
+[0;32mI (14274) MyModule: CH: 1000.000000,[0m
+[0;32mI (14374) MyModule: CH: 1000.000000,[0m
+[0;32mI (14474) MyModule: CH: 1001.000000,[0m
+[0;32mI (14574) MyModule: CH: 1000.000000,[0m
+[0;32mI (14674) MyModule: CH: 1000.000000,[0m
+[0;32mI (14774) MyModule: CH: 1000.000000,[0m
+[0;32mI (14874) MyModule: CH: 1000.000000,[0m
+[0;32mI (14974) MyModule: CH: 1000.000000,[0m
+[0;32mI (15074) MyModule: CH: 1000.000000,[0m
+[0;32mI (15174) MyModule: CH: 1000.000000,[0m
+[0;32mI (15274) MyModule: CH: 1000.000000,[0m
+[0;32mI (15374) MyModule: CH: 1000.000000,[0m
+[0;32mI (15474) MyModule: CH: 1000.000000,[0m
+[0;32mI (15574) MyModule: CH: 1000.000000,[0m
+[0;32mI (15674) MyModule: CH: 1000.000000,[0m
+[0;32mI (15774) MyModule: CH: 1000.000000,[0m
+[0;32mI (15874) MyModule: CH: 1000.000000,[0m
+[0;32mI (15974) MyModule: CH: 1000.000000,[0m
+[0;32mI (16074) MyModule: CH: 1000.000000,[0m
+[0;32mI (16174) MyModule: CH: 1000.000000,[0m
+[0;32mI (16274) MyModule: CH: 1000.000000,[0m
+[0;32mI (16374) MyModule: CH: 1000.000000,[0m
+[0;32mI (16474) MyModule: CH: 1000.000000,[0m
+[0;32mI (16574) MyModule: CH: 1000.000000,[0m
+[0;32mI (16674) MyModule: CH: 1000.000000,[0m
+[0;32mI (16774) MyModule: CH: 1000.000000,[0m
+[0;32mI (16874) MyModule: CH: 1000.000000,[0m
+[0;32mI (16974) MyModule: CH: 1000.000000,[0m
+[0;32mI (17074) MyModule: CH: 1000.000000,[0m
+[0;32mI (17174) MyModule: CH: 1000.000000,[0m
+[0;32mI (17274) MyModule: CH: 1000.000000,[0m
+[0;32mI (17374) MyModule: CH: 1000.000000,[0m
+[0;32mI (17474) MyModule: CH: 1000.000000,[0m
+[0;32mI (17574) MyModule: CH: 1000.000000,[0m
+[0;32mI (17674) MyModule: CH: 1000.000000,[0m
+[0;32mI (17774) MyModule: CH: 1000.000000,[0m
+[0;32mI (17874) MyModule: CH: 1000.000000,[0m
+[0;32mI (17974) MyModule: CH: 1000.000000,[0m
+[0;32mI (18074) MyModule: CH: 1000.000000,[0m
+[0;32mI (18174) MyModule: CH: 1000.000000,[0m
+[0;32mI (18274) MyModule: CH: 1000.000000,[0m
+[0;32mI (18374) MyModule: CH: 1000.000000,[0m
+[0;32mI (18474) MyModule: CH: 1000.000000,[0m
+[0;32mI (18574) MyModule: CH: 1000.000000,[0m
+[0;32mI (18674) MyModule: CH: 1000.000000,[0m
+[0;32mI (18774) MyModule: CH: 1000.000000,[0m
+[0;32mI (18874) MyModule: CH: 1000.000000,[0m
+[0;32mI (18974) MyModule: CH: 1000.000000,[0m
+[0;32mI (19074) MyModule: CH: 1000.000000,[0m
+[0;32mI (19174) MyModule: CH: 1000.000000,[0m
+[0;32mI (19274) MyModule: CH: 1000.000000,[0m
+[0;32mI (19374) MyModule: CH: 1000.000000,[0m
+[0;32mI (19474) MyModule: CH: 1000.000000,[0m
+[0;32mI (19574) MyModule: CH: 1000.000000,[0m
+[0;32mI (19674) MyModule: CH: 1000.000000,[0m
+[0;32mI (19774) MyModule: CH: 1000.000000,[0m
+[0;32mI (19874) MyModule: CH: 1000.000000,[0m
+[0;32mI (19974) MyModule: CH: 1000.000000,[0m
+[0;32mI (20074) MyModule: CH: 1000.000000,[0m
+[0;32mI (20174) MyModule: CH: 1000.000000,[0m
+[0;32mI (20274) MyModule: CH: 1000.000000,[0m
+[0;32mI (20374) MyModule: CH: 1015.000000,[0m
+[0;32mI (20474) MyModule: CH: 1090.000000,[0m
+[0;32mI (20574) MyModule: CH: 1136.000000,[0m
+[0;32mI (20674) MyModule: CH: 1168.000000,[0m
+[0;32mI (20774) MyModule: CH: 1178.000000,[0m
+[0;32mI (20874) MyModule: CH: 1178.000000,[0m
+[0;32mI (20974) MyModule: CH: 1176.000000,[0m
+[0;32mI (21074) MyModule: CH: 1169.000000,[0m
+[0;32mI (21174) MyModule: CH: 1159.000000,[0m
+[0;32mI (21274) MyModule: CH: 1157.000000,[0m
+[0;32mI (21374) MyModule: CH: 1108.000000,[0m
+[0;32mI (21474) MyModule: CH: 1054.000000,[0m
+[0;32mI (21574) MyModule: CH: 1003.000000,[0m
+[0;32mI (21674) MyModule: CH: 1003.000000,[0m
+[0;32mI (21774) MyModule: CH: 1003.000000,[0m
+[0;32mI (21874) MyModule: CH: 1003.000000,[0m
+[0;32mI (21974) MyModule: CH: 1000.000000,[0m
+[0;32mI (22074) MyModule: CH: 1000.000000,[0m
+[0;32mI (22174) MyModule: CH: 1000.000000,[0m
+[0;32mI (22274) MyModule: CH: 1000.000000,[0m
+[0;32mI (22374) MyModule: CH: 1000.000000,[0m
+[0;32mI (22474) MyModule: CH: 1000.000000,[0m
+[0;32mI (22574) MyModule: CH: 1062.000000,[0m
+[0;32mI (22674) MyModule: CH: 1062.000000,[0m
+[0;32mI (22774) MyModule: CH: 1062.000000,[0m
+[0;32mI (22874) MyModule: CH: 1062.000000,[0m
+[0;32mI (22974) MyModule: CH: 1062.000000,[0m
+[0;32mI (23074) MyModule: CH: 1062.000000,[0m
+[0;32mI (23174) MyModule: CH: 1062.000000,[0m
+[0;32mI (23274) MyModule: CH: 1009.000000,[0m
+[0;32mI (23374) MyModule: CH: 1000.000000,[0m
+[0;32mI (23474) MyModule: CH: 1000.000000,[0m
+[0;32mI (23574) MyModule: CH: 1000.000000,[0m
+[0;32mI (23674) MyModule: CH: 1000.000000,[0m
+[0;32mI (23774) MyModule: CH: 1065.000000,[0m
+[0;32mI (23874) MyModule: CH: 1120.000000,[0m
+[0;32mI (23974) MyModule: CH: 1257.000000,[0m
+[0;32mI (24074) MyModule: CH: 1319.000000,[0m
+[0;32mI (24174) MyModule: CH: 1452.000000,[0m
+[0;32mI (24274) MyModule: CH: 1660.000000,[0m
+[0;32mI (24374) MyModule: CH: 1841.000000,[0m
+[0;32mI (24474) MyModule: CH: 1924.000000,[0m
+[0;32mI (24574) MyModule: CH: 1940.000000,[0m
+[0;32mI (24674) MyModule: CH: 1956.000000,[0m
+[0;32mI (24774) MyModule: CH: 1835.000000,[0m
+[0;32mI (24874) MyModule: CH: 1562.000000,[0m
+[0;32mI (24974) MyModule: CH: 1309.000000,[0m
+[0;32mI (25074) MyModule: CH: 1131.000000,[0m
+[0;32mI (25174) MyModule: CH: 1001.000000,[0m
+[0;32mI (25274) MyModule: CH: 1001.000000,[0m
+[0;32mI (25374) MyModule: CH: 1001.000000,[0m
+[0;32mI (25474) MyModule: CH: 1001.000000,[0m
+[0;32mI (25574) MyModule: CH: 1000.000000,[0m
+[0;32mI (25674) MyModule: CH: 1000.000000,[0m
+[0;32mI (25774) MyModule: CH: 1000.000000,[0m
+[0;32mI (25874) MyModule: CH: 1000.000000,[0m
+[0;32mI (25974) MyModule: CH: 1000.000000,[0m
+[0;32mI (26074) MyModule: CH: 1000.000000,[0m
+[0;32mI (26174) MyModule: CH: 1000.000000,[0m
+[0;32mI (26274) MyModule: CH: 1000.000000,[0m
+[0;32mI (26374) MyModule: CH: 1239.000000,[0m
+[0;32mI (26474) MyModule: CH: 1464.000000,[0m
+[0;32mI (26574) MyModule: CH: 1889.000000,[0m
+[0;32mI (26674) MyModule: CH: 1998.000000,[0m
+[0;32mI (26774) MyModule: CH: 1998.000000,[0m
+[0;32mI (26874) MyModule: CH: 1998.000000,[0m
+[0;32mI (26974) MyModule: CH: 1998.000000,[0m
+[0;32mI (27074) MyModule: CH: 1998.000000,[0m
+[0;32mI (27174) MyModule: CH: 1998.000000,[0m
+[0;32mI (27274) MyModule: CH: 1998.000000,[0m
+[0;32mI (27374) MyModule: CH: 1998.000000,[0m
+[0;32mI (27474) MyModule: CH: 1998.000000,[0m
+[0;32mI (27574) MyModule: CH: 1998.000000,[0m
+[0;32mI (27674) MyModule: CH: 1998.000000,[0m
+[0;32mI (27774) MyModule: CH: 1998.000000,[0m
+[0;32mI (27874) MyModule: CH: 1998.000000,[0m
+[0;32mI (27974) MyModule: CH: 1998.000000,[0m
+[0;32mI (28074) MyModule: CH: 1998.000000,[0m
+[0;32mI (28174) MyModule: CH: 1998.000000,[0m
+[0;32mI (28274) MyModule: CH: 1998.000000,[0m
+[0;32mI (28374) MyModule: CH: 1998.000000,[0m
+[0;32mI (28474) MyModule: CH: 1998.000000,[0m
+[0;32mI (28574) MyModule: CH: 1998.000000,[0m
+[0;32mI (28674) MyModule: CH: 1998.000000,[0m
+[0;32mI (28774) MyModule: CH: 1998.000000,[0m
+[0;32mI (28874) MyModule: CH: 1998.000000,[0m
+[0;32mI (28974) MyModule: CH: 1998.000000,[0m
+[0;32mI (29074) MyModule: CH: 1998.000000,[0m
+[0;32mI (29174) MyModule: CH: 1998.000000,[0m
+[0;32mI (29274) MyModule: CH: 1998.000000,[0m
+[0;32mI (29374) MyModule: CH: 1998.000000,[0m
+[0;32mI (29474) MyModule: CH: 1998.000000,[0m
+[0;32mI (29574) MyModule: CH: 1998.000000,[0m
+[0;32mI (29674) MyModule: CH: 1998.000000,[0m
+[0;32mI (29774) MyModule: CH: 1998.000000,[0m
+[0;32mI (29874) MyModule: CH: 1998.000000,[0m
+[0;32mI (29974) MyModule: CH: 1998.000000,[0m
+[0;32mI (30074) MyModule: CH: 1998.000000,[0m
+[0;32mI (30174) MyModule: CH: 1998.000000,[0m
+[0;32mI (30274) MyModule: CH: 1998.000000,[0m
+[0;32mI (30374) MyModule: CH: 1998.000000,[0m
+[0;32mI (30474) MyModule: CH: 1998.000000,[0m
+[0;32mI (30574) MyModule: CH: 1998.000000,[0m
+[0;32mI (30674) MyModule: CH: 1998.000000,[0m
+[0;32mI (30774) MyModule: CH: 1998.000000,[0m
+[0;32mI (30874) MyModule: CH: 1998.000000,[0m
+[0;32mI (30974) MyModule: CH: 1998.000000,[0m
+[0;32mI (31074) MyModule: CH: 1998.000000,[0m
+[0;32mI (31174) MyModule: CH: 1998.000000,[0m
+[0;32mI (31274) MyModule: CH: 1998.000000,[0m
+[0;32mI (31374) MyModule: CH: 1998.000000,[0m
+[0;32mI (31474) MyModule: CH: 1998.000000,[0m
+[0;32mI (31574) MyModule: CH: 1998.000000,[0m
+[0;32mI (31674) MyModule: CH: 1998.000000,[0m
+[0;32mI (31774) MyModule: CH: 1998.000000,[0m
+[0;32mI (31874) MyModule: CH: 1998.000000,[0m
+[0;32mI (31974) MyModule: CH: 1998.000000,[0m
+[0;32mI (32074) MyModule: CH: 1998.000000,[0m
+[0;32mI (32174) MyModule: CH: 1998.000000,[0m
+[0;32mI (32274) MyModule: CH: 1998.000000,[0m
+[0;32mI (32374) MyModule: CH: 1998.000000,[0m
+[0;32mI (32474) MyModule: CH: 1998.000000,[0m
+[0;32mI (32574) MyModule: CH: 1998.000000,[0m
+[0;32mI (32674) MyModule: CH: 1998.000000,[0m
+[0;32mI (32774) MyModule: CH: 1998.000000,[0m
+[0;32mI (32874) MyModule: CH: 1998.000000,[0m
+[0;32mI (32974) MyModule: CH: 1998.000000,[0m
+[0;32mI (33074) MyModule: CH: 1998.000000,[0m
+[0;32mI (33174) MyModule: CH: 1521.000000,[0m
+[0;32mI (33274) MyModule: CH: 1028.000000,[0m
+[0;32mI (33374) MyModule: CH: 1000.000000,[0m
+[0;32mI (33474) MyModule: CH: 1000.000000,[0m
+[0;32mI (33574) MyModule: CH: 1000.000000,[0m
+[0;32mI (33674) MyModule: CH: 1000.000000,[0m
+[0;32mI (33774) MyModule: CH: 1000.000000,[0m
+[0;32mI (33874) MyModule: CH: 1000.000000,[0m
+[0;32mI (33974) MyModule: CH: 1000.000000,[0m
+[0;32mI (34074) MyModule: CH: 1000.000000,[0m
+[0;32mI (34174) MyModule: CH: 1161.000000,[0m
+[0;32mI (34274) MyModule: CH: 1579.000000,[0m
+[0;32mI (34374) MyModule: CH: 1722.000000,[0m
+[0;32mI (34474) MyModule: CH: 1940.000000,[0m
+[0;32mI (34574) MyModule: CH: 1998.000000,[0m
+[0;32mI (34674) MyModule: CH: 1998.000000,[0m
+[0;32mI (34774) MyModule: CH: 1998.000000,[0m
+[0;32mI (34874) MyModule: CH: 1961.000000,[0m
+[0;32mI (34974) MyModule: CH: 1382.000000,[0m
+[0;32mI (35074) MyModule: CH: 1095.000000,[0m
+[0;32mI (35174) MyModule: CH: 1000.000000,[0m
+[0;32mI (35274) MyModule: CH: 1000.000000,[0m
+[0;32mI (35374) MyModule: CH: 1369.000000,[0m
+[0;32mI (35474) MyModule: CH: 1941.000000,[0m
+[0;32mI (35574) MyModule: CH: 1980.000000,[0m
+[0;32mI (35674) MyModule: CH: 1980.000000,[0m
+[0;32mI (35774) MyModule: CH: 1980.000000,[0m
+[0;32mI (35874) MyModule: CH: 1883.000000,[0m
+[0;32mI (35974) MyModule: CH: 1772.000000,[0m
+[0;32mI (36074) MyModule: CH: 1772.000000,[0m
+[0;32mI (36174) MyModule: CH: 1772.000000,[0m
+[0;32mI (36274) MyModule: CH: 1772.000000,[0m
+[0;32mI (36374) MyModule: CH: 1770.000000,[0m
+[0;32mI (36474) MyModule: CH: 1738.000000,[0m
+[0;32mI (36574) MyModule: CH: 1670.000000,[0m
+[0;32mI (36674) MyModule: CH: 1671.000000,[0m
+[0;32mI (36774) MyModule: CH: 1672.000000,[0m
+[0;32mI (36874) MyModule: CH: 1671.000000,[0m
+[0;32mI (36974) MyModule: CH: 1671.000000,[0m
+[0;32mI (37074) MyModule: CH: 1672.000000,[0m
+[0;32mI (37174) MyModule: CH: 1671.000000,[0m
+[0;32mI (37274) MyModule: CH: 1669.000000,[0m
+[0;32mI (37374) MyModule: CH: 1672.000000,[0m
+[0;32mI (37474) MyModule: CH: 1672.000000,[0m
+[0;32mI (37574) MyModule: CH: 1672.000000,[0m
+[0;32mI (37674) MyModule: CH: 1663.000000,[0m
+[0;32mI (37774) MyModule: CH: 1221.000000,[0m
+[0;32mI (37874) MyModule: CH: 1017.000000,[0m
+[0;32mI (37974) MyModule: CH: 1017.000000,[0m
+[0;32mI (38074) MyModule: CH: 1017.000000,[0m
+[0;32mI (38174) MyModule: CH: 1000.000000,[0m
+[0;32mI (38274) MyModule: CH: 1000.000000,[0m
+[0;32mI (38374) MyModule: CH: 1000.000000,[0m
+[0;32mI (38474) MyModule: CH: 1000.000000,[0m
+[0;32mI (38574) MyModule: CH: 1000.000000,[0m
+[0;32mI (38674) MyModule: CH: 1000.000000,[0m
+[0;32mI (38774) MyModule: CH: 1000.000000,[0m
+[0;32mI (38874) MyModule: CH: 1000.000000,[0m
+[0;32mI (38974) MyModule: CH: 1000.000000,[0m
+[0;32mI (39074) MyModule: CH: 1000.000000,[0m
+[0;32mI (39174) MyModule: CH: 1000.000000,[0m
+[0;32mI (39274) MyModule: CH: 1000.000000,[0m
+[0;32mI (39374) MyModule: CH: 1000.000000,[0m
+[0;32mI (39474) MyModule: CH: 1000.000000,[0m
+[0;32mI (39574) MyModule: CH: 1000.000000,[0m
+[0;32mI (39674) MyModule: CH: 1000.000000,[0m
+[0;32mI (39774) MyModule: CH: 1000.000000,[0m
+[0;32mI (39874) MyModule: CH: 1000.000000,[0m
+[0;32mI (39974) MyModule: CH: 1000.000000,[0m
+[0;32mI (40074) MyModule: CH: 1000.000000,[0m
+[0;32mI (40174) MyModule: CH: 1000.000000,[0m
+[0;32mI (40274) MyModule: CH: 1000.000000,[0m
+[0;32mI (40374) MyModule: CH: 1000.000000,[0m
+[0;32mI (40474) MyModule: CH: 1000.000000,[0m
+[0;32mI (40574) MyModule: CH: 1000.000000,[0m
+[0;32mI (40674) MyModule: CH: 1000.000000,[0m
+[0;32mI (40774) MyModule: CH: 1000.000000,[0m
+[0;32mI (40874) MyModule: CH: 1000.000000,[0m
+[0;32mI (40974) MyModule: CH: 1000.000000,[0m
+[0;32mI (41074) MyModule: CH: 1000.000000,[0m
+[0;32mI (41174) MyModule: CH: 1000.000000,[0m
+[0;32mI (41274) MyModule: CH: 1000.000000,[0m
+[0;32mI (41374) MyModule: CH: 1001.000000,[0m
+[0;32mI (41474) MyModule: CH: 1285.000000,[0m
+[0;32mI (41574) MyModule: CH: 1522.000000,[0m
+[0;32mI (41674) MyModule: CH: 1620.000000,[0m
+[0;32mI (41774) MyModule: CH: 1670.000000,[0m
+[0;32mI (41874) MyModule: CH: 1669.000000,[0m
+[0;32mI (41974) MyModule: CH: 1669.000000,[0m
+[0;32mI (42074) MyModule: CH: 1609.000000,[0m
+[0;32mI (42174) MyModule: CH: 1549.000000,[0m
+[0;32mI (42274) MyModule: CH: 1549.000000,[0m
+[0;32mI (42374) MyModule: CH: 1410.000000,[0m
+[0;32mI (42474) MyModule: CH: 1068.000000,[0m
+[0;32mI (42574) MyModule: CH: 1031.000000,[0m
+[0;32mI (42674) MyModule: CH: 1000.000000,[0m
+[0;32mI (42774) MyModule: CH: 1000.000000,[0m
+[0;32mI (42874) MyModule: CH: 1000.000000,[0m
+[0;32mI (42974) MyModule: CH: 1000.000000,[0m
+[0;32mI (43074) MyModule: CH: 1000.000000,[0m
+[0;32mI (43174) MyModule: CH: 1000.000000,[0m
+[0;32mI (43274) MyModule: CH: 1000.000000,[0m
+[0;32mI (43374) MyModule: CH: 1000.000000,[0m
+[0;32mI (43474) MyModule: CH: 1000.000000,[0m
+[0;32mI (43574) MyModule: CH: 1000.000000,[0m
+[0;32mI (43674) MyModule: CH: 1000.000000,[0m
+[0;32mI (43774) MyModule: CH: 1000.000000,[0m
+[0;32mI (43874) MyModule: CH: 1000.000000,[0m
+[0;32mI (43974) MyModule: CH: 1000.000000,[0m
+[0;32mI (44074) MyModule: CH: 1000.000000,[0m
+[0;32mI (44174) MyModule: CH: 1000.000000,[0m
+[0;32mI (44274) MyModule: CH: 1000.000000,[0m
+[0;32mI (44374) MyModule: CH: 1000.000000,[0m
+[0;32mI (44474) MyModule: CH: 1000.000000,[0m
+[0;32mI (44574) MyModule: CH: 1000.000000,[0m
+[0;32mI (44674) MyModule: CH: 1042.000000,[0m
+[0;32mI (44774) MyModule: CH: 1050.000000,[0m
+[0;32mI (44874) MyModule: CH: 1050.000000,[0m
+[0;32mI (44974) MyModule: CH: 1050.000000,[0m
+[0;32mI (45074) MyModule: CH: 1050.000000,[0m
+[0;32mI (45174) MyModule: CH: 1103.000000,[0m
+[0;32mI (45274) MyModule: CH: 1419.000000,[0m
+[0;32mI (45374) MyModule: CH: 1819.000000,[0m
+[0;32mI (45474) MyModule: CH: 1998.000000,[0m
+[0;32mI (45574) MyModule: CH: 1998.000000,[0m
+[0;32mI (45674) MyModule: CH: 1998.000000,[0m
+[0;32mI (45774) MyModule: CH: 1998.000000,[0m
+[0;32mI (45874) MyModule: CH: 1998.000000,[0m
+[0;32mI (45974) MyModule: CH: 1998.000000,[0m
+[0;32mI (46074) MyModule: CH: 1998.000000,[0m
+[0;32mI (46174) MyModule: CH: 1998.000000,[0m
+[0;32mI (46274) MyModule: CH: 1998.000000,[0m
+[0;32mI (46374) MyModule: CH: 1998.000000,[0m
+[0;32mI (46474) MyModule: CH: 1998.000000,[0m
+[0;32mI (46574) MyModule: CH: 1998.000000,[0m
+[0;32mI (46674) MyModule: CH: 1998.000000,[0m
+[0;32mI (46774) MyModule: CH: 1998.000000,[0m
+[0;32mI (46874) MyModule: CH: 1997.000000,[0m
+[0;32mI (46974) MyModule: CH: 1997.000000,[0m
+[0;32mI (47074) MyModule: CH: 1933.000000,[0m
+[0;32mI (47174) MyModule: CH: 1934.000000,[0m
+[0;32mI (47274) MyModule: CH: 1934.000000,[0m
+[0;32mI (47374) MyModule: CH: 1934.000000,[0m
+[0;32mI (47474) MyModule: CH: 1935.000000,[0m
+[0;32mI (47574) MyModule: CH: 1935.000000,[0m
+[0;32mI (47674) MyModule: CH: 1998.000000,[0m
+[0;32mI (47774) MyModule: CH: 1998.000000,[0m
+[0;32mI (47874) MyModule: CH: 1998.000000,[0m
+[0;32mI (47974) MyModule: CH: 1998.000000,[0m
+[0;32mI (48074) MyModule: CH: 1998.000000,[0m
+[0;32mI (48174) MyModule: CH: 1998.000000,[0m
+[0;32mI (48274) MyModule: CH: 1998.000000,[0m
+[0;32mI (48374) MyModule: CH: 1998.000000,[0m
+[0;32mI (48474) MyModule: CH: 1998.000000,[0m
+[0;32mI (48574) MyModule: CH: 1998.000000,[0m
+[0;32mI (48674) MyModule: CH: 1998.000000,[0m
+[0;32mI (48774) MyModule: CH: 1998.000000,[0m
+[0;32mI (48874) MyModule: CH: 1998.000000,[0m
+[0;32mI (48974) MyModule: CH: 1998.000000,[0m
+[0;32mI (49074) MyModule: CH: 1998.000000,[0m
+[0;32mI (49174) MyModule: CH: 1998.000000,[0m
+[0;32mI (49274) MyModule: CH: 1998.000000,[0m
+[0;32mI (49374) MyModule: CH: 1998.000000,[0m
+[0;32mI (49474) MyModule: CH: 1998.000000,[0m
+[0;32mI (49574) MyModule: CH: 1998.000000,[0m
+[0;32mI (49674) MyModule: CH: 1998.000000,[0m
+[0;32mI (49774) MyModule: CH: 1998.000000,[0m
+[0;32mI (49874) MyModule: CH: 1998.000000,[0m
+[0;32mI (49974) MyModule: CH: 1998.000000,[0m
+[0;32mI (50074) MyModule: CH: 1998.000000,[0m
+[0;32mI (50174) MyModule: CH: 1998.000000,[0m
+[0;32mI (50274) MyModule: CH: 1998.000000,[0m
+[0;32mI (50374) MyModule: CH: 1998.000000,[0m
+[0;32mI (50474) MyModule: CH: 1998.000000,[0m
+[0;32mI (50574) MyModule: CH: 1998.000000,[0m
+[0;32mI (50674) MyModule: CH: 1998.000000,[0m
+[0;32mI (50774) MyModule: CH: 1998.000000,[0m
+[0;32mI (50874) MyModule: CH: 1998.000000,[0m

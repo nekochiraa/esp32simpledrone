@@ -1,0 +1,153 @@
+Command: /home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python /home/nekochira/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/nekochira/code/drone/hello_world/build/hello_world.elf /home/nekochira/code/drone/hello_world/build/bootloader/bootloader.elf -m '/home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python' '/home/nekochira/esp/esp-idf/tools/idf.py'
+��ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x2a (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+I (24) boot: ESP-IDF v5.5.1 2nd stage bootloader
+I (25) boot: compile time Jan 19 2026 17:11:36
+I (25) boot: Multicore bootloader
+I (25) boot: chip revision: v0.2
+I (28) boot: efuse block revision: v1.3
+I (31) boot.esp32s3: Boot SPI Speed : 80MHz
+I (35) boot.esp32s3: SPI Mode       : DIO
+I (39) boot.esp32s3: SPI Flash Size : 2MB
+I (43) boot: Enabling RNG early entropy source...
+I (47) boot: Partition Table:
+I (50) boot: ## Label            Usage          Type ST Offset   Length
+I (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09bb8h ( 39864) map[0m
+[0;32mI (93) esp_image: segment 1: paddr=00019be0 vaddr=3fc93600 size=029f8h ( 10744) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=0001c5e0 vaddr=40374000 size=03a38h ( 14904) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18aa8h (101032) map[0m
+[0;32mI (127) esp_image: segment 4: paddr=00038ad0 vaddr=40377a38 size=0bb48h ( 47944) load[0m
+[0;32mI (137) esp_image: segment 5: paddr=00044620 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (144) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (144) boot: Disabling RNG early entropy source...[0m
+[0;32mI (155) cpu_start: Multicore app[0m
+[0;32mI (164) cpu_start: Pro cpu start user code[0m
+[0;32mI (164) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (164) app_init: Application information:[0m
+[0;32mI (164) app_init: Project name:     hello_world[0m
+[0;32mI (169) app_init: App version:      1[0m
+[0;32mI (172) app_init: Compile time:     Jan 19 2026 17:11:27[0m
+[0;32mI (177) app_init: ELF file SHA256:  097e91f39...[0m
+[0;32mI (181) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (185) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (189) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (193) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (197) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (203) heap_init: At 3FC96918 len 00052DF8 (331 KiB): RAM[0m
+[0;32mI (208) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (213) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (219) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (224) spi_flash: detected chip: generic[0m
+[0;32mI (228) spi_flash: flash io: dio[0m
+[0;33mW (231) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (243) mcpwm(legacy): legacy driver is deprecated, please migrate to `driver/mcpwm_prelude.h`[0m
+[0;32mI (251) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (257) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (264) main_task: Started on CPU0[0m
+[0;32mI (274) main_task: Calling app_main()[0m
+[0;32mI (274) MyModule: app_main[0m
+[0;32mI (274) MyModule: ARMING avant[0m
+[0;32mI (5274) MyModule: ARMING DES ESC[0m
+[0;32mI (9274) MyModule: ARMING DES ESC[0m
+[0;32mI (9274) MyModule: 5.000000[0m
+[0;32mI (9274) MyModule: CH: 1000.000000,[0m
+[0;32mI (9374) MyModule: CH: 1000.000000,[0m
+[0;32mI (9474) MyModule: CH: 1000.000000,[0m
+[0;32mI (9574) MyModule: CH: 1000.000000,[0m
+[0;32mI (9674) MyModule: CH: 1000.000000,[0m
+[0;32mI (9774) MyModule: CH: 1000.000000,[0m
+[0;32mI (9874) MyModule: CH: 1000.000000,[0m
+[0;32mI (9974) MyModule: CH: 1000.000000,[0m
+[0;32mI (10074) MyModule: CH: 1000.000000,[0m
+[0;32mI (10174) MyModule: CH: 1000.000000,[0m
+[0;32mI (10274) MyModule: CH: 1000.000000,[0m
+[0;32mI (10374) MyModule: CH: 1000.000000,[0m
+[0;32mI (10474) MyModule: CH: 1000.000000,[0m
+[0;32mI (10574) MyModule: CH: 1000.000000,[0m
+[0;32mI (10674) MyModule: CH: 1000.000000,[0m
+[0;32mI (10774) MyModule: CH: 1000.000000,[0m
+[0;32mI (10874) MyModule: CH: 1000.000000,[0m
+[0;32mI (10974) MyModule: CH: 1000.000000,[0m
+[0;32mI (11074) MyModule: CH: 1000.000000,[0m
+[0;32mI (11174) MyModule: CH: 1000.000000,[0m
+[0;32mI (11274) MyModule: CH: 1000.000000,[0m
+[0;32mI (11374) MyModule: CH: 1000.000000,[0m
+[0;32mI (11474) MyModule: CH: 1000.000000,[0m
+[0;32mI (11574) MyModule: CH: 1000.000000,[0m
+[0;32mI (11674) MyModule: CH: 1000.000000,[0m
+[0;32mI (11774) MyModule: CH: 1000.000000,[0m
+[0;32mI (11874) MyModule: CH: 1000.000000,[0m
+[0;32mI (11974) MyModule: CH: 1000.000000,[0m
+[0;32mI (12074) MyModule: CH: 1000.000000,[0m
+[0;32mI (12174) MyModule: CH: 1000.000000,[0m
+[0;32mI (12274) MyModule: CH: 1000.000000,[0m
+[0;32mI (12374) MyModule: CH: 1000.000000,[0m
+[0;32mI (12474) MyModule: CH: 1000.000000,[0m
+[0;32mI (12574) MyModule: CH: 1000.000000,[0m
+[0;32mI (12674) MyModule: CH: 1000.000000,[0m
+[0;32mI (12774) MyModule: CH: 1000.000000,[0m
+[0;32mI (12874) MyModule: CH: 1000.000000,[0m
+[0;32mI (12974) MyModule: CH: 1000.000000,[0m
+[0;32mI (13074) MyModule: CH: 1000.000000,[0m
+[0;32mI (13174) MyModule: CH: 1055.000000,[0m
+[0;32mI (13274) MyModule: CH: 1114.000000,[0m
+[0;32mI (13374) MyModule: CH: 1155.000000,[0m
+[0;32mI (13474) MyModule: CH: 1222.000000,[0m
+[0;32mI (13574) MyModule: CH: 1233.000000,[0m
+[0;32mI (13674) MyModule: CH: 1232.000000,[0m
+[0;32mI (13774) MyModule: CH: 1232.000000,[0m
+[0;32mI (13874) MyModule: CH: 1232.000000,[0m
+[0;32mI (13974) MyModule: CH: 1232.000000,[0m
+[0;32mI (14074) MyModule: CH: 1174.000000,[0m
+[0;32mI (14174) MyModule: CH: 1000.000000,[0m
+[0;32mI (14274) MyModule: CH: 1000.000000,[0m
+[0;32mI (14374) MyModule: CH: 1002.000000,[0m
+[0;32mI (14474) MyModule: CH: 1000.000000,[0m
+[0;32mI (14574) MyModule: CH: 1000.000000,[0m
+[0;32mI (14674) MyModule: CH: 1000.000000,[0m
+[0;32mI (14774) MyModule: CH: 1000.000000,[0m
+[0;32mI (14874) MyModule: CH: 1000.000000,[0m
+[0;32mI (14974) MyModule: CH: 1000.000000,[0m
+[0;32mI (15074) MyModule: CH: 1000.000000,[0m
+[0;32mI (15174) MyModule: CH: 1000.000000,[0m
+[0;32mI (15274) MyModule: CH: 1000.000000,[0m
+[0;32mI (15374) MyModule: CH: 1000.000000,[0m
+[0;32mI (15474) MyModule: CH: 1000.000000,[0m
+[0;32mI (15574) MyModule: CH: 1000.000000,[0m
+[0;32mI (15674) MyModule: CH: 1000.000000,[0m
+[0;32mI (15774) MyModule: CH: 1000.000000,[0m
+[0;32mI (15874) MyModule: CH: 1000.000000,[0m
+[0;32mI (15974) MyModule: CH: 1000.000000,[0m
+[0;32mI (16074) MyModule: CH: 1000.000000,[0m
+[0;32mI (16174) MyModule: CH: 1000.000000,[0m
+[0;32mI (16274) MyModule: CH: 1000.000000,[0m
+[0;32mI (16374) MyModule: CH: 1000.000000,[0m
+[0;32mI (16474) MyModule: CH: 1000.000000,[0m
+[0;32mI (16574) MyModule: CH: 1000.000000,[0m
+[0;32mI (16674) MyModule: CH: 1000.000000,[0m
+[0;32mI (16774) MyModule: CH: 1000.000000,[0m
+[0;32mI (16874) MyModule: CH: 1000.000000,[0m
+[0;32mI (16974) MyModule: CH: 1000.000000,[0m
+[0;32mI (17074) MyModule: CH: 1000.000000,[0m
+[0;32mI (17174) MyModule: CH: 1000.000000,[0m
+[0;32mI (17274) MyModule: CH: 1000.000000,[0m
+[0;32mI (17374) MyModule: CH: 1000.000000,[0m
+[0;32mI (17474) MyModule: CH: 1000.000000,[0m
+[0;32mI (17574) MyModule: CH: 1000.000000,[0m
+[0;32mI (17674) MyModule: CH: 1000.000000,[0m
+[0;32mI (17774) MyModule: CH: 1000.000000,[0m
+[0;32mI (17874) MyModule: CH: 1000.000000,[0m
+[0;32mI (17974) MyModule: CH: 1000.000000,[0m
+[0;32mI (18074) MyModule: CH: 1000.000000,[0m
+[0;32mI (18174) MyModule: CH: 1000.000000,[0m

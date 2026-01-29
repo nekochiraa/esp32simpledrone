@@ -1,0 +1,18 @@
+dependencies:
+  idf:
+    source:
+      type: idf
+    version: 5.5.1
+  zorxx/ibus:
+    component_hash: 82c5f7539046c1e321b0fea7536265f9b52ebc855454a157082ba4b161739ed7
+    dependencies: []
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.0.0
+direct_dependencies:
+- idf
+- zorxx/ibus
+manifest_hash: 9e9d1f30c71812646a96ca6a5a3b8f39e8eabcb7efc9e2b0359c8b5e1a7b4db2
+target: esp32s3
+version: 2.0.0
