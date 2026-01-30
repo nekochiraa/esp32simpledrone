@@ -1,0 +1,31 @@
+# Build artifacts
+build/
+*.o
+*.elf
+*.bin
+*.map
+
+# ESP-IDF specific
+sdkconfig.old
+dependencies.lock
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
