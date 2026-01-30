@@ -1,104 +1,201 @@
-| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C5 | ESP32-C6 | ESP32-C61 | ESP32-H2 | ESP32-H21 | ESP32-H4 | ESP32-P4 | ESP32-S2 | ESP32-S3 | Linux |
-| ----------------- | ----- | -------- | -------- | -------- | -------- | --------- | -------- | --------- | -------- | -------- | -------- | -------- | ----- |
+# ESP32 Simple Drone
 
-# Hello World Example
+Projet de contrôle de drone basé sur ESP32 avec support IBUS et contrôle ESC.
 
-Starts a FreeRTOS task to print "Hello World".
+## Cibles Supportées
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+| ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C5 | ESP32-C6 | ESP32-S2 | ESP32-S3 |
+| ----- | -------- | -------- | -------- | -------- | -------- | -------- |
 
-## How to use example
+## Aperçu du Projet
 
-Follow detailed instructions provided specifically for this example.
+Ce projet implémente un contrôleur de drone simple utilisant:
+- **ESP32** comme microcontrôleur principal
+- **Protocole IBUS** pour la réception des commandes radio
+- **MCPWM** pour le contrôle des ESC (Electronic Speed Controllers)
+- **4 moteurs** en configuration quadricoptère
 
-Select the instructions depending on Espressif chip installed on your development board:
+## Architecture
 
-- [ESP32 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/index.html)
-- [ESP32-S2 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html)
+### Entrées
+- **IBUS** (récepteur radio) sur UART1
+  - RX: GPIO 5
+  - TX: GPIO 4
 
+### Sorties
+- **4 ESC** via MCPWM (50 Hz):
+  - Moteur avant droit (Front Right): GPIO 17 (MCPWM0A)
+  - Moteur avant gauche (Front Left): GPIO 19 (MCPWM0B)
+  - Moteur arrière droit (Back Right): GPIO 20 (MCPWM1A)
+  - Moteur arrière gauche (Back Left): GPIO 21 (MCPWM1B)
 
-## Example folder contents
+## Structure du Code (dossier `main/`)
 
-The project **hello_world** contains one source file in C language [hello_world_main.c](main/hello_world_main.c). The file is located in folder [main](main).
+### 📄 `main.c`
 
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both).
+Fichier principal contenant la fonction `app_main()`.
 
-Below is short explanation of remaining files in the project folder.
+**Responsabilités:**
+- Initialise l'event loop ESP-IDF
+- Configure la communication IBUS (UART1)
+- Initialise les moteurs via `pwminit()`
+- Boucle principale de lecture des commandes IBUS
 
+**Fonctionnement:**
+1. Configure le handler IBUS pour recevoir les valeurs des canaux
+2. Lit le canal 3 (index 2) qui correspond au throttle
+3. Convertit la valeur IBUS en pourcentage pour l'ESC:
+   - Formule: `(valeur - 1000) / 10`
+   - IBUS 1000 → 0% (moteur arrêté)
+   - IBUS 1500 → 50% (mi-puissance)
+   - IBUS 2000 → 100% (pleine puissance)
+4. Applique la commande au moteur avant droit
+
+**Note:** Par défaut, seul le moteur avant droit est contrôlé. Pour un vol réel, il faudrait implémenter le mixage des 4 moteurs avec stabilisation.
+
+### 📄 `motor.h` / `motor.c`
+
+Module de contrôle des ESC via MCPWM.
+
+**API Publique:**
+
+```c
+void pwminit(void);                  // Initialise MCPWM et effectue l'arming des ESC
+void frontright(float percent);      // Contrôle moteur avant droit (0-100%)
+void frontleft(float percent);       // Contrôle moteur avant gauche (0-100%)
+void backright(float percent);       // Contrôle moteur arrière droit (0-100%)
+void backleft(float percent);        // Contrôle moteur arrière gauche (0-100%)
 ```
-├── CMakeLists.txt
-├── pytest_hello_world.py      Python script used for automated testing
-├── main
-│   ├── CMakeLists.txt
-│   └── hello_world_main.c
-└── README.md                  This is the file you are currently reading
+
+**Détails Techniques:**
+
+- **Fréquence PWM:** 50 Hz (standard ESC)
+- **Plage de duty cycle:** 5% à 10%
+  - 5% ≈ 1 ms → vitesse minimale
+  - 10% ≈ 2 ms → vitesse maximale
+- **Conversion:** `duty = percent/20 + 5`
+- **Protection:** `MAXBRIDE` limite la puissance maximale à 100%
+
+**Séquence d'Arming:**
+1. Attente de 5 secondes au démarrage
+2. Envoi de 5% duty pendant 2 secondes
+3. Envoi de 10% duty pendant 2 secondes
+4. ESC prêts à recevoir des commandes
+
+### 📄 `idf_component.yml`
+
+Configuration des dépendances du projet.
+
+**Dépendances:**
+- `zorxx__ibus`: Librairie de gestion du protocole IBUS
+
+## Compilation et Flash
+
+### Prérequis
+
+- ESP-IDF v5.0 ou supérieur
+- Python 3.8+
+- Câble USB pour programmer l'ESP32
+
+### Commandes
+
+```bash
+# Configuration du projet
+idf.py menuconfig
+
+# Compilation
+idf.py build
+
+# Flash sur l'ESP32
+idf.py -p /dev/ttyUSB0 flash
+
+# Moniteur série
+idf.py -p /dev/ttyUSB0 monitor
+
+# Flash + Monitor
+idf.py -p /dev/ttyUSB0 flash monitor
 ```
 
-For more information on structure and contents of ESP-IDF projects, please refer to Section [Build System](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) of the ESP-IDF Programming Guide.
+## Câblage Matériel
+
+### Récepteur IBUS
+- **RX** → GPIO 5
+- **TX** → GPIO 4
+- **VCC** → 3.3V ou 5V (selon le récepteur)
+- **GND** → GND
+
+### ESC
+Connecter le signal PWM de chaque ESC au GPIO correspondant:
+- ESC avant droit → GPIO 17
+- ESC avant gauche → GPIO 19
+- ESC arrière droit → GPIO 20
+- ESC arrière gauche → GPIO 21
+
+**⚠️ Attention:** Alimenter les ESC avec une batterie appropriée (2S-4S LiPo selon les moteurs). Ne **JAMAIS** alimenter les moteurs depuis l'ESP32.
+
+## Sécurité
+
+### Points Critiques
+
+1. **Toujours démarrer avec throttle bas** (IBUS ≈ 1000) pour éviter un démarrage intempestif des moteurs
+2. **`MAXBRIDE = 100%`** limite la puissance maximale envoyée aux ESC
+3. **Tester sans hélices** lors des premiers essais
+4. **Débrancher la batterie** avant toute manipulation du câblage
+
+### Limites Actuelles
+
+- ❌ Pas de stabilisation IMU implémentée
+- ❌ Pas de contrôle PID intégré
+- ❌ Un seul moteur contrôlé par défaut
+- ❌ Pas de détection de perte de signal radio
+- ❌ Pas de mode failsafe
+
+## Développement Futur
+
+Pour transformer ce projet en un drone fonctionnel, il faudrait ajouter:
+
+1. **Capteur IMU** (ex: MPU6050)
+   - Lecture de l'accéléromètre et gyroscope
+   - Calcul des angles (roll, pitch, yaw)
+   
+2. **Stabilisation PID**
+   - Contrôleurs PID pour roll/pitch/yaw
+   - Filtres complémentaires pour fusion des données
+
+3. **Mixage des moteurs**
+   - Distribution des commandes sur les 4 moteurs
+   - Gestion des modes de vol (acro, angle, etc.)
+
+4. **Sécurité avancée**
+   - Détection de perte de signal
+   - Mode failsafe (atterrissage automatique)
+   - Alarme batterie faible
 
 ## Troubleshooting
 
-* Program upload failure
+### Échec du téléversement
+- Vérifier la connexion USB
+- Maintenir le bouton BOOT pendant le flash
+- Réduire le baud rate dans menuconfig
 
-    * Hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
-    * The baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
+### Moteurs ne répondent pas
+- Vérifier la séquence d'arming des ESC
+- S'assurer que le throttle IBUS est autour de 1000 au démarrage
+- Vérifier le câblage des signaux PWM
 
-## Technical support and feedback
+### Pas de signal IBUS
+- Vérifier les connexions RX/TX
+- Vérifier que le récepteur est bien bindé à l'émetteur
+- Utiliser `idf.py monitor` pour voir les logs
 
-Please use the following feedback channels:
+## Ressources
 
-* For technical queries, go to the [esp32.com](https://esp32.com/) forum
-* For a feature request or bug report, create a [GitHub issue](https://github.com/espressif/esp-idf/issues)
+- [ESP-IDF Programming Guide](https://docs.espressif.com/projects/esp-idf/en/latest/)
+- [MCPWM Documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/mcpwm.html)
+- [IBUS Protocol](https://github.com/zorxx/ibus)
 
-We will get back to you as soon as possible.
+## Licence
 
-## Documentation du code (main/)
+Ce projet est fourni tel quel, sans garantie. Utilisation à vos risques et périls.
 
-Cette section décrit le code du dossier `main/` (contrôle ESC, lecture IBUS, primitives de stabilisation IMU).
-
-Aperçu de l’architecture
-- Entrées: IBUS (récepteur radio) sur UART1
-- Traitement: boucle de contrôle dans `app_main` (main.c), primitives de stabilisation (stabilization.c)
-- Sorties: ESC via MCPWM (motor.c)
-
-Cartographie des broches (par défaut)
-- ESC (MCPWM, 50 Hz):
-  - Avant droit (Front Right): GPIO 17 (MCPWM0A)
-  - Avant gauche (Front Left): GPIO 19 (MCPWM0B)
-  - Arrière droit (Back Right): GPIO 20 (MCPWM1A)
-  - Arrière gauche (Back Left): GPIO 21 (MCPWM1B)
-- IBUS (UART1): RX = GPIO 5, TX = GPIO 4
-- IMU MPU6050 (I2C0): SCL = GPIO 20, SDA = GPIO 21
-  - Attention: 20/21 sont aussi utilisés pour des ESC dans motor.c; évitez tout conflit de broches lors du câblage.
-
-Fichiers et responsabilités
-- main.c
-  - Initialise l’event loop et IBUS, configure le PWM via `pwminit()`, puis lit en boucle le canal IBUS 3 (index 2) et en déduit une puissance.
-  - Conversion IBUS→ESC: (valeur − 1000) / 10 ≈ 0→100%, appliquée à `frontright()`. Exemple: 1000→0%, 1500→50%, 2000→100%.
-  - Démonstration: seul le moteur avant droit est piloté par défaut; ajoutez `frontleft/backright/backleft` pour piloter les autres moteurs.
-- motor.h / motor.c
-  - API ESC (MCPWM à 50 Hz). Arming séquentiel au démarrage (5% puis 10%) pour initialiser les ESC.
-  - Fonctions:
-    - `void pwminit(void)`: configure MCPWM et effectue l’arming.
-    - `void frontright(float percent)`, `frontleft`, `backright`, `backleft`: applique un duty équivalent à percent∈[0..100], saturé par `MAXBRIDE`.
-  - Mappage PWM: percent→duty% = percent/20 + 5 (0%→5%≈1 ms, 100%→10%≈2 ms).
-- controller.h / controller.c
-  - Exemple IBUS (journalisation des canaux) via `channelget()`. Utile pour vérifier le câblage et la réception IBUS.
-  - Remarque: certaines déclarations liées à la stabilisation figurent dans controller.h; consolidation future possible.
-- stabilization.h / stabilization.c
-  - Primitives IMU (MPU6050 via I2C) et utilitaires de filtrage/contrôle.
-  - API principale:
-    - `int stabinit(float *offset)`: init I2C/MPU6050, mesure les offsets gyro (moyenne sur ~1000 échantillons). 0 si OK.
-    - `int printaccel(uint8_t *data, float *xyz)`: lit l’accéléromètre et calcule roll/pitch (deg) dans `xyz[0..1]`.
-    - `int printgyro(uint8_t *data, float *xyz, float dt, float *offset)`: intègre le gyro (deg/s) sur dt et corrige l’offset.
-    - `float complementaryFilter(float gyro, float accel)`: fusion angle gyro/accel.
-    - `float pidcontroll(float mesure, float consigne, float dt, float *pid)`: PID (pid[0]=intégrale, pid[2]=Kp, pid[3]=Ki, pid[4]=Kd; l’appelant doit gérer l’erreur précédente).
-
-Flux d’exécution typique
-1) `pwminit()` arme les ESC (50 Hz). 2) IBUS met à jour `last_channels` via un handler. 3) La boucle principale convertit CH3→% et commande les moteurs.
-
-Sécurité & limites
-- Démarrer avec un throttle bas (IBUS≈1000) pour éviter un démarrage des moteurs.
-- `MAXBRIDE` limite la puissance max envoyée aux ESC.
-- Stabilisation (IMU/PID) non encore intégrée dans main.c par défaut; prévoir une étape d’intégration (lecture IMU→filtre→PID→mixage 4 moteurs).
-
+**⚠️ AVERTISSEMENT:** Les drones peuvent être dangereux. Respectez les lois locales et prenez toutes les précautions de sécurité nécessaires.
