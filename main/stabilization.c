@@ -76,7 +76,7 @@ static esp_err_t mpu6050_init(void)
     return ESP_OK;
 }
 
-static void kalmanfilter(float gyro, float accel, float *P, float *X)
+void kalmanfilter(float gyro, float accel, float *P, float *X)
 {
     static const float Q = 0.009571f;
     static const float R = 0.036904f;
@@ -115,34 +115,40 @@ int printgyro(uint8_t *data, float *xyz, float dt, float *offset)
     if (mpu6050_read_register(MPU6050_GYRO_XOUT_H, data, 6) != ESP_OK) {
         xyz[0] = 0.0f;
         xyz[1] = 0.0f;
+        xyz[2] = 0.0f;
         return 1;
     }
 
     int16_t gyro_x = (int16_t)((data[0] << 8) | data[1]);
     int16_t gyro_y = (int16_t)((data[2] << 8) | data[3]);
+    int16_t gyro_z = (int16_t)((data[4] << 8) | data[5]);
 
     xyz[0] += ((gyro_x - offset[0]) / 131.0f) * dt; // roll
     xyz[1] += ((gyro_y - offset[1]) / 131.0f) * dt; // pitch
+    xyz[2]  =  (gyro_z - offset[2]) / 131.0f;       // yaw rate (deg/s)
     return 0;
 }
 
 static void getgyrooffset(uint8_t *data, float *xyzgyro, float *offset)
 {
-    float moy[2] = {0.0f, 0.0f};
+    float moy[3] = {0.0f, 0.0f, 0.0f};
 
     ESP_LOGI(TAG, "Calibration gyroscope...");
     for (uint16_t i = 0; i < 1000; i++) {
         if (mpu6050_read_register(MPU6050_GYRO_XOUT_H, data, 6) == ESP_OK) {
             int16_t gyro_x = (int16_t)((data[0] << 8) | data[1]);
             int16_t gyro_y = (int16_t)((data[2] << 8) | data[3]);
+            int16_t gyro_z = (int16_t)((data[4] << 8) | data[5]);
             moy[0] += (float)gyro_x;
             moy[1] += (float)gyro_y;
+            moy[2] += (float)gyro_z;
         } else {
             ESP_LOGE(TAG, "Erreur lecture gyroscope");
         }
     }
     offset[0] = moy[0] / 1000.0f;
     offset[1] = moy[1] / 1000.0f;
+    offset[2] = moy[2] / 1000.0f;
 }
 
 float complementaryFilter(float gyro, float accel)

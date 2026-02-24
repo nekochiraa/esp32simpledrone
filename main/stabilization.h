@@ -11,6 +11,7 @@
 int   stabinit(float *offset);
 float pidcontroll(float mesure, float consigne, float dt, float *pid);
 float complementaryFilter(float gyro, float accel);
+void  kalmanfilter(float gyro, float accel, float *P, float *X);
 int   printgyro(uint8_t *data, float *xyz, float dt, float *offset);
 int   printaccel(uint8_t *data, float *xyz);
 

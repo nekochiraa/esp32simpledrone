@@ -16,15 +16,18 @@
 #define MAX_PITCH_ANGLE  30.0f  // consigne max pitch (degrés)
 #define MAX_YAW_RATE    180.0f  // consigne max yaw (deg/s)
 #define LOOP_PERIOD_MS    10    // période de la boucle de contrôle
+#define FAILSAFE_TIMEOUT_US 500000 // 500 ms sans signal iBUS → arrêt moteurs
 
 static const char *TAG = "drone";
 static volatile ibus_channel_t last_channels[IBUS_CHANNEL_COUNT];
 static volatile bool channels_updated = false;
+static volatile int64_t last_ibus_time = 0;
 
 static void channel_handler(ibus_channel_t *channels, void *cookie)
 {
     memcpy((void *)last_channels, channels, sizeof(last_channels));
     channels_updated = true;
+    last_ibus_time = esp_timer_get_time();
 }
 
 void app_main(void)
@@ -33,7 +36,7 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_event_loop_create_default());
 
     /* Initialisation IMU + calibration gyroscope */
-    float gyro_offset[2] = {0.0f, 0.0f};
+    float gyro_offset[3] = {0.0f, 0.0f, 0.0f};
     if (stabinit(gyro_offset) != 0) {
         ESP_LOGE(TAG, "Échec init stabilisation, arrêt.");
         return;
@@ -59,10 +62,11 @@ void app_main(void)
 
     /* Variables de la boucle */
     uint8_t imu_data[6]    = {0};
-    float accel_rp[2]      = {0.0f, 0.0f}; // roll, pitch accéléromètre
-    float gyro_rp[2]       = {0.0f, 0.0f}; // roll, pitch gyroscope intégré
+    float accel_rp[2]      = {0.0f, 0.0f};         // roll, pitch accéléromètre
+    float gyro_rp[3]       = {0.0f, 0.0f, 0.0f};  // roll, pitch intégrés + yaw rate
     float angle_roll       = 0.0f;
     float angle_pitch      = 0.0f;
+    float kalman_P[2]      = {1.0f, 1.0f};         // covariance Kalman (roll, pitch)
     motor_output_t motors  = {0};
 
     int64_t prev_time = esp_timer_get_time();
@@ -79,9 +83,18 @@ void app_main(void)
         printaccel(imu_data, accel_rp);
         printgyro(imu_data, gyro_rp, dt, gyro_offset);
 
-        /* Fusion complémentaire */
-        angle_roll  = complementaryFilter(gyro_rp[0], accel_rp[0]);
-        angle_pitch = complementaryFilter(gyro_rp[1], accel_rp[1]);
+        /* Fusion Kalman (remplace le filtre complémentaire) */
+        kalmanfilter(gyro_rp[0], accel_rp[0], &kalman_P[0], &angle_roll);
+        kalmanfilter(gyro_rp[1], accel_rp[1], &kalman_P[1], &angle_pitch);
+
+        /* Failsafe : si pas de signal iBUS depuis 500 ms → couper */
+        bool signal_lost = (now - last_ibus_time) > FAILSAFE_TIMEOUT_US;
+        if (signal_lost) {
+            fc.armed = false;
+            if ((now - last_ibus_time) < FAILSAFE_TIMEOUT_US + 1000000) {
+                ESP_LOGW(TAG, "FAILSAFE: signal perdu, moteurs coupés");
+            }
+        }
 
         /* Lecture des consignes iBUS */
         float throttle = 0.0f;
@@ -103,7 +116,7 @@ void app_main(void)
         /* Calcul PID + mixage */
         flight_ctrl_update(&fc, throttle,
                            roll_sp, pitch_sp, yaw_sp,
-                           angle_roll, angle_pitch, 0.0f,
+                           angle_roll, angle_pitch, gyro_rp[2],
                            dt, &motors);
 
         /* Commande moteurs */
