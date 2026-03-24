@@ -3,6 +3,7 @@
 
 #include "pid.h"
 #include <stdbool.h>
+#include <stdint.h>
 
 /* Mapping des canaux iBUS standard */
 #define IBUS_CH_ROLL     0  // CH1 : aileron

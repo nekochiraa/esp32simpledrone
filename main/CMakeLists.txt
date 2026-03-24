@@ -4,7 +4,8 @@ idf_component_register(SRCS "main.c"
                             "controller.c"
                             "pid.c"
                             "flight_controller.c"
+                            "test_stabilisation.c"
                     INCLUDE_DIRS "."
                     REQUIRES driver
-                    PRIV_REQUIRES esp_event
+                    PRIV_REQUIRES esp_event esp_timer
                     )

@@ -8,6 +8,14 @@
 #include "motor.h"
 #include "stabilization.h"
 #include "flight_controller.h"
+#include "main.h"
+
+// ========================================
+// MODE TEST: Décommentez la ligne ci-dessous pour lancer les tests
+// au lieu du mode drone normal
+// ========================================
+// #define MODE_TEST
+// ========================================
 
 #define IBUS_UART   UART_NUM_1
 #define IBUS_TX_PIN 4
@@ -32,6 +40,18 @@ static void channel_handler(ibus_channel_t *channels, void *cookie)
 
 void app_main(void)
 {
+#ifdef MODE_TEST
+    ESP_LOGI(TAG, "=== MODE TEST ACTIVÉ ===");
+    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    
+    // Lancer les tests de stabilisation
+    test_stabilisation_simple();
+    
+    ESP_LOGI(TAG, "Tests terminés. Le programme va boucler indéfiniment.");
+    for (;;) {
+        vTaskDelay(pdMS_TO_TICKS(10000));
+    }
+#else
     ESP_LOGI(TAG, "=== ESP32 Simple Drone ===");
     ESP_ERROR_CHECK(esp_event_loop_create_default());
 
@@ -134,4 +154,5 @@ void app_main(void)
     }
 
     ibus_deinit(ctx);
+#endif // MODE_TEST
 }

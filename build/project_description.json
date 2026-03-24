@@ -1,13 +1,13 @@
 {
     "version":            "1.2",
     "project_name":       "hello_world",
-    "project_version":    "1",
-    "project_path":       "/home/nekochira/code/drone/hello_world",
+    "project_version":    "d3230f7-dirty",
+    "project_path":       "/home/nekochira/code/esp32simpledrone",
     "idf_path":           "/home/nekochira/esp/esp-idf",
-    "build_dir":          "/home/nekochira/code/drone/hello_world/build",
-    "config_file":        "/home/nekochira/code/drone/hello_world/sdkconfig",
+    "build_dir":          "/home/nekochira/code/esp32simpledrone/build",
+    "config_file":        "/home/nekochira/code/esp32simpledrone/sdkconfig",
     "config_defaults":    "",
-    "bootloader_elf":     "/home/nekochira/code/drone/hello_world/build/bootloader/bootloader.elf",
+    "bootloader_elf":     "/home/nekochira/code/esp32simpledrone/build/bootloader/bootloader.elf",
     "app_elf":            "hello_world.elf",
     "app_bin":            "hello_world.bin",
     "build_type":         "flash_app",
@@ -26,7 +26,7 @@
     },
     "common_component_reqs": [ "cxx", "newlib", "freertos", "esp_hw_support", "heap", "log", "soc", "hal", "esp_rom", "esp_common", "esp_system", "xtensa" ],
     "build_components" : [ "app_update", "bootloader", "bootloader_support", "cxx", "driver", "efuse", "esp_app_format", "esp_bootloader_format", "esp_common", "esp_driver_ana_cmpr", "esp_driver_bitscrambler", "esp_driver_dac", "esp_driver_gpio", "esp_driver_gptimer", "esp_driver_i2c", "esp_driver_i2s", "esp_driver_ledc", "esp_driver_mcpwm", "esp_driver_parlio", "esp_driver_pcnt", "esp_driver_rmt", "esp_driver_sdio", "esp_driver_sdm", "esp_driver_sdmmc", "esp_driver_sdspi", "esp_driver_spi", "esp_driver_tsens", "esp_driver_twai", "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_event", "esp_hw_support", "esp_mm", "esp_partition", "esp_pm", "esp_ringbuf", "esp_rom", "esp_security", "esp_system", "esp_timer", "esptool_py", "freertos", "hal", "heap", "log", "main", "mbedtls", "newlib", "partition_table", "pthread", "sdmmc", "soc", "spi_flash", "xtensa", "zorxx__ibus", "" ],
-    "build_component_paths" : [ "/home/nekochira/esp/esp-idf/components/app_update", "/home/nekochira/esp/esp-idf/components/bootloader", "/home/nekochira/esp/esp-idf/components/bootloader_support", "/home/nekochira/esp/esp-idf/components/cxx", "/home/nekochira/esp/esp-idf/components/driver", "/home/nekochira/esp/esp-idf/components/efuse", "/home/nekochira/esp/esp-idf/components/esp_app_format", "/home/nekochira/esp/esp-idf/components/esp_bootloader_format", "/home/nekochira/esp/esp-idf/components/esp_common", "/home/nekochira/esp/esp-idf/components/esp_driver_ana_cmpr", "/home/nekochira/esp/esp-idf/components/esp_driver_bitscrambler", "/home/nekochira/esp/esp-idf/components/esp_driver_dac", "/home/nekochira/esp/esp-idf/components/esp_driver_gpio", "/home/nekochira/esp/esp-idf/components/esp_driver_gptimer", "/home/nekochira/esp/esp-idf/components/esp_driver_i2c", "/home/nekochira/esp/esp-idf/components/esp_driver_i2s", "/home/nekochira/esp/esp-idf/components/esp_driver_ledc", "/home/nekochira/esp/esp-idf/components/esp_driver_mcpwm", "/home/nekochira/esp/esp-idf/components/esp_driver_parlio", "/home/nekochira/esp/esp-idf/components/esp_driver_pcnt", "/home/nekochira/esp/esp-idf/components/esp_driver_rmt", "/home/nekochira/esp/esp-idf/components/esp_driver_sdio", "/home/nekochira/esp/esp-idf/components/esp_driver_sdm", "/home/nekochira/esp/esp-idf/components/esp_driver_sdmmc", "/home/nekochira/esp/esp-idf/components/esp_driver_sdspi", "/home/nekochira/esp/esp-idf/components/esp_driver_spi", "/home/nekochira/esp/esp-idf/components/esp_driver_tsens", "/home/nekochira/esp/esp-idf/components/esp_driver_twai", "/home/nekochira/esp/esp-idf/components/esp_driver_uart", "/home/nekochira/esp/esp-idf/components/esp_driver_usb_serial_jtag", "/home/nekochira/esp/esp-idf/components/esp_event", "/home/nekochira/esp/esp-idf/components/esp_hw_support", "/home/nekochira/esp/esp-idf/components/esp_mm", "/home/nekochira/esp/esp-idf/components/esp_partition", "/home/nekochira/esp/esp-idf/components/esp_pm", "/home/nekochira/esp/esp-idf/components/esp_ringbuf", "/home/nekochira/esp/esp-idf/components/esp_rom", "/home/nekochira/esp/esp-idf/components/esp_security", "/home/nekochira/esp/esp-idf/components/esp_system", "/home/nekochira/esp/esp-idf/components/esp_timer", "/home/nekochira/esp/esp-idf/components/esptool_py", "/home/nekochira/esp/esp-idf/components/freertos", "/home/nekochira/esp/esp-idf/components/hal", "/home/nekochira/esp/esp-idf/components/heap", "/home/nekochira/esp/esp-idf/components/log", "/home/nekochira/code/drone/hello_world/main", "/home/nekochira/esp/esp-idf/components/mbedtls", "/home/nekochira/esp/esp-idf/components/newlib", "/home/nekochira/esp/esp-idf/components/partition_table", "/home/nekochira/esp/esp-idf/components/pthread", "/home/nekochira/esp/esp-idf/components/sdmmc", "/home/nekochira/esp/esp-idf/components/soc", "/home/nekochira/esp/esp-idf/components/spi_flash", "/home/nekochira/esp/esp-idf/components/xtensa", "/home/nekochira/code/drone/hello_world/managed_components/zorxx__ibus", "" ],
+    "build_component_paths" : [ "/home/nekochira/esp/esp-idf/components/app_update", "/home/nekochira/esp/esp-idf/components/bootloader", "/home/nekochira/esp/esp-idf/components/bootloader_support", "/home/nekochira/esp/esp-idf/components/cxx", "/home/nekochira/esp/esp-idf/components/driver", "/home/nekochira/esp/esp-idf/components/efuse", "/home/nekochira/esp/esp-idf/components/esp_app_format", "/home/nekochira/esp/esp-idf/components/esp_bootloader_format", "/home/nekochira/esp/esp-idf/components/esp_common", "/home/nekochira/esp/esp-idf/components/esp_driver_ana_cmpr", "/home/nekochira/esp/esp-idf/components/esp_driver_bitscrambler", "/home/nekochira/esp/esp-idf/components/esp_driver_dac", "/home/nekochira/esp/esp-idf/components/esp_driver_gpio", "/home/nekochira/esp/esp-idf/components/esp_driver_gptimer", "/home/nekochira/esp/esp-idf/components/esp_driver_i2c", "/home/nekochira/esp/esp-idf/components/esp_driver_i2s", "/home/nekochira/esp/esp-idf/components/esp_driver_ledc", "/home/nekochira/esp/esp-idf/components/esp_driver_mcpwm", "/home/nekochira/esp/esp-idf/components/esp_driver_parlio", "/home/nekochira/esp/esp-idf/components/esp_driver_pcnt", "/home/nekochira/esp/esp-idf/components/esp_driver_rmt", "/home/nekochira/esp/esp-idf/components/esp_driver_sdio", "/home/nekochira/esp/esp-idf/components/esp_driver_sdm", "/home/nekochira/esp/esp-idf/components/esp_driver_sdmmc", "/home/nekochira/esp/esp-idf/components/esp_driver_sdspi", "/home/nekochira/esp/esp-idf/components/esp_driver_spi", "/home/nekochira/esp/esp-idf/components/esp_driver_tsens", "/home/nekochira/esp/esp-idf/components/esp_driver_twai", "/home/nekochira/esp/esp-idf/components/esp_driver_uart", "/home/nekochira/esp/esp-idf/components/esp_driver_usb_serial_jtag", "/home/nekochira/esp/esp-idf/components/esp_event", "/home/nekochira/esp/esp-idf/components/esp_hw_support", "/home/nekochira/esp/esp-idf/components/esp_mm", "/home/nekochira/esp/esp-idf/components/esp_partition", "/home/nekochira/esp/esp-idf/components/esp_pm", "/home/nekochira/esp/esp-idf/components/esp_ringbuf", "/home/nekochira/esp/esp-idf/components/esp_rom", "/home/nekochira/esp/esp-idf/components/esp_security", "/home/nekochira/esp/esp-idf/components/esp_system", "/home/nekochira/esp/esp-idf/components/esp_timer", "/home/nekochira/esp/esp-idf/components/esptool_py", "/home/nekochira/esp/esp-idf/components/freertos", "/home/nekochira/esp/esp-idf/components/hal", "/home/nekochira/esp/esp-idf/components/heap", "/home/nekochira/esp/esp-idf/components/log", "/home/nekochira/code/esp32simpledrone/main", "/home/nekochira/esp/esp-idf/components/mbedtls", "/home/nekochira/esp/esp-idf/components/newlib", "/home/nekochira/esp/esp-idf/components/partition_table", "/home/nekochira/esp/esp-idf/components/pthread", "/home/nekochira/esp/esp-idf/components/sdmmc", "/home/nekochira/esp/esp-idf/components/soc", "/home/nekochira/esp/esp-idf/components/spi_flash", "/home/nekochira/esp/esp-idf/components/xtensa", "/home/nekochira/code/esp32simpledrone/managed_components/zorxx__ibus", "" ],
     "build_component_info" : {
         "app_update": {
             "alias": "idf::app_update",
@@ -39,7 +39,7 @@
             "priv_reqs": [ "esptool_py", "efuse", "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/app_update/libapp_update.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/app_update/libapp_update.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/app_update/esp_ota_ops.c", "/home/nekochira/esp/esp-idf/components/app_update/esp_ota_app_desc.c" ],
             "include_dirs": [ "include" ]
         },
@@ -69,7 +69,7 @@
             "priv_reqs": [ "spi_flash", "mbedtls", "efuse", "heap", "esp_bootloader_format", "esp_app_format" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/bootloader_support/libbootloader_support.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/bootloader_support/libbootloader_support.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/bootloader_support/src/bootloader_common.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/bootloader_common_loader.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/bootloader_clock_init.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/bootloader_mem.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/bootloader_random.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/bootloader_efuse.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/flash_encrypt.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/secure_boot.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/bootloader_random_esp32s3.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/bootloader_flash/src/flash_qio_mode.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32s3.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/flash_partitions.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/esp_image_format.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/bootloader_sha.c", "/home/nekochira/esp/esp-idf/components/bootloader_support/src/esp32s3/secure_boot_secure_features.c" ],
             "include_dirs": [ "include", "bootloader_flash/include" ]
         },
@@ -84,7 +84,7 @@
             "priv_reqs": [ "esp_system", "pthread" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/cxx/libcxx.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/cxx/libcxx.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/cxx/cxx_exception_stubs.cpp", "/home/nekochira/esp/esp-idf/components/cxx/cxx_guards.cpp", "/home/nekochira/esp/esp-idf/components/cxx/cxx_init.cpp" ],
             "include_dirs": []
         },
@@ -99,7 +99,7 @@
             "priv_reqs": [ "efuse", "esp_timer", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/driver/libdriver.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/driver/libdriver.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/driver/deprecated/adc_legacy.c", "/home/nekochira/esp/esp-idf/components/driver/deprecated/adc_dma_legacy.c", "/home/nekochira/esp/esp-idf/components/driver/deprecated/timer_legacy.c", "/home/nekochira/esp/esp-idf/components/driver/i2c/i2c.c", "/home/nekochira/esp/esp-idf/components/driver/deprecated/i2s_legacy.c", "/home/nekochira/esp/esp-idf/components/driver/deprecated/mcpwm_legacy.c", "/home/nekochira/esp/esp-idf/components/driver/deprecated/pcnt_legacy.c", "/home/nekochira/esp/esp-idf/components/driver/deprecated/rmt_legacy.c", "/home/nekochira/esp/esp-idf/components/driver/deprecated/sigma_delta_legacy.c", "/home/nekochira/esp/esp-idf/components/driver/deprecated/rtc_temperature_legacy.c", "/home/nekochira/esp/esp-idf/components/driver/touch_sensor/touch_sensor_common.c", "/home/nekochira/esp/esp-idf/components/driver/touch_sensor/esp32s3/touch_sensor.c", "/home/nekochira/esp/esp-idf/components/driver/twai/twai.c" ],
             "include_dirs": [ "deprecated", "i2c/include", "touch_sensor/include", "twai/include", "touch_sensor/esp32s3/include" ]
         },
@@ -114,7 +114,7 @@
             "priv_reqs": [ "bootloader_support", "soc", "spi_flash", "esp_system", "esp_partition", "esp_app_format" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/efuse/libefuse.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/efuse/libefuse.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/efuse/esp32s3/esp_efuse_table.c", "/home/nekochira/esp/esp-idf/components/efuse/esp32s3/esp_efuse_fields.c", "/home/nekochira/esp/esp-idf/components/efuse/esp32s3/esp_efuse_rtc_calib.c", "/home/nekochira/esp/esp-idf/components/efuse/esp32s3/esp_efuse_utility.c", "/home/nekochira/esp/esp-idf/components/efuse/src/esp_efuse_api.c", "/home/nekochira/esp/esp-idf/components/efuse/src/esp_efuse_fields.c", "/home/nekochira/esp/esp-idf/components/efuse/src/esp_efuse_utility.c", "/home/nekochira/esp/esp-idf/components/efuse/src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c", "/home/nekochira/esp/esp-idf/components/efuse/src/esp_efuse_startup.c" ],
             "include_dirs": [ "include", "esp32s3/include" ]
         },
@@ -129,7 +129,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_app_format/libesp_app_format.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_app_format/libesp_app_format.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_app_format/esp_app_desc.c" ],
             "include_dirs": [ "include" ]
         },
@@ -144,7 +144,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_bootloader_format/libesp_bootloader_format.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_bootloader_format/libesp_bootloader_format.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c" ],
             "include_dirs": [ "include" ]
         },
@@ -159,7 +159,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_common/libesp_common.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_common/libesp_common.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_common/src/esp_err_to_name.c" ],
             "include_dirs": [ "include" ]
         },
@@ -219,7 +219,7 @@
             "priv_reqs": [ "esp_pm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_gpio/libesp_driver_gpio.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_gpio/libesp_driver_gpio.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_gpio/src/gpio.c", "/home/nekochira/esp/esp-idf/components/esp_driver_gpio/src/gpio_glitch_filter_ops.c", "/home/nekochira/esp/esp-idf/components/esp_driver_gpio/src/rtc_io.c", "/home/nekochira/esp/esp-idf/components/esp_driver_gpio/src/dedic_gpio.c", "/home/nekochira/esp/esp-idf/components/esp_driver_gpio/src/gpio_pin_glitch_filter.c" ],
             "include_dirs": [ "include" ]
         },
@@ -234,7 +234,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_gptimer/libesp_driver_gptimer.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_gptimer/libesp_driver_gptimer.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_gptimer/src/gptimer.c", "/home/nekochira/esp/esp-idf/components/esp_driver_gptimer/src/gptimer_common.c" ],
             "include_dirs": [ "include" ]
         },
@@ -249,7 +249,7 @@
             "priv_reqs": [ "esp_driver_gpio", "esp_pm", "esp_ringbuf" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_i2c/libesp_driver_i2c.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_i2c/libesp_driver_i2c.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_i2c/i2c_master.c", "/home/nekochira/esp/esp-idf/components/esp_driver_i2c/i2c_common.c", "/home/nekochira/esp/esp-idf/components/esp_driver_i2c/i2c_slave.c" ],
             "include_dirs": [ "include" ]
         },
@@ -264,7 +264,7 @@
             "priv_reqs": [ "esp_driver_gpio", "esp_pm", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_i2s/libesp_driver_i2s.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_i2s/libesp_driver_i2s.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_i2s/i2s_common.c", "/home/nekochira/esp/esp-idf/components/esp_driver_i2s/i2s_std.c", "/home/nekochira/esp/esp-idf/components/esp_driver_i2s/i2s_pdm.c", "/home/nekochira/esp/esp-idf/components/esp_driver_i2s/i2s_tdm.c", "/home/nekochira/esp/esp-idf/components/esp_driver_i2s/i2s_platform.c" ],
             "include_dirs": [ "include" ]
         },
@@ -279,7 +279,7 @@
             "priv_reqs": [ "esp_pm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_ledc/libesp_driver_ledc.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_ledc/libesp_driver_ledc.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_ledc/src/ledc.c" ],
             "include_dirs": [ "include" ]
         },
@@ -294,7 +294,7 @@
             "priv_reqs": [ "esp_pm", "esp_driver_gpio" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_mcpwm/libesp_driver_mcpwm.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_mcpwm/libesp_driver_mcpwm.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_mcpwm/src/mcpwm_cap.c", "/home/nekochira/esp/esp-idf/components/esp_driver_mcpwm/src/mcpwm_cmpr.c", "/home/nekochira/esp/esp-idf/components/esp_driver_mcpwm/src/mcpwm_com.c", "/home/nekochira/esp/esp-idf/components/esp_driver_mcpwm/src/mcpwm_fault.c", "/home/nekochira/esp/esp-idf/components/esp_driver_mcpwm/src/mcpwm_gen.c", "/home/nekochira/esp/esp-idf/components/esp_driver_mcpwm/src/mcpwm_oper.c", "/home/nekochira/esp/esp-idf/components/esp_driver_mcpwm/src/mcpwm_sync.c", "/home/nekochira/esp/esp-idf/components/esp_driver_mcpwm/src/mcpwm_timer.c" ],
             "include_dirs": [ "include" ]
         },
@@ -324,7 +324,7 @@
             "priv_reqs": [ "esp_pm", "esp_driver_gpio" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_pcnt/libesp_driver_pcnt.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_pcnt/libesp_driver_pcnt.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_pcnt/src/pulse_cnt.c" ],
             "include_dirs": [ "include" ]
         },
@@ -339,7 +339,7 @@
             "priv_reqs": [ "esp_pm", "esp_driver_gpio", "esp_driver_bitscrambler", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_rmt/libesp_driver_rmt.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_rmt/libesp_driver_rmt.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_rmt/src/rmt_common.c", "/home/nekochira/esp/esp-idf/components/esp_driver_rmt/src/rmt_encoder.c", "/home/nekochira/esp/esp-idf/components/esp_driver_rmt/src/rmt_encoder_bytes.c", "/home/nekochira/esp/esp-idf/components/esp_driver_rmt/src/rmt_encoder_copy.c", "/home/nekochira/esp/esp-idf/components/esp_driver_rmt/src/rmt_encoder_simple.c", "/home/nekochira/esp/esp-idf/components/esp_driver_rmt/src/rmt_rx.c", "/home/nekochira/esp/esp-idf/components/esp_driver_rmt/src/rmt_tx.c" ],
             "include_dirs": [ "include" ]
         },
@@ -369,7 +369,7 @@
             "priv_reqs": [ "esp_pm", "esp_driver_gpio" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_sdm/libesp_driver_sdm.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_sdm/libesp_driver_sdm.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_sdm/src/sdm.c" ],
             "include_dirs": [ "include" ]
         },
@@ -384,7 +384,7 @@
             "priv_reqs": [ "esp_timer", "esp_pm", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_sdmmc/libesp_driver_sdmmc.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_sdmmc/libesp_driver_sdmmc.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_sdmmc/src/sdmmc_transaction.c", "/home/nekochira/esp/esp-idf/components/esp_driver_sdmmc/src/sdmmc_host.c" ],
             "include_dirs": [ "include" ]
         },
@@ -399,7 +399,7 @@
             "priv_reqs": [ "esp_timer", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_sdspi/libesp_driver_sdspi.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_sdspi/libesp_driver_sdspi.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_sdspi/src/sdspi_crc.c", "/home/nekochira/esp/esp-idf/components/esp_driver_sdspi/src/sdspi_host.c", "/home/nekochira/esp/esp-idf/components/esp_driver_sdspi/src/sdspi_transaction.c" ],
             "include_dirs": [ "include" ]
         },
@@ -414,7 +414,7 @@
             "priv_reqs": [ "esp_timer", "esp_mm", "esp_driver_gpio" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_spi/libesp_driver_spi.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_spi/libesp_driver_spi.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_common.c", "/home/nekochira/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_master.c", "/home/nekochira/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_slave.c", "/home/nekochira/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_slave_hd.c" ],
             "include_dirs": [ "include" ]
         },
@@ -429,7 +429,7 @@
             "priv_reqs": [ "efuse" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_tsens/libesp_driver_tsens.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_tsens/libesp_driver_tsens.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_tsens/src/temperature_sensor.c" ],
             "include_dirs": [ "include" ]
         },
@@ -444,7 +444,7 @@
             "priv_reqs": [ "esp_driver_gpio", "esp_pm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_twai/libesp_driver_twai.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_twai/libesp_driver_twai.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_twai/esp_twai.c", "/home/nekochira/esp/esp-idf/components/esp_driver_twai/esp_twai_onchip.c" ],
             "include_dirs": [ "include" ]
         },
@@ -459,7 +459,7 @@
             "priv_reqs": [ "esp_pm", "esp_driver_gpio", "esp_ringbuf", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_uart/libesp_driver_uart.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_uart/libesp_driver_uart.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_uart/src/uart.c", "/home/nekochira/esp/esp-idf/components/esp_driver_uart/src/uart_wakeup.c", "/home/nekochira/esp/esp-idf/components/esp_driver_uart/src/uhci.c" ],
             "include_dirs": [ "include" ]
         },
@@ -474,7 +474,7 @@
             "priv_reqs": [ "esp_driver_gpio", "esp_ringbuf", "esp_pm", "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c", "/home/nekochira/esp/esp-idf/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c" ],
             "include_dirs": [ "include" ]
         },
@@ -489,7 +489,7 @@
             "priv_reqs": [ "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_event/libesp_event.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_event/libesp_event.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_event/default_event_loop.c", "/home/nekochira/esp/esp-idf/components/esp_event/esp_event.c", "/home/nekochira/esp/esp-idf/components/esp_event/esp_event_private.c" ],
             "include_dirs": [ "include" ]
         },
@@ -504,7 +504,7 @@
             "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_security", "esp_driver_gpio", "esp_timer", "esp_pm", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_hw_support/libesp_hw_support.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_hw_support/libesp_hw_support.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_hw_support/cpu.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/esp_cpu_intr.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/esp_memory_utils.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/cpu_region_protect.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/esp_clk.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/clk_ctrl_os.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/hw_random.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/intr_alloc.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/mac_addr.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/periph_ctrl.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/revision.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/rtc_module.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/regi2c_ctrl.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/esp_gpio_reserve.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/sar_periph_ctrl_common.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/io_mux.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/esp_clk_tree.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/dma/esp_dma_utils.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/dma/gdma_link.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/spi_bus_lock.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/clk_utils.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp_clk_tree_common.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/spi_share_hw_ctrl.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/adc_share_hw_ctrl.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/sleep_modem.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/sleep_modes.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/sleep_console.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/sleep_usb.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/sleep_gpio.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/sleep_event.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/dma/gdma.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/deprecated/gdma_legacy.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/dma/esp_async_memcpy.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/dma/async_memcpy_gdma.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/systimer.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/mspi_timing_tuning.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/sleep_wake_stub.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/esp_clock_output.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/power_supply/brownout.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_clk.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_clk_init.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_init.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_sleep.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_time.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/chip_info.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/sar_periph_ctrl.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp32s3/esp_memprot.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/port/esp_memprot_conv.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/mspi_timing_config.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c", "/home/nekochira/esp/esp-idf/components/esp_hw_support/lowpower/port/esp32s3/sleep_cpu.c" ],
             "include_dirs": [ "include", "include/soc", "include/soc/esp32s3", "dma/include", "ldo/include", "debug_probe/include", "mspi_timing_tuning/include", "mspi_timing_tuning/tuning_scheme_impl/include", "power_supply/include" ]
         },
@@ -519,7 +519,7 @@
             "priv_reqs": [ "heap", "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_mm/libesp_mm.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_mm/libesp_mm.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_mm/esp_mmu_map.c", "/home/nekochira/esp/esp-idf/components/esp_mm/port/esp32s3/ext_mem_layout.c", "/home/nekochira/esp/esp-idf/components/esp_mm/esp_cache_msync.c", "/home/nekochira/esp/esp-idf/components/esp_mm/esp_cache_utils.c", "/home/nekochira/esp/esp-idf/components/esp_mm/heap_align_hw.c" ],
             "include_dirs": [ "include" ]
         },
@@ -534,7 +534,7 @@
             "priv_reqs": [ "esp_system", "spi_flash", "partition_table", "bootloader_support", "app_update" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_partition/libesp_partition.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_partition/libesp_partition.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_partition/partition.c", "/home/nekochira/esp/esp-idf/components/esp_partition/partition_target.c" ],
             "include_dirs": [ "include" ]
         },
@@ -549,7 +549,7 @@
             "priv_reqs": [ "esp_system", "esp_driver_gpio", "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_pm/libesp_pm.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_pm/libesp_pm.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_pm/pm_locks.c", "/home/nekochira/esp/esp-idf/components/esp_pm/pm_trace.c", "/home/nekochira/esp/esp-idf/components/esp_pm/pm_impl.c" ],
             "include_dirs": [ "include" ]
         },
@@ -564,7 +564,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_ringbuf/libesp_ringbuf.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_ringbuf/libesp_ringbuf.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_ringbuf/ringbuf.c" ],
             "include_dirs": [ "include" ]
         },
@@ -579,7 +579,7 @@
             "priv_reqs": [ "soc", "hal" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_rom/libesp_rom.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_rom/libesp_rom.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_sys.c", "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_print.c", "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_crc.c", "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_uart.c", "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_spiflash.c", "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_efuse.c", "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_gpio.c", "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_longjmp.S", "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_systimer.c", "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_wdt.c", "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_cache_esp32s2_esp32s3.c", "/home/nekochira/esp/esp-idf/components/esp_rom/patches/esp_rom_cache_writeback_esp32s3.S" ],
             "include_dirs": [ "include", "esp32s3/include", "esp32s3/include/esp32s3", "esp32s3" ]
         },
@@ -594,7 +594,7 @@
             "priv_reqs": [ "efuse", "esp_hw_support", "esp_system", "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_security/libesp_security.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_security/libesp_security.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_security/src/init.c", "/home/nekochira/esp/esp-idf/components/esp_security/src/esp_hmac.c", "/home/nekochira/esp/esp-idf/components/esp_security/src/esp_ds.c", "/home/nekochira/esp/esp-idf/components/esp_security/src/esp_crypto_lock.c", "/home/nekochira/esp/esp-idf/components/esp_security/src/esp_crypto_periph_clk.c" ],
             "include_dirs": [ "include" ]
         },
@@ -609,7 +609,7 @@
             "priv_reqs": [ "spi_flash", "esp_timer", "esp_mm", "bootloader_support", "esp_pm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_system/libesp_system.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_system/libesp_system.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_system/esp_err.c", "/home/nekochira/esp/esp-idf/components/esp_system/crosscore_int.c", "/home/nekochira/esp/esp-idf/components/esp_system/esp_ipc.c", "/home/nekochira/esp/esp-idf/components/esp_system/esp_system_console.c", "/home/nekochira/esp/esp-idf/components/esp_system/freertos_hooks.c", "/home/nekochira/esp/esp-idf/components/esp_system/int_wdt.c", "/home/nekochira/esp/esp-idf/components/esp_system/panic.c", "/home/nekochira/esp/esp-idf/components/esp_system/esp_system.c", "/home/nekochira/esp/esp-idf/components/esp_system/startup.c", "/home/nekochira/esp/esp-idf/components/esp_system/startup_funcs.c", "/home/nekochira/esp/esp-idf/components/esp_system/system_time.c", "/home/nekochira/esp/esp-idf/components/esp_system/stack_check.c", "/home/nekochira/esp/esp-idf/components/esp_system/ubsan.c", "/home/nekochira/esp/esp-idf/components/esp_system/xt_wdt.c", "/home/nekochira/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c", "/home/nekochira/esp/esp-idf/components/esp_system/task_wdt/task_wdt_impl_timergroup.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/cpu_start.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/panic_handler.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/esp_system_chip.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/image_process.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/esp_ipc_isr.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/arch/xtensa/esp_ipc_isr_port.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/arch/xtensa/esp_ipc_isr_handler.S", "/home/nekochira/esp/esp-idf/components/esp_system/port/arch/xtensa/esp_ipc_isr_routines.S", "/home/nekochira/esp/esp-idf/components/esp_system/port/arch/xtensa/panic_arch.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/arch/xtensa/panic_handler_asm.S", "/home/nekochira/esp/esp-idf/components/esp_system/port/arch/xtensa/expression_with_stack.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/arch/xtensa/expression_with_stack_asm.S", "/home/nekochira/esp/esp-idf/components/esp_system/port/arch/xtensa/debug_helpers.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/arch/xtensa/debug_helpers_asm.S", "/home/nekochira/esp/esp-idf/components/esp_system/port/arch/xtensa/debug_stubs.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/arch/xtensa/trax.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/soc/esp32s3/highint_hdl.S", "/home/nekochira/esp/esp-idf/components/esp_system/port/soc/esp32s3/clk.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/soc/esp32s3/reset_reason.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/soc/esp32s3/cache_err_int.c", "/home/nekochira/esp/esp-idf/components/esp_system/port/soc/esp32s3/apb_backup_dma.c" ],
             "include_dirs": [ "include" ]
         },
@@ -624,7 +624,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/esp_timer/libesp_timer.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/esp_timer/libesp_timer.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/esp_timer/src/esp_timer.c", "/home/nekochira/esp/esp-idf/components/esp_timer/src/esp_timer_init.c", "/home/nekochira/esp/esp-idf/components/esp_timer/src/ets_timer_legacy.c", "/home/nekochira/esp/esp-idf/components/esp_timer/src/system_time.c", "/home/nekochira/esp/esp-idf/components/esp_timer/src/esp_timer_impl_common.c", "/home/nekochira/esp/esp-idf/components/esp_timer/src/esp_timer_impl_systimer.c" ],
             "include_dirs": [ "include" ]
         },
@@ -654,7 +654,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/freertos/libfreertos.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/freertos/libfreertos.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/freertos/heap_idf.c", "/home/nekochira/esp/esp-idf/components/freertos/app_startup.c", "/home/nekochira/esp/esp-idf/components/freertos/port_common.c", "/home/nekochira/esp/esp-idf/components/freertos/port_systick.c", "/home/nekochira/esp/esp-idf/components/freertos/FreeRTOS-Kernel/list.c", "/home/nekochira/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c", "/home/nekochira/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c", "/home/nekochira/esp/esp-idf/components/freertos/FreeRTOS-Kernel/timers.c", "/home/nekochira/esp/esp-idf/components/freertos/FreeRTOS-Kernel/event_groups.c", "/home/nekochira/esp/esp-idf/components/freertos/FreeRTOS-Kernel/stream_buffer.c", "/home/nekochira/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c", "/home/nekochira/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S", "/home/nekochira/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_init.c", "/home/nekochira/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_overlay_os_hook.c", "/home/nekochira/esp/esp-idf/components/freertos/esp_additions/freertos_compatibility.c", "/home/nekochira/esp/esp-idf/components/freertos/esp_additions/idf_additions_event_groups.c", "/home/nekochira/esp/esp-idf/components/freertos/esp_additions/idf_additions.c" ],
             "include_dirs": [ "config/include", "config/include/freertos", "config/xtensa/include", "FreeRTOS-Kernel/include", "FreeRTOS-Kernel/portable/xtensa/include", "FreeRTOS-Kernel/portable/xtensa/include/freertos", "esp_additions/include" ]
         },
@@ -669,7 +669,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/hal/libhal.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/hal/libhal.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/hal/hal_utils.c", "/home/nekochira/esp/esp-idf/components/hal/mpu_hal.c", "/home/nekochira/esp/esp-idf/components/hal/efuse_hal.c", "/home/nekochira/esp/esp-idf/components/hal/esp32s3/efuse_hal.c", "/home/nekochira/esp/esp-idf/components/hal/mmu_hal.c", "/home/nekochira/esp/esp-idf/components/hal/cache_hal.c", "/home/nekochira/esp/esp-idf/components/hal/color_hal.c", "/home/nekochira/esp/esp-idf/components/hal/spi_flash_hal.c", "/home/nekochira/esp/esp-idf/components/hal/spi_flash_hal_iram.c", "/home/nekochira/esp/esp-idf/components/hal/spi_flash_encrypt_hal_iram.c", "/home/nekochira/esp/esp-idf/components/hal/esp32s3/clk_tree_hal.c", "/home/nekochira/esp/esp-idf/components/hal/systimer_hal.c", "/home/nekochira/esp/esp-idf/components/hal/uart_hal.c", "/home/nekochira/esp/esp-idf/components/hal/uart_hal_iram.c", "/home/nekochira/esp/esp-idf/components/hal/gpio_hal.c", "/home/nekochira/esp/esp-idf/components/hal/rtc_io_hal.c", "/home/nekochira/esp/esp-idf/components/hal/timer_hal.c", "/home/nekochira/esp/esp-idf/components/hal/ledc_hal.c", "/home/nekochira/esp/esp-idf/components/hal/ledc_hal_iram.c", "/home/nekochira/esp/esp-idf/components/hal/i2c_hal.c", "/home/nekochira/esp/esp-idf/components/hal/i2c_hal_iram.c", "/home/nekochira/esp/esp-idf/components/hal/rmt_hal.c", "/home/nekochira/esp/esp-idf/components/hal/pcnt_hal.c", "/home/nekochira/esp/esp-idf/components/hal/mcpwm_hal.c", "/home/nekochira/esp/esp-idf/components/hal/uhci_hal.c", "/home/nekochira/esp/esp-idf/components/hal/twai_hal_sja1000.c", "/home/nekochira/esp/esp-idf/components/hal/gdma_hal_top.c", "/home/nekochira/esp/esp-idf/components/hal/gdma_hal_ahb_v1.c", "/home/nekochira/esp/esp-idf/components/hal/i2s_hal.c", "/home/nekochira/esp/esp-idf/components/hal/sdm_hal.c", "/home/nekochira/esp/esp-idf/components/hal/sdmmc_hal.c", "/home/nekochira/esp/esp-idf/components/hal/adc_hal_common.c", "/home/nekochira/esp/esp-idf/components/hal/adc_oneshot_hal.c", "/home/nekochira/esp/esp-idf/components/hal/adc_hal.c", "/home/nekochira/esp/esp-idf/components/hal/lcd_hal.c", "/home/nekochira/esp/esp-idf/components/hal/mpi_hal.c", "/home/nekochira/esp/esp-idf/components/hal/sha_hal.c", "/home/nekochira/esp/esp-idf/components/hal/aes_hal.c", "/home/nekochira/esp/esp-idf/components/hal/brownout_hal.c", "/home/nekochira/esp/esp-idf/components/hal/spi_hal.c", "/home/nekochira/esp/esp-idf/components/hal/spi_hal_iram.c", "/home/nekochira/esp/esp-idf/components/hal/spi_slave_hal.c", "/home/nekochira/esp/esp-idf/components/hal/spi_slave_hal_iram.c", "/home/nekochira/esp/esp-idf/components/hal/spi_slave_hd_hal.c", "/home/nekochira/esp/esp-idf/components/hal/spi_flash_hal_gpspi.c", "/home/nekochira/esp/esp-idf/components/hal/hmac_hal.c", "/home/nekochira/esp/esp-idf/components/hal/ds_hal.c", "/home/nekochira/esp/esp-idf/components/hal/cam_hal.c", "/home/nekochira/esp/esp-idf/components/hal/usb_serial_jtag_hal.c", "/home/nekochira/esp/esp-idf/components/hal/usb_dwc_hal.c", "/home/nekochira/esp/esp-idf/components/hal/usb_wrap_hal.c", "/home/nekochira/esp/esp-idf/components/hal/esp32s3/touch_sensor_hal.c", "/home/nekochira/esp/esp-idf/components/hal/touch_sensor_hal.c", "/home/nekochira/esp/esp-idf/components/hal/touch_sens_hal.c", "/home/nekochira/esp/esp-idf/components/hal/xt_wdt_hal.c", "/home/nekochira/esp/esp-idf/components/hal/esp32s3/rtc_cntl_hal.c" ],
             "include_dirs": [ "platform_port/include", "esp32s3/include", "include" ]
         },
@@ -684,7 +684,7 @@
             "priv_reqs": [ "soc" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/heap/libheap.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/heap/libheap.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/heap/heap_caps_base.c", "/home/nekochira/esp/esp-idf/components/heap/heap_caps.c", "/home/nekochira/esp/esp-idf/components/heap/heap_caps_init.c", "/home/nekochira/esp/esp-idf/components/heap/multi_heap.c", "/home/nekochira/esp/esp-idf/components/heap/tlsf/tlsf.c", "/home/nekochira/esp/esp-idf/components/heap/port/memory_layout_utils.c", "/home/nekochira/esp/esp-idf/components/heap/port/esp32s3/memory_layout.c" ],
             "include_dirs": [ "include", "tlsf" ]
         },
@@ -699,7 +699,7 @@
             "priv_reqs": [ "hal", "soc", "esp_hw_support" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/log/liblog.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/log/liblog.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/log/src/os/log_timestamp.c", "/home/nekochira/esp/esp-idf/components/log/src/log_timestamp_common.c", "/home/nekochira/esp/esp-idf/components/log/src/os/log_lock.c", "/home/nekochira/esp/esp-idf/components/log/src/buffer/log_buffers.c", "/home/nekochira/esp/esp-idf/components/log/src/os/util.c", "/home/nekochira/esp/esp-idf/components/log/src/util.c", "/home/nekochira/esp/esp-idf/components/log/src/log_format_text.c", "/home/nekochira/esp/esp-idf/components/log/src/log_print.c", "/home/nekochira/esp/esp-idf/components/log/src/log.c", "/home/nekochira/esp/esp-idf/components/log/src/os/log_write.c", "/home/nekochira/esp/esp-idf/components/log/src/log_level/log_level.c", "/home/nekochira/esp/esp-idf/components/log/src/log_level/tag_log_level/tag_log_level.c", "/home/nekochira/esp/esp-idf/components/log/src/log_level/tag_log_level/linked_list/log_linked_list.c", "/home/nekochira/esp/esp-idf/components/log/src/log_level/tag_log_level/cache/log_binary_heap.c" ],
             "include_dirs": [ "include" ]
         },
@@ -707,15 +707,15 @@
             "alias": "idf::main",
             "target": "___idf_main",
             "prefix": "idf",
-            "dir": "/home/nekochira/code/drone/hello_world/main",
+            "dir": "/home/nekochira/code/esp32simpledrone/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
             "reqs": [ "driver" ],
-            "priv_reqs": [ "esp_event", "zorxx__ibus" ],
+            "priv_reqs": [ "esp_event", "esp_timer", "zorxx__ibus" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "zorxx__ibus" ],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/nekochira/code/drone/hello_world/main/main.c", "/home/nekochira/code/drone/hello_world/main/motor.c" ],
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/main/libmain.a",
+            "sources": [ "/home/nekochira/code/esp32simpledrone/main/main.c", "/home/nekochira/code/esp32simpledrone/main/motor.c", "/home/nekochira/code/esp32simpledrone/main/stabilization.c", "/home/nekochira/code/esp32simpledrone/main/controller.c", "/home/nekochira/code/esp32simpledrone/main/pid.c", "/home/nekochira/code/esp32simpledrone/main/flight_controller.c", "/home/nekochira/code/esp32simpledrone/main/test_stabilisation.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
@@ -729,8 +729,8 @@
             "priv_reqs": [ "soc", "esp_hw_support", "esp_pm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/mbedtls/libmbedtls.a",
-            "sources": [ "/home/nekochira/esp/esp-idf/components/mbedtls/esp_crt_bundle/esp_crt_bundle.c", "/home/nekochira/code/drone/hello_world/build/x509_crt_bundle.S" ],
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/mbedtls/libmbedtls.a",
+            "sources": [ "/home/nekochira/esp/esp-idf/components/mbedtls/esp_crt_bundle/esp_crt_bundle.c", "/home/nekochira/code/esp32simpledrone/build/x509_crt_bundle.S" ],
             "include_dirs": [ "port/include", "mbedtls/include", "mbedtls/library", "esp_crt_bundle/include" ]
         },
         "newlib": {
@@ -744,7 +744,7 @@
             "priv_reqs": [ "soc", "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/newlib/libnewlib.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/newlib/libnewlib.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/newlib/src/init.c", "/home/nekochira/esp/esp-idf/components/newlib/src/abort.c", "/home/nekochira/esp/esp-idf/components/newlib/src/assert.c", "/home/nekochira/esp/esp-idf/components/newlib/src/heap.c", "/home/nekochira/esp/esp-idf/components/newlib/src/locks.c", "/home/nekochira/esp/esp-idf/components/newlib/src/poll.c", "/home/nekochira/esp/esp-idf/components/newlib/src/pthread.c", "/home/nekochira/esp/esp-idf/components/newlib/src/random.c", "/home/nekochira/esp/esp-idf/components/newlib/src/getentropy.c", "/home/nekochira/esp/esp-idf/components/newlib/src/termios.c", "/home/nekochira/esp/esp-idf/components/newlib/src/stdatomic.c", "/home/nekochira/esp/esp-idf/components/newlib/src/time.c", "/home/nekochira/esp/esp-idf/components/newlib/src/sysconf.c", "/home/nekochira/esp/esp-idf/components/newlib/src/realpath.c", "/home/nekochira/esp/esp-idf/components/newlib/src/scandir.c", "/home/nekochira/esp/esp-idf/components/newlib/src/syscalls.c", "/home/nekochira/esp/esp-idf/components/newlib/src/reent_syscalls.c", "/home/nekochira/esp/esp-idf/components/newlib/src/port/esp_time_impl.c", "/home/nekochira/esp/esp-idf/components/newlib/src/flockfile.c", "/home/nekochira/esp/esp-idf/components/newlib/src/reent_init.c", "/home/nekochira/esp/esp-idf/components/newlib/src/newlib_init.c", "/home/nekochira/esp/esp-idf/components/newlib/src/port/esp_time_impl.c" ],
             "include_dirs": [ "platform_include" ]
         },
@@ -774,7 +774,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/pthread/libpthread.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/pthread/libpthread.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/pthread/pthread.c", "/home/nekochira/esp/esp-idf/components/pthread/pthread_cond_var.c", "/home/nekochira/esp/esp-idf/components/pthread/pthread_local_storage.c", "/home/nekochira/esp/esp-idf/components/pthread/pthread_rwlock.c", "/home/nekochira/esp/esp-idf/components/pthread/pthread_semaphore.c" ],
             "include_dirs": [ "include" ]
         },
@@ -789,7 +789,7 @@
             "priv_reqs": [ "soc", "esp_timer", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/sdmmc/libsdmmc.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/sdmmc/libsdmmc.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/sdmmc/sdmmc_cmd.c", "/home/nekochira/esp/esp-idf/components/sdmmc/sdmmc_common.c", "/home/nekochira/esp/esp-idf/components/sdmmc/sdmmc_init.c", "/home/nekochira/esp/esp-idf/components/sdmmc/sdmmc_io.c", "/home/nekochira/esp/esp-idf/components/sdmmc/sdmmc_mmc.c", "/home/nekochira/esp/esp-idf/components/sdmmc/sdmmc_sd.c", "/home/nekochira/esp/esp-idf/components/sdmmc/sd_pwr_ctrl/sd_pwr_ctrl.c" ],
             "include_dirs": [ "include" ]
         },
@@ -804,7 +804,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/soc/libsoc.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/soc/libsoc.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/soc/lldesc.c", "/home/nekochira/esp/esp-idf/components/soc/dport_access_common.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/interrupts.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/gpio_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/uart_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/adc_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/dedic_gpio_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/gdma_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/spi_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/ledc_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/pcnt_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/rmt_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/sdm_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/i2s_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/i2c_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/temperature_sensor_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/timer_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/lcd_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/mcpwm_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/mpi_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/sdmmc_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/touch_sensor_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/twai_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/wdt_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/usb_dwc_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/rtc_io_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/cam_periph.c", "/home/nekochira/esp/esp-idf/components/soc/esp32s3/power_supply_periph.c" ],
             "include_dirs": [ "include", "esp32s3", "esp32s3/include", "esp32s3/register" ]
         },
@@ -819,7 +819,7 @@
             "priv_reqs": [ "bootloader_support", "app_update", "soc", "esp_mm", "esp_driver_gpio" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/spi_flash/libspi_flash.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/spi_flash/libspi_flash.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/spi_flash/flash_brownout_hook.c", "/home/nekochira/esp/esp-idf/components/spi_flash/esp32s3/spi_flash_oct_flash_init.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_hpm_enable.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_chip_drivers.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_chip_generic.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_chip_issi.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_chip_mxic.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_chip_gd.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_chip_winbond.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_chip_boya.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_chip_mxic_opi.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_chip_th.c", "/home/nekochira/esp/esp-idf/components/spi_flash/memspi_host_driver.c", "/home/nekochira/esp/esp-idf/components/spi_flash/cache_utils.c", "/home/nekochira/esp/esp-idf/components/spi_flash/flash_mmap.c", "/home/nekochira/esp/esp-idf/components/spi_flash/flash_ops.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_wrap.c", "/home/nekochira/esp/esp-idf/components/spi_flash/esp_flash_api.c", "/home/nekochira/esp/esp-idf/components/spi_flash/esp_flash_spi_init.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_os_func_app.c", "/home/nekochira/esp/esp-idf/components/spi_flash/spi_flash_os_func_noos.c" ],
             "include_dirs": [ "include" ]
         },
@@ -834,7 +834,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/xtensa/libxtensa.a",
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/xtensa/libxtensa.a",
             "sources": [ "/home/nekochira/esp/esp-idf/components/xtensa/eri.c", "/home/nekochira/esp/esp-idf/components/xtensa/xt_trax.c", "/home/nekochira/esp/esp-idf/components/xtensa/xtensa_context.S", "/home/nekochira/esp/esp-idf/components/xtensa/xtensa_intr_asm.S", "/home/nekochira/esp/esp-idf/components/xtensa/xtensa_intr.c", "/home/nekochira/esp/esp-idf/components/xtensa/xtensa_vectors.S" ],
             "include_dirs": [ "esp32s3/include", "include", "deprecated_include" ]
         },
@@ -842,15 +842,15 @@
             "alias": "idf::zorxx__ibus",
             "target": "___idf_zorxx__ibus",
             "prefix": "idf",
-            "dir": "/home/nekochira/code/drone/hello_world/managed_components/zorxx__ibus",
+            "dir": "/home/nekochira/code/esp32simpledrone/managed_components/zorxx__ibus",
             "type": "LIBRARY",
             "lib": "__idf_zorxx__ibus",
             "reqs": [],
             "priv_reqs": [ "driver", "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/nekochira/code/drone/hello_world/build/esp-idf/zorxx__ibus/libzorxx__ibus.a",
-            "sources": [ "/home/nekochira/code/drone/hello_world/managed_components/zorxx__ibus/lib/ibus.c", "/home/nekochira/code/drone/hello_world/managed_components/zorxx__ibus/lib/sys/esp-idf.c" ],
+            "file": "/home/nekochira/code/esp32simpledrone/build/esp-idf/zorxx__ibus/libzorxx__ibus.a",
+            "sources": [ "/home/nekochira/code/esp32simpledrone/managed_components/zorxx__ibus/lib/ibus.c", "/home/nekochira/code/esp32simpledrone/managed_components/zorxx__ibus/lib/sys/esp-idf.c" ],
             "include_dirs": [ "include" ]
         }
     },
@@ -937,7 +937,7 @@
             "priv_reqs": [ "esp_driver_uart", "esp_driver_usb_serial_jtag" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "/home/nekochira/code/drone/hello_world/build" ]
+            "include_dirs": [ "/home/nekochira/code/esp32simpledrone/build" ]
         },
         "cxx": {
             "alias": "idf::cxx",
@@ -985,7 +985,7 @@
             "priv_reqs": [ "http_parser", "esp_timer", "lwip" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "/home/nekochira/code/drone/hello_world/build", "esp-tls-crypto" ]
+            "include_dirs": [ "/home/nekochira/code/esp32simpledrone/build", "esp-tls-crypto" ]
         },
         "esp_adc": {
             "alias": "idf::esp_adc",
@@ -2155,10 +2155,10 @@
             "alias": "idf::main",
             "target": "___idf_main",
             "prefix": "idf",
-            "dir": "/home/nekochira/code/drone/hello_world/main",
+            "dir": "/home/nekochira/code/esp32simpledrone/main",
             "lib": "__idf_main",
             "reqs": [ "driver" ],
-            "priv_reqs": [ "esp_event", "zorxx__ibus" ],
+            "priv_reqs": [ "esp_event", "esp_timer", "zorxx__ibus" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "zorxx__ibus" ],
             "include_dirs": [ "." ]
@@ -2167,7 +2167,7 @@
             "alias": "idf::zorxx__ibus",
             "target": "___idf_zorxx__ibus",
             "prefix": "idf",
-            "dir": "/home/nekochira/code/drone/hello_world/managed_components/zorxx__ibus",
+            "dir": "/home/nekochira/code/esp32simpledrone/managed_components/zorxx__ibus",
             "lib": "__idf_zorxx__ibus",
             "reqs": [],
             "priv_reqs": [ "driver", "esp_timer" ],
@@ -2178,10 +2178,10 @@
     },
     "debug_prefix_map_gdbinit": "",
     "gdbinit_files": {
-        "01_symbols": "/home/nekochira/code/drone/hello_world/build/gdbinit/symbols",
-        "02_prefix_map": "/home/nekochira/code/drone/hello_world/build/gdbinit/prefix_map",
-        "03_py_extensions": "/home/nekochira/code/drone/hello_world/build/gdbinit/py_extensions",
-        "04_connect": "/home/nekochira/code/drone/hello_world/build/gdbinit/connect"
+        "01_symbols": "/home/nekochira/code/esp32simpledrone/build/gdbinit/symbols",
+        "02_prefix_map": "/home/nekochira/code/esp32simpledrone/build/gdbinit/prefix_map",
+        "03_py_extensions": "/home/nekochira/code/esp32simpledrone/build/gdbinit/py_extensions",
+        "04_connect": "/home/nekochira/code/esp32simpledrone/build/gdbinit/connect"
     },
     "debug_arguments_openocd": "-f board/esp32s3-builtin.cfg"
 }

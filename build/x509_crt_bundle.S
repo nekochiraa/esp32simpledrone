@@ -1,4 +1,4 @@
-/* * Data converted from /home/nekochira/code/drone/hello_world/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/nekochira/code/esp32simpledrone/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 #if !defined (__APPLE__) && !defined (__linux__)

@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/nekochira/code/drone/hello_world/build/CMakeFiles/bootloader"
+			"file" : "/home/nekochira/code/esp32simpledrone/build/CMakeFiles/bootloader"
 		},
 		{
-			"file" : "/home/nekochira/code/drone/hello_world/build/CMakeFiles/bootloader.rule"
+			"file" : "/home/nekochira/code/esp32simpledrone/build/CMakeFiles/bootloader.rule"
 		},
 		{
-			"file" : "/home/nekochira/code/drone/hello_world/build/CMakeFiles/bootloader-complete.rule"
+			"file" : "/home/nekochira/code/esp32simpledrone/build/CMakeFiles/bootloader-complete.rule"
 		},
 		{
-			"file" : "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+			"file" : "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
 		},
 		{
-			"file" : "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+			"file" : "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
 		},
 		{
-			"file" : "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+			"file" : "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
 		},
 		{
-			"file" : "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+			"file" : "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
 		},
 		{
-			"file" : "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+			"file" : "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
 		},
 		{
-			"file" : "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+			"file" : "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
 		},
 		{
-			"file" : "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+			"file" : "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
 		}
 	],
 	"target" : 

@@ -1,0 +1,19 @@
+# CMakeLists.txt pour le programme de test de stabilisation
+# 
+# Pour utiliser ce fichier:
+# 1. Sauvegarder votre CMakeLists.txt actuel
+# 2. Remplacer le contenu de CMakeLists.txt par celui-ci
+# 3. Compiler avec: idf.py build
+# 4. Flasher avec: idf.py flash monitor
+
+idf_component_register(
+    SRCS 
+        "test_stabilization.c"
+        "stabilization.c"
+        "pid.c"
+    INCLUDE_DIRS 
+        "."
+    REQUIRES 
+        driver 
+        esp_timer
+)

@@ -13,8 +13,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /home/nekochira/code/drone/hello_world/build/bootloader/bootloader.elf
+    add-symbol-file /home/nekochira/code/esp32simpledrone/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /home/nekochira/code/drone/hello_world/build/hello_world.elf
+file /home/nekochira/code/esp32simpledrone/build/hello_world.elf

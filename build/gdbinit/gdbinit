@@ -1,2 +1,2 @@
-source /home/nekochira/code/drone/hello_world/build/gdbinit/symbols
-source /home/nekochira/code/drone/hello_world/build/gdbinit/connect
+source /home/nekochira/code/esp32simpledrone/build/gdbinit/symbols
+source /home/nekochira/code/esp32simpledrone/build/gdbinit/connect

@@ -1,0 +1,121 @@
+Command: /home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python /home/nekochira/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/nekochira/code/esp32simpledrone/build/hello_world.elf /home/nekochira/code/esp32simpledrone/build/bootloader/bootloader.elf -m '/home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python' '/home/nekochira/esp/esp-idf/tools/idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09e1ch ( 40476) map[0m
+[0;32mI (93) esp_image: segment 1: paddr=00019e44 vaddr=3fc92700 size=028b8h ( 10424) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=0001c704 vaddr=40374000 size=03914h ( 14612) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18ddch (101852) map[0m
+[0;32mI (127) esp_image: segment 4: paddr=00038e04 vaddr=40377914 size=0add8h ( 44504) load[0m
+[0;32mI (137) esp_image: segment 5: paddr=00043be4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (143) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (143) boot: Disabling RNG early entropy source...[0m
+[0;32mI (154) cpu_start: Multicore app[0m
+[0;32mI (163) cpu_start: Pro cpu start user code[0m
+[0;32mI (163) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (164) app_init: Application information:[0m
+[0;32mI (164) app_init: Project name:     hello_world[0m
+[0;32mI (168) app_init: App version:      d3230f7-dirty[0m
+[0;32mI (172) app_init: Compile time:     Mar 21 2026 20:07:22[0m
+[0;32mI (177) app_init: ELF file SHA256:  c3bbbc978...[0m
+[0;32mI (182) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (185) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (189) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (193) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (197) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (203) heap_init: At 3FC95840 len 00053ED0 (335 KiB): RAM[0m
+[0;32mI (209) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (214) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (219) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (225) spi_flash: detected chip: generic[0m
+[0;32mI (228) spi_flash: flash io: dio[0m
+[0;33mW (231) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (243) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (249) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (256) main_task: Started on CPU0[0m
+[0;32mI (266) main_task: Calling app_main()[0m
+[0;32mI (266) drone: === MODE TEST ACTIVÉ ===[0m
+[0;32mI (266) TEST: [0m
+
+[0;32mI (266) TEST: ========================================[0m
+[0;32mI (276) TEST:    TEST SYSTÈME DE STABILISATION[0m
+[0;32mI (276) TEST: ========================================[0m
+
+[0;32mI (786) TEST: >>> Test 1: Initialisation du capteur[0m
+[0;32mI (786) MPU6050: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (886) MPU6050: WHO_AM_I = 0x68 (attendu 0x68)[0m
+[0;32mI (986) MPU6050: MPU6050 initialisé avec succès[0m
+[0;32mI (986) MPU6050: Calibration gyroscope...[0m
+[0;32mI (1246) TEST: ✓ Initialisation réussie![0m
+[0;32mI (1246) TEST:   Offsets gyro: X=-744.53 Y=301.80 Z=-146.82[0m
+
+[0;32mI (2246) TEST: >>> Test 2: Lecture des capteurs (5 lectures)[0m
+[0;32mI (2246) TEST: [1] Gyro: R=0.0° P=-0.0° Y=-0.0°/s | Accel: R=-175.2° P=79.2°[0m
+[0;32mI (2346) TEST: [2] Gyro: R=0.0° P=-0.0° Y=0.0°/s | Accel: R=-174.4° P=80.1°[0m
+[0;32mI (2446) TEST: [3] Gyro: R=0.0° P=-0.0° Y=-0.2°/s | Accel: R=-175.9° P=79.2°[0m
+[0;32mI (2546) TEST: [4] Gyro: R=0.0° P=-0.0° Y=0.0°/s | Accel: R=-174.3° P=79.4°[0m
+[0;32mI (2646) TEST: [5] Gyro: R=0.0° P=-0.0° Y=-0.2°/s | Accel: R=-175.1° P=79.6°[0m
+[0;32mI (2746) TEST: [0m
+[0;32mI (3746) TEST: >>> Test 3: Filtre Complémentaire[0m
+[0;32mI (3746) TEST:   Gyro=10.00° Accel=9.80° → Filtré=10.00°[0m
+[0;32mI (3746) TEST:   Gyro=10.00° Accel=10.20° → Filtré=10.00°[0m
+[0;32mI (3746) TEST:   Gyro=10.00° Accel=9.90° → Filtré=10.00°[0m
+[0;32mI (3746) TEST:   Gyro=10.00° Accel=10.10° → Filtré=10.00°[0m
+[0;32mI (3756) TEST: [0m
+[0;32mI (4756) TEST: >>> Test 4: Filtre de Kalman[0m
+[0;32mI (4756) TEST:   [1] Gyro=0.100° Accel=10.00° → Kalman=9.651° (P=0.0356)[0m
+[0;32mI (4756) TEST:   [2] Gyro=0.090° Accel=10.20° → Kalman=9.994° (P=0.0203)[0m
+[0;32mI (4756) TEST:   [3] Gyro=0.110° Accel=9.80° → Kalman=9.968° (P=0.0165)[0m
+[0;32mI (4766) TEST:   [4] Gyro=0.100° Accel=10.10° → Kalman=10.081° (P=0.0153)[0m
+[0;32mI (4776) TEST:   [5] Gyro=0.080° Accel=9.90° → Kalman=10.056° (P=0.0149)[0m
+[0;32mI (4776) TEST: [0m
+[0;32mI (5776) TEST: >>> Test 5: Contrôleur PID (stabilisation à 0°)[0m
+[0;32mI (5776) TEST:   Gains: Kp=1.5 Ki=0.1 Kd=0.05[0m
+[0;32mI (5776) TEST:   [1] Angle=20.0° → Correction=-100.00 (I=-0.200)[0m
+[0;32mI (5776) TEST:   [2] Angle=15.0° → Correction=2.47 (I=-0.350)[0m
+[0;32mI (5786) TEST:   [3] Angle=10.0° → Correction=9.95 (I=-0.450)[0m
+[0;32mI (5786) TEST:   [4] Angle=6.0° → Correction=10.95 (I=-0.510)[0m
+[0;32mI (5796) TEST:   [5] Angle=3.0° → Correction=10.45 (I=-0.540)[0m
+[0;32mI (5796) TEST:   [6] Angle=1.0° → Correction=8.44 (I=-0.550)[0m
+[0;32mI (5806) TEST:   [7] Angle=0.2° → Correction=3.64 (I=-0.552)[0m
+[0;32mI (5806) TEST: [0m
+[0;32mI (6816) TEST: >>> Test 6: Boucle de stabilisation complète (10 cycles)[0m
+[0;32mI (6816) TEST:   Consigne: Roll=0° Pitch=0°[0m
+
+[0;32mI (6816) TEST:   [01] Roll: -168.24° (corr: 100.00) | Pitch:  76.93° (corr: -100.00)[0m
+[0;32mI (6916) TEST:   [02] Roll: -170.09° (corr: 100.00) | Pitch:  78.40° (corr: -100.00)[0m
+[0;32mI (7016) TEST:   [03] Roll: -172.14° (corr: 100.00) | Pitch:  78.75° (corr: -96.74)[0m
+[0;32mI (7116) TEST:   [04] Roll: -173.53° (corr: 100.00) | Pitch:  78.99° (corr: -96.47)[0m
+[0;32mI (7216) TEST:   [05] Roll: -173.57° (corr: 100.00) | Pitch:  79.25° (corr: -97.03)[0m
+[0;32mI (7316) TEST:   [06] Roll: -174.23° (corr: 100.00) | Pitch:  79.48° (corr: -97.10)[0m
+[0;32mI (7416) TEST:   [07] Roll: -173.71° (corr: 100.00) | Pitch:  79.55° (corr: -96.33)[0m
+[0;32mI (7516) TEST:   [08] Roll: -174.52° (corr: 100.00) | Pitch:  79.37° (corr: -94.63)[0m
+[0;32mI (7616) TEST:   [09] Roll: -174.82° (corr: 100.00) | Pitch:  79.31° (corr: -95.38)[0m
+[0;32mI (7716) TEST:   [10] Roll: -174.84° (corr: 100.00) | Pitch:  79.12° (corr: -94.47)[0m
+[0;32mI (7816) TEST: [0m
+========================================
+[0;32mI (7816) TEST:    ✓ TOUS LES TESTS TERMINÉS[0m
+[0;32mI (7816) TEST: ========================================[0m
+
+[0;32mI (7816) drone: Tests terminés. Le programme va boucler indéfiniment.[0m

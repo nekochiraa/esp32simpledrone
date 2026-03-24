@@ -10,18 +10,18 @@ if(NOT EXISTS "/home/nekochira/esp/esp-idf/components/bootloader/subproject")
   file(MAKE_DIRECTORY "/home/nekochira/esp/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/home/nekochira/code/drone/hello_world/build/bootloader"
-  "/home/nekochira/code/drone/hello_world/build/bootloader-prefix"
-  "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/tmp"
-  "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src/bootloader-stamp"
-  "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src"
-  "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/nekochira/code/esp32simpledrone/build/bootloader"
+  "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix"
+  "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/tmp"
+  "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src"
+  "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/nekochira/code/drone/hello_world/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/nekochira/code/esp32simpledrone/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

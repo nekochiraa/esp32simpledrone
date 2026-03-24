@@ -1,0 +1,501 @@
+Command: /home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python /home/nekochira/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/nekochira/code/esp32simpledrone/build/hello_world.elf /home/nekochira/code/esp32simpledrone/build/bootloader/bootloader.elf -m '/home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python' '/home/nekochira/esp/esp-idf/tools/idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09ffch ( 40956) map[0m
+[0;32mI (94) esp_image: segment 1: paddr=0001a024 vaddr=3fc92700 size=028b8h ( 10424) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=0001c8e4 vaddr=40374000 size=03734h ( 14132) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18f9ch (102300) map[0m
+[0;32mI (127) esp_image: segment 4: paddr=00038fc4 vaddr=40377734 size=0afb8h ( 44984) load[0m
+[0;32mI (137) esp_image: segment 5: paddr=00043f84 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (143) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (143) boot: Disabling RNG early entropy source...[0m
+[0;32mI (154) cpu_start: Multicore app[0m
+[0;32mI (164) cpu_start: Pro cpu start user code[0m
+[0;32mI (164) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (164) app_init: Application information:[0m
+[0;32mI (164) app_init: Project name:     hello_world[0m
+[0;32mI (168) app_init: App version:      d3230f7-dirty[0m
+[0;32mI (172) app_init: Compile time:     Mar 21 2026 20:07:22[0m
+[0;32mI (177) app_init: ELF file SHA256:  158302e50...[0m
+[0;32mI (182) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (186) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (189) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (193) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (197) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (204) heap_init: At 3FC95840 len 00053ED0 (335 KiB): RAM[0m
+[0;32mI (209) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (214) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (219) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (225) spi_flash: detected chip: generic[0m
+[0;32mI (228) spi_flash: flash io: dio[0m
+[0;33mW (231) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (243) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (250) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (256) main_task: Started on CPU0[0m
+[0;32mI (266) main_task: Calling app_main()[0m
+[0;32mI (266) drone: === MODE TEST ACTIVÉ ===[0m
+[0;32mI (266) TEST: [0m
+
+[0;32mI (266) TEST: ========================================[0m
+[0;32mI (276) TEST:    TEST SYSTÈME DE STABILISATION[0m
+[0;32mI (276) TEST: ========================================[0m
+
+[0;32mI (786) TEST: >>> Test 1: Initialisation du capteur[0m
+[0;32mI (786) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (836) BMI270: CHIP_ID = 0x24 (attendu 0x24)[0m
+[0;32mI (986) BMI270: Status interne: 0x02[0m
+[0;32mI (1036) BMI270: BMI270 initialisé avec succès (±2g, ±250°/s @ 200Hz)[0m
+[0;32mI (1036) BMI270: Calibration gyroscope BMI270 (2000 échantillons)...[0m
+[0;32mI (1576) BMI270: Offsets calculés: X=0.00 Y=0.00 Z=0.00[0m
+[0;32mI (1576) TEST: ✓ Initialisation réussie![0m
+[0;32mI (1576) TEST:   Offsets gyro: X=0.00 Y=0.00 Z=0.00[0m
+
+[0;32mI (2576) TEST: >>> Test 2: Lecture des capteurs (5 lectures)[0m
+[0;32mI (2576) TEST: [1] Gyro: R=0.0° P=0.0° Y=0.0°/s | Accel: R=0.0° P=-0.0°[0m
+[0;32mI (2676) TEST: [2] Gyro: R=0.0° P=0.0° Y=0.0°/s | Accel: R=0.0° P=-0.0°[0m
+[0;32mI (2776) TEST: [3] Gyro: R=0.0° P=0.0° Y=0.0°/s | Accel: R=0.0° P=-0.0°[0m
+[0;32mI (2876) TEST: [4] Gyro: R=0.0° P=0.0° Y=0.0°/s | Accel: R=0.0° P=-0.0°[0m
+[0;32mI (2976) TEST: [5] Gyro: R=0.0° P=0.0° Y=0.0°/s | Accel: R=0.0° P=-0.0°[0m
+[0;32mI (3076) TEST: [0m
+[0;32mI (4076) TEST: >>> Test 3: Filtre Complémentaire[0m
+[0;32mI (4076) TEST:   Gyro=10.00° Accel=9.80° → Filtré=10.00°[0m
+[0;32mI (4076) TEST:   Gyro=10.00° Accel=10.20° → Filtré=10.00°[0m
+[0;32mI (4076) TEST:   Gyro=10.00° Accel=9.90° → Filtré=10.00°[0m
+[0;32mI (4076) TEST:   Gyro=10.00° Accel=10.10° → Filtré=10.00°[0m
+[0;32mI (4086) TEST: [0m
+[0;32mI (5086) TEST: >>> Test 4: Filtre de Kalman[0m
+[0;32mI (5086) TEST:   [1] Gyro=0.100° Accel=10.00° → Kalman=9.712° (P=0.0291)[0m
+[0;32mI (5086) TEST:   [2] Gyro=0.090° Accel=10.20° → Kalman=10.008° (P=0.0155)[0m
+[0;32mI (5086) TEST:   [3] Gyro=0.110° Accel=9.80° → Kalman=9.997° (P=0.0114)[0m
+[0;32mI (5096) TEST:   [4] Gyro=0.100° Accel=10.10° → Kalman=10.098° (P=0.0098)[0m
+[0;32mI (5106) TEST:   [5] Gyro=0.080° Accel=9.90° → Kalman=10.095° (P=0.0089)[0m
+[0;32mI (5106) TEST: [0m
+[0;32mI (6106) TEST: >>> Test 5: Contrôleur PID (stabilisation à 0°)[0m
+[0;32mI (6106) TEST:   Gains: Kp=1.5 Ki=0.1 Kd=0.05[0m
+[0;32mI (6106) TEST:   [1] Angle=20.0° → Correction=-100.00 (I=-0.200)[0m
+[0;32mI (6106) TEST:   [2] Angle=15.0° → Correction=2.47 (I=-0.350)[0m
+[0;32mI (6116) TEST:   [3] Angle=10.0° → Correction=9.95 (I=-0.450)[0m
+[0;32mI (6116) TEST:   [4] Angle=6.0° → Correction=10.95 (I=-0.510)[0m
+[0;32mI (6126) TEST:   [5] Angle=3.0° → Correction=10.45 (I=-0.540)[0m
+[0;32mI (6126) TEST:   [6] Angle=1.0° → Correction=8.44 (I=-0.550)[0m
+[0;32mI (6136) TEST:   [7] Angle=0.2° → Correction=3.64 (I=-0.552)[0m
+[0;32mI (6136) TEST: [0m
+[0;32mI (7146) TEST: >>> Test 6: Boucle de stabilisation complète (10 cycles)[0m
+[0;32mI (7146) TEST:   Consigne: Roll=0° Pitch=0°[0m
+
+[0;32mI (7146) TEST:   [01] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[0;32mI (7246) TEST:   [02] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[1;31mE (7346) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7346) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7346) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7346) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7356) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7356) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7366) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7376) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7376) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7386) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7386) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7396) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7396) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7406) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7416) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7416) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7426) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7426) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7436) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7446) TEST:   Erreur lecture capteurs[0m
+[0;32mI (7446) TEST:   [08] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[1;31mE (7556) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7556) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7556) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7556) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7566) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7566) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7576) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7586) TEST:   Erreur lecture capteurs[0m
+[0;32mI (7586) TEST: [0m
+========================================
+[0;32mI (7596) TEST:    ✓ TOUS LES TESTS TERMINÉS[0m
+[0;32mI (7596) TEST: ========================================[0m
+
+[0;32mI (7596) drone: Tests terminés. Le programme va boucler indéfiniment.[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09ffch ( 40956) map[0m
+[0;32mI (94) esp_image: segment 1: paddr=0001a024 vaddr=3fc92700 size=028b8h ( 10424) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=0001c8e4 vaddr=40374000 size=03734h ( 14132) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18f9ch (102300) map[0m
+[0;32mI (127) esp_image: segment 4: paddr=00038fc4 vaddr=40377734 size=0afb8h ( 44984) load[0m
+[0;32mI (137) esp_image: segment 5: paddr=00043f84 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (143) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (143) boot: Disabling RNG early entropy source...[0m
+[0;32mI (154) cpu_start: Multicore app[0m
+[0;32mI (164) cpu_start: Pro cpu start user code[0m
+[0;32mI (164) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (164) app_init: Application information:[0m
+[0;32mI (164) app_init: Project name:     hello_world[0m
+[0;32mI (168) app_init: App version:      d3230f7-dirty[0m
+[0;32mI (172) app_init: Compile time:     Mar 21 2026 20:07:22[0m
+[0;32mI (177) app_init: ELF file SHA256:  158302e50...[0m
+[0;32mI (182) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (186) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (189) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (193) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (197) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (204) heap_init: At 3FC95840 len 00053ED0 (335 KiB): RAM[0m
+[0;32mI (209) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (214) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (219) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (225) spi_flash: detected chip: generic[0m
+[0;32mI (228) spi_flash: flash io: dio[0m
+[0;33mW (231) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (243) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (250) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (256) main_task: Started on CPU0[0m
+[0;32mI (266) main_task: Calling app_main()[0m
+[0;32mI (266) drone: === MODE TEST ACTIVÉ ===[0m
+[0;32mI (266) TEST: [0m
+
+[0;32mI (266) TEST: ========================================[0m
+[0;32mI (276) TEST:    TEST SYSTÈME DE STABILISATION[0m
+[0;32mI (276) TEST: ========================================[0m
+
+[0;32mI (786) TEST: >>> Test 1: Initialisation du capteur[0m
+[0;32mI (786) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (836) BMI270: CHIP_ID = 0x24 (attendu 0x24)[0m
+[0;32mI (986) BMI270: Status interne: 0x02[0m
+[0;32mI (1036) BMI270: BMI270 initialisé avec succès (±2g, ±250°/s @ 200Hz)[0m
+[0;32mI (1036) BMI270: Calibration gyroscope BMI270 (2000 échantillons)...[0m
+[0;32mI (1576) BMI270: Offsets calculés: X=0.00 Y=0.00 Z=0.00[0m
+[0;32mI (1576) TEST: ✓ Initialisation réussie![0m
+[0;32mI (1576) TEST:   Offsets gyro: X=0.00 Y=0.00 Z=0.00[0m
+
+[0;32mI (2576) TEST: >>> Test 2: Lecture des capteurs (5 lectures)[0m
+[0;32mI (2576) TEST: [1] Gyro: R=0.0° P=0.0° Y=0.0°/s | Accel: R=0.0° P=-0.0°[0m
+[0;32mI (2676) TEST: [2] Gyro: R=0.0° P=0.0° Y=0.0°/s | Accel: R=0.0° P=-0.0°[0m
+[0;32mI (2776) TEST: [3] Gyro: R=0.0° P=0.0° Y=0.0°/s | Accel: R=0.0° P=-0.0°[0m
+[0;32mI (2876) TEST: [4] Gyro: R=0.0° P=0.0° Y=0.0°/s | Accel: R=0.0° P=-0.0°[0m
+[0;32mI (2976) TEST: [5] Gyro: R=0.0° P=0.0° Y=0.0°/s | Accel: R=0.0° P=-0.0°[0m
+[0;32mI (3076) TEST: [0m
+[0;32mI (4076) TEST: >>> Test 3: Filtre Complémentaire[0m
+[0;32mI (4076) TEST:   Gyro=10.00° Accel=9.80° → Filtré=10.00°[0m
+[0;32mI (4076) TEST:   Gyro=10.00° Accel=10.20° → Filtré=10.00°[0m
+[0;32mI (4076) TEST:   Gyro=10.00° Accel=9.90° → Filtré=10.00°[0m
+[0;32mI (4076) TEST:   Gyro=10.00° Accel=10.10° → Filtré=10.00°[0m
+[0;32mI (4086) TEST: [0m
+[0;32mI (5086) TEST: >>> Test 4: Filtre de Kalman[0m
+[0;32mI (5086) TEST:   [1] Gyro=0.100° Accel=10.00° → Kalman=9.712° (P=0.0291)[0m
+[0;32mI (5086) TEST:   [2] Gyro=0.090° Accel=10.20° → Kalman=10.008° (P=0.0155)[0m
+[0;32mI (5086) TEST:   [3] Gyro=0.110° Accel=9.80° → Kalman=9.997° (P=0.0114)[0m
+[0;32mI (5096) TEST:   [4] Gyro=0.100° Accel=10.10° → Kalman=10.098° (P=0.0098)[0m
+[0;32mI (5106) TEST:   [5] Gyro=0.080° Accel=9.90° → Kalman=10.095° (P=0.0089)[0m
+[0;32mI (5106) TEST: [0m
+[0;32mI (6106) TEST: >>> Test 5: Contrôleur PID (stabilisation à 0°)[0m
+[0;32mI (6106) TEST:   Gains: Kp=1.5 Ki=0.1 Kd=0.05[0m
+[0;32mI (6106) TEST:   [1] Angle=20.0° → Correction=-100.00 (I=-0.200)[0m
+[0;32mI (6106) TEST:   [2] Angle=15.0° → Correction=2.47 (I=-0.350)[0m
+[0;32mI (6116) TEST:   [3] Angle=10.0° → Correction=9.95 (I=-0.450)[0m
+[0;32mI (6116) TEST:   [4] Angle=6.0° → Correction=10.95 (I=-0.510)[0m
+[0;32mI (6126) TEST:   [5] Angle=3.0° → Correction=10.45 (I=-0.540)[0m
+[0;32mI (6126) TEST:   [6] Angle=1.0° → Correction=8.44 (I=-0.550)[0m
+[0;32mI (6136) TEST:   [7] Angle=0.2° → Correction=3.64 (I=-0.552)[0m
+[0;32mI (6136) TEST: [0m
+[0;32mI (7146) TEST: >>> Test 6: Boucle de stabilisation complète (10 cycles)[0m
+[0;32mI (7146) TEST:   Consigne: Roll=0° Pitch=0°[0m
+
+[0;32mI (7146) TEST:   [01] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[0;32mI (7246) TEST:   [02] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[0;32mI (7346) TEST:   [03] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[0;32mI (7446) TEST:   [04] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[0;32mI (7546) TEST:   [05] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[0;32mI (7646) TEST:   [06] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[0;32mI (7746) TEST:   [07] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[0;32mI (7846) TEST:   [08] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[0;32mI (7946) TEST:   [09] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[0;32mI (8046) TEST:   [10] Roll:   0.00° (corr:   0.00) | Pitch:   0.00° (corr:   0.00)[0m
+[0;32mI (8146) TEST: [0m
+========================================
+[0;32mI (8146) TEST:    ✓ TOUS LES TESTS TERMINÉS[0m
+[0;32mI (8146) TEST: ========================================[0m
+
+[0;32mI (8146) drone: Tests terminés. Le programme va boucler indéfiniment.[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09ffch ( 40956) map[0m
+[0;32mI (94) esp_image: segment 1: paddr=0001a024 vaddr=3fc92700 size=028b8h ( 10424) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=0001c8e4 vaddr=40374000 size=03734h ( 14132) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18f9ch (102300) map[0m
+[0;32mI (127) esp_image: segment 4: paddr=00038fc4 vaddr=40377734 size=0afb8h ( 44984) load[0m
+[0;32mI (137) esp_image: segment 5: paddr=00043f84 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (143) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (143) boot: Disabling RNG early entropy source...[0m
+[0;32mI (154) cpu_start: Multicore app[0m
+[0;32mI (164) cpu_start: Pro cpu start user code[0m
+[0;32mI (164) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (164) app_init: Application information:[0m
+[0;32mI (164) app_init: Project name:     hello_world[0m
+[0;32mI (168) app_init: App version:      d3230f7-dirty[0m
+[0;32mI (172) app_init: Compile time:     Mar 21 2026 20:07:22[0m
+[0;32mI (177) app_init: ELF file SHA256:  158302e50...[0m
+[0;32mI (182) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (186) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (189) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (193) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (197) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (204) heap_init: At 3FC95840 len 00053ED0 (335 KiB): RAM[0m
+[0;32mI (209) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (214) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (219) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (225) spi_flash: detected chip: generic[0m
+[0;32mI (228) spi_flash: flash io: dio[0m
+[0;33mW (231) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (243) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (250) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (256) main_task: Started on CPU0[0m
+[0;32mI (266) main_task: Calling app_main()[0m
+[0;32mI (266) drone: === MODE TEST ACTIVÉ ===[0m
+[0;32mI (266) TEST: [0m
+
+[0;32mI (266) TEST: ========================================[0m
+[0;32mI (276) TEST:    TEST SYSTÈME DE STABILISATION[0m
+[0;32mI (276) TEST: ========================================[0m
+
+[0;32mI (786) TEST: >>> Test 1: Initialisation du capteur[0m
+[0;32mI (786) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[1;31mE (836) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (836) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (836) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (836) BMI270: Impossible de lire CHIP_ID[0m
+[1;31mE (846) BMI270: Échec initialisation BMI270[0m
+[1;31mE (846) TEST: ✗ Échec initialisation[0m
+
+[0;32mI (846) drone: Tests terminés. Le programme va boucler indéfiniment.[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09ffch ( 40956) map[0m
+[0;32mI (94) esp_image: segment 1: paddr=0001a024 vaddr=3fc92700 size=028b8h ( 10424) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=0001c8e4 vaddr=40374000 size=03734h ( 14132) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18f9ch (102300) map[0m
+[0;32mI (127) esp_image: segment 4: paddr=00038fc4 vaddr=40377734 size=0afb8h ( 44984) load[0m
+[0;32mI (137) esp_image: segment 5: paddr=00043f84 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (143) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (143) boot: Disabling RNG early entropy source...[0m
+[0;32mI (154) cpu_start: Multicore app[0m
+[0;32mI (164) cpu_start: Pro cpu start user code[0m
+[0;32mI (164) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (164) app_init: Application information:[0m
+[0;32mI (164) app_init: Project name:     hello_world[0m
+[0;32mI (168) app_init: App version:      d3230f7-dirty[0m
+[0;32mI (172) app_init: Compile time:     Mar 21 2026 20:07:22[0m
+[0;32mI (177) app_init: ELF file SHA256:  158302e50...[0m
+[0;32mI (182) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (186) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (189) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (193) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (197) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (204) heap_init: At 3FC95840 len 00053ED0 (335 KiB): RAM[0m
+[0;32mI (209) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (214) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (219) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (225) spi_flash: detected chip: generic[0m
+[0;32mI (228) spi_flash: flash io: dio[0m
+[0;33mW (231) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (243) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (250) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (256) main_task: Started on CPU0[0m
+[0;32mI (266) main_task: Calling app_main()[0m
+[0;32mI (266) drone: === MODE TEST ACTIVÉ ===[0m
+[0;32mI (266) TEST: [0m
+
+[0;32mI (266) TEST: ========================================[0m
+[0;32mI (276) TEST:    TEST SYSTÈME DE STABILISATION[0m
+[0;32mI (276) TEST: ========================================[0m
+
+[0;32mI (786) TEST: >>> Test 1: Initialisation du capteur[0m
+[0;32mI (786) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (836) BMI270: CHIP_ID = 0x24 (attendu 0x24)[0m
+[0;32mI (986) BMI270: Status interne: 0x02[0m
+[0;32mI (1036) BMI270: BMI270 initialisé avec succès (±2g, ±250°/s @ 200Hz)[0m
+[0;32mI (1036) BMI270: Calibration gyroscope BMI270 (2000 échantillons)...[0m
+[0;32mI (1576) BMI270: Offsets calculés: X=0.00 Y=0.00 Z=0.00[0m
+[0;32mI (1576) TEST: ✓ Initialisation réussie![0m
+[0;32mI (1576) TEST:   Offsets gyro: X=0.00 Y=0.00 Z=0.00[0m
+
+[0;32mI (2576) TEST: >>> Test 2: Lecture des capteurs (5 lectures)[0m
+[1;31mE (2576) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2576) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2576) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2686) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2686) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2686) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2786) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2786) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2786) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2886) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2886) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2886) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2986) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2986) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2986) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[0;32mI (3086) TEST: [0m
+[0;32mI (4086) TEST: >>> Test 3: Filtre Complémentaire[0m
+[0;32mI (4086) TEST:   Gyro=10.00° Accel=9.80° → Filtré=10.00°[0m
+[0;32mI (4086) TEST:   Gyro=10.00° Accel=10.20° → Filtré=10.00°[0m
+[0;32mI (4086) TEST:   Gyro=10.00° Accel=9.90° → Filtré=10.00°[0m
+[0;32mI (4086) TEST:   Gyro=10.00° Accel=10.10° → Filtré=10.00°[0m
+[0;32mI (4096) TEST: [0m
+[0;32mI (5096) TEST: >>> Test 4: Filtre de Kalman[0m
+[0;32mI (5096) TEST:   [1] Gyro=0.100° Accel=10.00° → Kalman=9.712° (P=0.0291)[0m
+[0;32mI (5096) TEST:   [2] Gyro=0.090° Accel=10.20° → Kalman=10.008° (P=0.0155)[0m
+[0;32mI (5096) TEST:   [3] Gyro=0.110° Accel=9.80° → Kalman=9.997° (P=0.0114)[0m
+[0;32mI (5106) TEST:   [4] Gyro=0.100° Accel=10.10° → Kalman=10.098° (P=0.0098)[0m
+[0;32mI (5116) TEST:   [5] Gyro=0.080° Accel=9.90° → Kalman=10.095° (P=0.0089)[0m
+[0;32mI (5116) TEST: [0m
+[0;32mI (6116) TEST: >>> Test 5: Contrôleur PID (stabilisation à 0°)[0m
+[0;32mI (6116) TEST:   Gains: Kp=1.5 Ki=0.1 Kd=0.05[0m
+[0;32mI (6116) TEST:   [1] Angle=20.0° → Correction=-100.00 (I=-0.200)[0m
+[0;32mI (6116) TEST:   [2] Angle=15.0° → Correction=2.47 (I=-0.350)[0m
+[0;32mI (6126) TEST:   [3] Angle=10.0° → Correction=9.95 (I=-0.450)[0m
+[0;32mI (6126) TEST:   [4] Angle=6.0° → Correction=10.95 (I=-0.510)[0m
+[0;32mI (6136) TEST:   [5] Angle=3.0° → Correction=10.45 (I=-0.540)[0m
+[0;32mI (6136) TEST:   [6] Angle=1.0° → Correction=8.44 (I=-0.550)[0m
+[0;32mI (6146) TEST:   [7] Angle=0.2° → Correction=3.64 (I=-0.552)[0m
+[0;32mI (6146) TEST: [0m
+[0;32mI (7156) TEST: >>> Test 6: Boucle de stabilisation complète (10 cycles)[0m
+[0;32mI (7156) TEST:   Consigne: Roll=0° Pitch=0°[0m
+
+[1;31mE (7156) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7156) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7166) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7166) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7176) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7176) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7186) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7196) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7196) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7206) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7206) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7216) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7216) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7226) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7236) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7236) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7246) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7246) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7256) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7266) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7266) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7276) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7276) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7286) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7286) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7296) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7306) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7306) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7316) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7316) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7326) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7336) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7336) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7336) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7346) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7356) TEST:   Erreur lecture capteurs[0m
+[1;31mE (7356) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7366) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7366) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7376) TEST:   Erreur lecture capteurs[0m
+[0;32mI (7386) TEST: [0m
+========================================
+[0;32mI (7386) TEST:    ✓ TOUS LES TESTS TERMINÉS[0m
+[0;32mI (7386) TEST: ========================================[0m
+
+[0;32mI (7396) drone: Tests terminés. Le programme va boucler indéfiniment.[0m
