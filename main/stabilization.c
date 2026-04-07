@@ -1,11 +1,11 @@
 #include "stabilization.h"
 #include "bmi270_config.h"
 
-#define I2C_MASTER_SCL_IO    20
-#define I2C_MASTER_SDA_IO    21
+#define I2C_MASTER_SCL_IO    21
+#define I2C_MASTER_SDA_IO    20
 #define I2C_MASTER_PORT      I2C_NUM_0
-#define I2C_MASTER_FREQ_HZ   400000
-#define I2C_TIMEOUT_MS       1000
+#define I2C_MASTER_FREQ_HZ   100000
+#define I2C_TIMEOUT_MS       2000
 
 // BMI270 Registres
 #define BMI270_ADDR          0x69
@@ -43,7 +43,7 @@ static esp_err_t i2c_master_init(void)
         .scl_io_num = I2C_MASTER_SCL_IO,
         .clk_source = I2C_CLK_SRC_DEFAULT,
         .glitch_ignore_cnt = 7,
-        .flags.enable_internal_pullup = true,
+        .flags.enable_internal_pullup = false,
     };
     esp_err_t ret = i2c_new_master_bus(&bus_cfg, &i2c_bus);
     if (ret != ESP_OK) {
@@ -226,7 +226,7 @@ void kalmanfilter(float gyro, float accel, float *P, float *X)
     *P  = (1.0f - K) * (*P);
 }
 
-int printaccel(uint8_t *data, float *xyz)
+int printaccel(uint8_t *data, float *xyz, float *offset)
 {
     // BMI270: données en little-endian (LSB first)
     if (bmi270_read_register(BMI270_ACC_DATA, data, 6) != ESP_OK) {
@@ -241,12 +241,18 @@ int printaccel(uint8_t *data, float *xyz)
     int16_t accel_y = (int16_t)(data[2] | (data[3] << 8));
     int16_t accel_z = (int16_t)(data[4] | (data[5] << 8));
 
+    // Remapping des axes: le capteur est monté avec Y pointant vers le haut
+    // Donc on échange Y et Z pour avoir Z_drone = Y_sensor
     float ax = accel_x / ACCEL_SENSITIVITY;
-    float ay = accel_y / ACCEL_SENSITIVITY;
-    float az = accel_z / ACCEL_SENSITIVITY;
+    float ay = accel_z / ACCEL_SENSITIVITY;   // Y_drone = Z_sensor
+    float az = (accel_y / ACCEL_SENSITIVITY);   // Z_drone = Y_sensor (gravité)
 
-    xyz[0] = atan2f(ay, az) * 180.0f / M_PI;                         // roll
-    xyz[1] = atan2f(-ax, sqrtf(ay * ay + az * az)) * 180.0f / M_PI; // pitch
+    float roll_raw  = atan2f(ay, az) * 180.0f / M_PI;
+    float pitch_raw = atan2f(-ax, sqrtf(ay * ay + az * az)) * 180.0f / M_PI;
+
+    // Soustrait l'offset de calibration pour que la position initiale = 0
+    xyz[0] = roll_raw  - offset[0];
+    xyz[1] = pitch_raw - offset[1];
     return 0;
 }
 
@@ -265,21 +271,22 @@ int printgyro(uint8_t *data, float *xyz, float dt, float *offset)
     int16_t gyro_y = (int16_t)(data[2] | (data[3] << 8));
     int16_t gyro_z = (int16_t)(data[4] | (data[5] << 8));
 
-    xyz[0] += ((gyro_x - offset[0]) / GYRO_SENSITIVITY) * dt; // roll
-    xyz[1] += ((gyro_y - offset[1]) / GYRO_SENSITIVITY) * dt; // pitch
-    xyz[2]  =  (gyro_z - offset[2]) / GYRO_SENSITIVITY;       // yaw rate (deg/s)
+    // Remapping des axes: même rotation que l'accéléromètre
+    // X_drone = X_sensor, Y_drone = Z_sensor, Z_drone = Y_sensor
+    xyz[0] += ((gyro_x - offset[0]) / GYRO_SENSITIVITY) * dt; // roll (X)
+    xyz[1] += ((gyro_z - offset[2]) / GYRO_SENSITIVITY) * dt; // pitch (Y_drone = Z_sensor)
+    xyz[2]  =  (gyro_y - offset[1]) / GYRO_SENSITIVITY;       // yaw rate (Z_drone = Y_sensor)
     return 0;
 }
 
-static void getgyrooffset(uint8_t *data, float *xyzgyro, float *offset)
+static void getgyrooffset(uint8_t *data, float *offset)
 {
     float moy[3] = {0.0f, 0.0f, 0.0f};
-    const int NUM_SAMPLES = 2000;  // Plus d'échantillons pour meilleure précision
+    const int NUM_SAMPLES = 2000;
 
     ESP_LOGI(TAG, "Calibration gyroscope BMI270 (%d échantillons)...", NUM_SAMPLES);
     for (int i = 0; i < NUM_SAMPLES; i++) {
         if (bmi270_read_register(BMI270_GYR_DATA, data, 6) == ESP_OK) {
-            // Little-endian
             int16_t gyro_x = (int16_t)(data[0] | (data[1] << 8));
             int16_t gyro_y = (int16_t)(data[2] | (data[3] << 8));
             int16_t gyro_z = (int16_t)(data[4] | (data[5] << 8));
@@ -289,12 +296,40 @@ static void getgyrooffset(uint8_t *data, float *xyzgyro, float *offset)
         } else {
             ESP_LOGE(TAG, "Erreur lecture gyroscope");
         }
-        vTaskDelay(pdMS_TO_TICKS(1));  // ~1ms entre lectures
+        vTaskDelay(pdMS_TO_TICKS(1));
     }
     offset[0] = moy[0] / (float)NUM_SAMPLES;
     offset[1] = moy[1] / (float)NUM_SAMPLES;
     offset[2] = moy[2] / (float)NUM_SAMPLES;
-    ESP_LOGI(TAG, "Offsets calculés: X=%.2f Y=%.2f Z=%.2f", offset[0], offset[1], offset[2]);
+    ESP_LOGI(TAG, "Gyro offsets: X=%.2f Y=%.2f Z=%.2f", offset[0], offset[1], offset[2]);
+}
+
+static void getacceloffset(uint8_t *data, float *offset)
+{
+    float moy[2] = {0.0f, 0.0f};
+    const int NUM_SAMPLES = 500;
+
+    ESP_LOGI(TAG, "Calibration accéléromètre (position initiale = 0°)...");
+    for (int i = 0; i < NUM_SAMPLES; i++) {
+        if (bmi270_read_register(BMI270_ACC_DATA, data, 6) == ESP_OK) {
+            int16_t accel_x = (int16_t)(data[0] | (data[1] << 8));
+            int16_t accel_y = (int16_t)(data[2] | (data[3] << 8));
+            int16_t accel_z = (int16_t)(data[4] | (data[5] << 8));
+
+            float ax = accel_x / ACCEL_SENSITIVITY;
+            float ay = accel_z / ACCEL_SENSITIVITY;
+            float az = accel_y / ACCEL_SENSITIVITY;
+
+            moy[0] += atan2f(ay, az) * 180.0f / M_PI;                          // roll
+            moy[1] += atan2f(-ax, sqrtf(ay * ay + az * az)) * 180.0f / M_PI;  // pitch
+        } else {
+            ESP_LOGE(TAG, "Erreur lecture accéléromètre");
+        }
+        vTaskDelay(pdMS_TO_TICKS(2));
+    }
+    offset[0] = moy[0] / (float)NUM_SAMPLES;
+    offset[1] = moy[1] / (float)NUM_SAMPLES;
+    ESP_LOGI(TAG, "Accel offsets: Roll=%.2f° Pitch=%.2f°", offset[0], offset[1]);
 }
 
 float complementaryFilter(float gyro, float accel)
@@ -312,10 +347,9 @@ float pidcontroll(float mesure, float consigne, float dt, float *pid)
     return pid[2] * erreur + pid[3] * pid[0] + pid[4] * derive;
 }
 
-int stabinit(float *offset)
+int stabinit(float *gyro_offset, float *accel_offset)
 {
-    uint8_t data[6]   = {0};
-    float xyzgyro[3]  = {0.0f, 0.0f, 0.0f};
+    uint8_t data[6] = {0};
 
     ESP_LOGI(TAG, "Initialisation I2C (new i2c_master driver)...");
     if (i2c_master_init() != ESP_OK) {
@@ -328,6 +362,9 @@ int stabinit(float *offset)
         return 1;
     }
 
-    getgyrooffset(data, xyzgyro, offset);
+    ESP_LOGW(TAG, "=== NE PAS BOUGER LE DRONE PENDANT LA CALIBRATION ===");
+    getgyrooffset(data, gyro_offset);
+    getacceloffset(data, accel_offset);
+    ESP_LOGI(TAG, "Calibration terminée, position actuelle = 0°");
     return 0;
 }

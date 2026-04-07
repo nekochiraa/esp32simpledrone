@@ -1,0 +1,1659 @@
+Command: /home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python /home/nekochira/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/nekochira/code/esp32simpledrone/build/hello_world.elf /home/nekochira/code/esp32simpledrone/build/bootloader/bootloader.elf -m '/home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python' '/home/nekochira/esp/esp-idf/tools/idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0d1f8h ( 53752) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001d220 vaddr=3fc93900 size=029f8h ( 10744) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001fc20 vaddr=40374000 size=003f8h (  1016) load[0m
+[0;32mI (101) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1cc88h (117896) map[0m
+[0;32mI (129) esp_image: segment 4: paddr=0003ccb0 vaddr=403743f8 size=0f4c8h ( 62664) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=0004c180 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (161) cpu_start: Multicore app[0m
+[0;32mI (170) cpu_start: Pro cpu start user code[0m
+[0;32mI (170) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (170) app_init: Project name:     hello_world[0m
+[0;32mI (175) app_init: App version:      1992420-dirty[0m
+[0;32mI (179) app_init: Compile time:     Mar 24 2026 12:45:40[0m
+[0;32mI (184) app_init: ELF file SHA256:  beca0c3c0...[0m
+[0;32mI (188) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (192) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (196) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (200) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (204) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (210) heap_init: At 3FC96C48 len 00052AC8 (330 KiB): RAM[0m
+[0;32mI (215) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (220) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (226) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (232) spi_flash: detected chip: generic[0m
+[0;32mI (235) spi_flash: flash io: dio[0m
+[0;33mW (238) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (250) mcpwm(legacy): legacy driver is deprecated, please migrate to `driver/mcpwm_prelude.h`[0m
+[0;32mI (258) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (271) main_task: Started on CPU0[0m
+[0;32mI (281) main_task: Calling app_main()[0m
+[0;32mI (281) drone: === ESP32 Simple Drone ===[0m
+[0;32mI (281) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[1;31mE (291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (301) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+[1;31mE (301) BMI270: Erreur soft reset BMI270[0m
+[1;31mE (311) BMI270: Échec initialisation BMI270[0m
+[1;31mE (311) drone: Échec init stabilisation, arrêt.[0m
+[0;32mI (321) main_task: Returned from app_main()[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0d1f8h ( 53752) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001d220 vaddr=3fc93900 size=029f8h ( 10744) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001fc20 vaddr=40374000 size=003f8h (  1016) load[0m
+[0;32mI (101) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1cc88h (117896) map[0m
+[0;32mI (129) esp_image: segment 4: paddr=0003ccb0 vaddr=403743f8 size=0f4c8h ( 62664) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=0004c180 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (161) cpu_start: Multicore app[0m
+[0;32mI (170) cpu_start: Pro cpu start user code[0m
+[0;32mI (170) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (170) app_init: Project name:     hello_world[0m
+[0;32mI (175) app_init: App version:      1992420-dirty[0m
+[0;32mI (179) app_init: Compile time:     Mar 24 2026 12:45:40[0m
+[0;32mI (184) app_init: ELF file SHA256:  beca0c3c0...[0m
+[0;32mI (188) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (192) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (196) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (200) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (204) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (210) heap_init: At 3FC96C48 len 00052AC8 (330 KiB): RAM[0m
+[0;32mI (215) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (220) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (226) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (232) spi_flash: detected chip: generic[0m
+[0;32mI (235) spi_flash: flash io: dio[0m
+[0;33mW (238) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (250) mcpwm(legacy): legacy driver is deprecated, please migrate to `driver/mcpwm_prelude.h`[0m
+[0;32mI (258) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (271) main_task: Started on CPU0[0m
+[0;32mI (281) main_task: Calling app_main()[0m
+[0;32mI (281) drone: === ESP32 Simple Drone ===[0m
+[0;32mI (281) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (341) BMI270: CHIP_ID = 0x24 (attendu 0x24)[0m
+[0;32mI (341) BMI270: Chargement firmware BMI270 (8192 bytes)...[0m
+[1;31mE (881) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (881) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+[1;31mE (891) BMI270: Erreur écriture INIT_ADDR_0[0m
+[1;31mE (891) BMI270: Échec initialisation BMI270[0m
+[1;31mE (901) drone: Échec init stabilisation, arrêt.[0m
+[0;32mI (901) main_task: Returned from app_main()[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0d1f8h ( 53752) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001d220 vaddr=3fc93900 size=029f8h ( 10744) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001fc20 vaddr=40374000 size=003f8h (  1016) load[0m
+[0;32mI (101) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1cc88h (117896) map[0m
+[0;32mI (129) esp_image: segment 4: paddr=0003ccb0 vaddr=403743f8 size=0f4c8h ( 62664) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=0004c180 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (161) cpu_start: Multicore app[0m
+[0;32mI (170) cpu_start: Pro cpu start user code[0m
+[0;32mI (170) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (170) app_init: Project name:     hello_world[0m
+[0;32mI (175) app_init: App version:      1992420-dirty[0m
+[0;32mI (179) app_init: Compile time:     Mar 24 2026 12:45:40[0m
+[0;32mI (184) app_init: ELF file SHA256:  beca0c3c0...[0m
+[0;32mI (188) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (192) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (196) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (200) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (204) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (210) heap_init: At 3FC96C48 len 00052AC8 (330 KiB): RAM[0m
+[0;32mI (215) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (220) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (226) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (232) spi_flash: detected chip: generic[0m
+[0;32mI (235) spi_flash: flash io: dio[0m
+[0;33mW (238) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (250) mcpwm(legacy): legacy driver is deprecated, please migrate to `driver/mcpwm_prelude.h`[0m
+[0;32mI (258) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (271) main_task: Started on CPU0[0m
+[0;32mI (281) main_task: Calling app_main()[0m
+[0;32mI (281) drone: === ESP32 Simple Drone ===[0m
+[0;32mI (281) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (341) BMI270: CHIP_ID = 0x24 (attendu 0x24)[0m
+[0;32mI (341) BMI270: Chargement firmware BMI270 (8192 bytes)...[0m
+[1;31mE (971) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (971) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+[1;31mE (981) BMI270: Erreur écriture INIT_ADDR_0[0m
+[1;31mE (981) BMI270: Échec initialisation BMI270[0m
+[1;31mE (991) drone: Échec init stabilisation, arrêt.[0m
+[0;32mI (991) main_task: Returned from app_main()[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0d1f8h ( 53752) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001d220 vaddr=3fc93900 size=029f8h ( 10744) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001fc20 vaddr=40374000 size=003f8h (  1016) load[0m
+[0;32mI (101) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1cc88h (117896) map[0m
+[0;32mI (129) esp_image: segment 4: paddr=0003ccb0 vaddr=403743f8 size=0f4c8h ( 62664) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=0004c180 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (161) cpu_start: Multicore app[0m
+[0;32mI (170) cpu_start: Pro cpu start user code[0m
+[0;32mI (170) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (170) app_init: Project name:     hello_world[0m
+[0;32mI (175) app_init: App version:      1992420-dirty[0m
+[0;32mI (179) app_init: Compile time:     Mar 24 2026 12:45:40[0m
+[0;32mI (184) app_init: ELF file SHA256:  beca0c3c0...[0m
+[0;32mI (188) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (192) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (196) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (200) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (204) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (210) heap_init: At 3FC96C48 len 00052AC8 (330 KiB): RAM[0m
+[0;32mI (215) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (220) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (226) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (232) spi_flash: detected chip: generic[0m
+[0;32mI (235) spi_flash: flash io: dio[0m
+[0;33mW (238) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (250) mcpwm(legacy): legacy driver is deprecated, please migrate to `driver/mcpwm_prelude.h`[0m
+[0;32mI (258) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (271) main_task: Started on CPU0[0m
+[0;32mI (281) main_task: Calling app_main()[0m
+[0;32mI (281) drone: === ESP32 Simple Drone ===[0m
+[0;32mI (281) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (341) BMI270: CHIP_ID = 0x24 (attendu 0x24)[0m
+[0;32mI (341) BMI270: Chargement firmware BMI270 (8192 bytes)...[0m
+[1;31mE (1121) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1121) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1121) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+[1;31mE (1131) BMI270: Erreur écriture INIT_ADDR_0[0m
+[1;31mE (1131) BMI270: Échec initialisation BMI270[0m
+[1;31mE (1131) drone: Échec init stabilisation, arrêt.[0m
+[0;32mI (1141) main_task: Returned from app_main()[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0d1f8h ( 53752) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001d220 vaddr=3fc93900 size=029f8h ( 10744) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001fc20 vaddr=40374000 size=003f8h (  1016) load[0m
+[0;32mI (101) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1cc88h (117896) map[0m
+[0;32mI (129) esp_image: segment 4: paddr=0003ccb0 vaddr=403743f8 size=0f4c8h ( 62664) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=0004c180 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (161) cpu_start: Multicore app[0m
+[0;32mI (170) cpu_start: Pro cpu start user code[0m
+[0;32mI (170) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (170) app_init: Project name:     hello_world[0m
+[0;32mI (175) app_init: App version:      1992420-dirty[0m
+[0;32mI (179) app_init: Compile time:     Mar 24 2026 12:45:40[0m
+[0;32mI (184) app_init: ELF file SHA256:  beca0c3c0...[0m
+[0;32mI (188) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (192) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (196) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (200) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (204) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (210) heap_init: At 3FC96C48 len 00052AC8 (330 KiB): RAM[0m
+[0;32mI (215) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (220) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (226) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (232) spi_flash: detected chip: generic[0m
+[0;32mI (235) spi_flash: flash io: dio[0m
+[0;33mW (238) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (250) mcpwm(legacy): legacy driver is deprecated, please migrate to `driver/mcpwm_prelude.h`[0m
+[0;32mI (258) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (271) main_task: Started on CPU0[0m
+[0;32mI (281) main_task: Calling app_main()[0m
+[0;32mI (281) drone: === ESP32 Simple Drone ===[0m
+[0;32mI (281) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[1;31mE (341) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (341) BMI270: Impossible de lire CHIP_ID[0m
+[1;31mE (351) BMI270: Échec initialisation BMI270[0m
+[1;31mE (351) drone: Échec init stabilisation, arrêt.[0m
+[0;32mI (361) main_task: Returned from app_main()[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0d1f8h ( 53752) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001d220 vaddr=3fc93900 size=029f8h ( 10744) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001fc20 vaddr=40374000 size=003f8h (  1016) load[0m
+[0;32mI (101) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1cc88h (117896) map[0m
+[0;32mI (129) esp_image: segment 4: paddr=0003ccb0 vaddr=403743f8 size=0f4c8h ( 62664) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=0004c180 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (161) cpu_start: Multicore app[0m
+[0;32mI (170) cpu_start: Pro cpu start user code[0m
+[0;32mI (170) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (170) app_init: Project name:     hello_world[0m
+[0;32mI (175) app_init: App version:      1992420-dirty[0m
+[0;32mI (179) app_init: Compile time:     Mar 24 2026 12:45:40[0m
+[0;32mI (184) app_init: ELF file SHA256:  beca0c3c0...[0m
+[0;32mI (188) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (192) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (196) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (200) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (204) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (210) heap_init: At 3FC96C48 len 00052AC8 (330 KiB): RAM[0m
+[0;32mI (215) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (220) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (226) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (232) spi_flash: detected chip: generic[0m
+[0;32mI (235) spi_flash: flash io: dio[0m
+[0;33mW (238) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (250) mcpwm(legacy): legacy driver is deprecated, please migrate to `driver/mcpwm_prelude.h`[0m
+[0;32mI (258) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (271) main_task: Started on CPU0[0m
+[0;32mI (281) main_task: Calling app_main()[0m
+[0;32mI (281) drone: === ESP32 Simple Drone ===[0m
+[0;32mI (281) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (341) BMI270: CHIP_ID = 0x24 (attendu 0x24)[0m
+[0;32mI (341) BMI270: Chargement firmware BMI270 (8192 bytes)...[0m
+[1;31mE (551) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (551) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+[1;31mE (551) BMI270: Erreur écriture INIT_ADDR_0[0m
+[1;31mE (561) BMI270: Échec initialisation BMI270[0m
+[1;31mE (561) drone: Échec init stabilisation, arrêt.[0m
+[0;32mI (571) main_task: Returned from app_main()[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0d1f8h ( 53752) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001d220 vaddr=3fc93900 size=029f8h ( 10744) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001fc20 vaddr=40374000 size=003f8h (  1016) load[0m
+[0;32mI (101) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1cc88h (117896) map[0m
+[0;32mI (129) esp_image: segment 4: paddr=0003ccb0 vaddr=403743f8 size=0f4c8h ( 62664) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=0004c180 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (161) cpu_start: Multicore app[0m
+[0;32mI (170) cpu_start: Pro cpu start user code[0m
+[0;32mI (170) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (170) app_init: Project name:     hello_world[0m
+[0;32mI (175) app_init: App version:      1992420-dirty[0m
+[0;32mI (179) app_init: Compile time:     Mar 24 2026 12:45:40[0m
+[0;32mI (184) app_init: ELF file SHA256:  beca0c3c0...[0m
+[0;32mI (188) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (192) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (196) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (200) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (204) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (210) heap_init: At 3FC96C48 len 00052AC8 (330 KiB): RAM[0m
+[0;32mI (215) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (220) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (226) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (232) spi_flash: detected chip: generic[0m
+[0;32mI (235) spi_flash: flash io: dio[0m
+[0;33mW (238) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (250) mcpwm(legacy): legacy driver is deprecated, please migrate to `driver/mcpwm_prelude.h`[0m
+[0;32mI (258) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (271) main_task: Started on CPU0[0m
+[0;32mI (281) main_task: Calling app_main()[0m
+[0;32mI (281) drone: === ESP32 Simple Drone ===[0m
+[0;32mI (281) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (341) BMI270: CHIP_ID = 0x24 (attendu 0x24)[0m
+[0;32mI (341) BMI270: Chargement firmware BMI270 (8192 bytes)...[0m
+[1;31mE (341) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (351) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+[1;31mE (351) BMI270: Erreur écriture INIT_ADDR_1[0m
+[1;31mE (361) BMI270: Échec initialisation BMI270[0m
+[1;31mE (361) drone: Échec init stabilisation, arrêt.[0m
+[0;32mI (371) main_task: Returned from app_main()[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0d1f8h ( 53752) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001d220 vaddr=3fc93900 size=029f8h ( 10744) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001fc20 vaddr=40374000 size=003f8h (  1016) load[0m
+[0;32mI (101) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1cc88h (117896) map[0m
+[0;32mI (129) esp_image: segment 4: paddr=0003ccb0 vaddr=403743f8 size=0f4c8h ( 62664) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=0004c180 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (161) cpu_start: Multicore app[0m
+[0;32mI (170) cpu_start: Pro cpu start user code[0m
+[0;32mI (170) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (170) app_init: Project name:     hello_world[0m
+[0;32mI (175) app_init: App version:      1992420-dirty[0m
+[0;32mI (179) app_init: Compile time:     Mar 24 2026 12:45:40[0m
+[0;32mI (184) app_init: ELF file SHA256:  beca0c3c0...[0m
+[0;32mI (188) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (192) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (196) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (200) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (204) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (210) heap_init: At 3FC96C48 len 00052AC8 (330 KiB): RAM[0m
+[0;32mI (215) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (220) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (226) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (232) spi_flash: detected chip: generic[0m
+[0;32mI (235) spi_flash: flash io: dio[0m
+[0;33mW (238) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (250) mcpwm(legacy): legacy driver is deprecated, please migrate to `driver/mcpwm_prelude.h`[0m
+[0;32mI (258) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (271) main_task: Started on CPU0[0m
+[0;32mI (281) main_task: Calling app_main()[0m
+[0;32mI (281) drone: === ESP32 Simple Drone ===[0m
+[0;32mI (281) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (341) BMI270: CHIP_ID = 0x24 (attendu 0x24)[0m
+[0;32mI (341) BMI270: Chargement firmware BMI270 (8192 bytes)...[0m
+[0;32mI (1311) BMI270: Firmware chargé avec succès[0m
+[0;32mI (1461) BMI270: Status interne: 0x01 (init OK)[0m
+[0;32mI (1511) BMI270: BMI270 initialisé avec succès (±2g, ±250°/s @ 200Hz)[0m
+[0;32mI (1511) BMI270: Calibration gyroscope BMI270 (2000 échantillons)...[0m
+[1;31mE (2051) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2051) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2051) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2061) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2071) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2071) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2081) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2081) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2091) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2101) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2111) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2111) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2121) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2131) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2131) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2141) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2151) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2151) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2161) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2161) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2171) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2181) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2181) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2191) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2201) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2211) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2211) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2221) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2221) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2231) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2231) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2241) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2251) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2251) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2261) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2261) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2271) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2271) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2281) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2291) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2291) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2301) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2311) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2321) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2321) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2321) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2331) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2341) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2351) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2351) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2361) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2371) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2371) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2381) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2381) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2391) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2391) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2401) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2411) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2411) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2421) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2421) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2431) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2441) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2441) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2451) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2451) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2461) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2471) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2481) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2481) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2491) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2501) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2511) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2511) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2521) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2521) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2531) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2531) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2541) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2551) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2551) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2561) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2561) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2571) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2571) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2581) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2591) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2591) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2601) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2611) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2621) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2621) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2631) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2631) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2641) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2651) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2651) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2661) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2661) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2671) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2671) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2681) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2691) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2691) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2701) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2701) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2711) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2711) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2721) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2731) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2731) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2741) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2741) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2751) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2761) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2761) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2771) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2781) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2791) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2791) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2801) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2801) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2811) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2811) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2821) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2831) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2831) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2841) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2851) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2851) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2861) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2871) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2881) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2891) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2891) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2901) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2911) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2921) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2921) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2931) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2941) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2951) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2951) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2961) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2961) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2971) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2981) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (2991) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (2991) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3001) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3001) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3011) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3011) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3031) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3031) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3041) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3051) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3061) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3061) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3071) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3081) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3091) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3101) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3101) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3111) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3111) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3131) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3131) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3141) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3151) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3151) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3161) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3171) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3171) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3181) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3201) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3201) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3211) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3211) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3221) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3231) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3231) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3241) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3241) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3251) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3251) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3261) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3271) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3271) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3271) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3281) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3291) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3301) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3311) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3321) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3321) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3331) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3341) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3341) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3361) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3361) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3371) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3371) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3381) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3391) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3391) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3401) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3401) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3411) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3411) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3421) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3431) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3431) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3441) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3441) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3451) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3451) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3471) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3471) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3481) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3481) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3501) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3501) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3511) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3521) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3531) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3531) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3541) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3541) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3551) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3561) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3571) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3571) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3581) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3581) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3591) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3591) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3611) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3611) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3621) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3631) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3641) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3641) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3651) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3661) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3671) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3671) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3681) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3681) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3691) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3691) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3701) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3711) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3711) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3721) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3731) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3731) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3741) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3751) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3751) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3761) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3771) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3781) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3781) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3791) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3801) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3801) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3811) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3821) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3831) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3841) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3841) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3851) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3871) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3871) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3891) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3901) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3911) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3911) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3921) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3941) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3941) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3951) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3951) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3961) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3971) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (3981) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (3981) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (3991) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4001) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4011) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4011) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4031) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4031) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4051) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4051) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4061) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4061) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4081) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4081) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4101) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4111) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4111) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4121) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4131) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4151) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4151) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4161) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4161) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4171) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4171) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4191) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4201) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4211) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4221) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4221) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4221) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4231) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4241) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4241) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4251) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4261) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4261) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4271) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4271) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4281) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4291) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4301) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4311) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4311) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4321) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4321) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4331) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4341) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4351) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4361) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4371) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4381) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4381) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4391) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4401) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4411) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4411) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4421) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4421) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4431) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4431) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4441) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4451) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4451) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4471) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4471) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4481) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4491) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4501) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4521) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4521) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4531) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4531) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4541) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4541) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4561) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4561) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4571) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4581) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4591) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4591) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4601) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4611) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4611) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4631) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4631) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4641) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4641) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4661) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4661) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4671) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4681) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4681) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4691) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4701) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4701) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4711) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4731) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4731) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4731) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4741) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4751) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4751) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4771) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4781) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4791) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4801) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4801) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4821) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4821) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4841) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4851) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4861) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4871) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4871) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4891) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4891) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4901) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4911) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4911) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4931) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4941) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4941) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4951) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4961) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4961) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (4971) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (4981) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (4981) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5001) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5001) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5011) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5011) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5031) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5031) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5041) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5051) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5051) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5061) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5071) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5081) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5081) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5101) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5101) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5111) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5111) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5121) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5121) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5141) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5151) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5151) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5161) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5171) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5171) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5181) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5191) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5191) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5211) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5211) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5221) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5221) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5231) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5241) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5241) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5241) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5251) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5261) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5261) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5271) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5271) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5281) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5301) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5301) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5321) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5321) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5321) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5331) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5341) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5351) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5361) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5371) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5371) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5381) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5381) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5401) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5401) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5411) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5411) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5421) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5421) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5431) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5441) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5441) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5451) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5451) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5471) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5481) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5481) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5481) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5491) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5501) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5511) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5521) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5531) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5541) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5541) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5561) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5561) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5581) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5581) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5601) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5601) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5611) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5621) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5621) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5631) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5641) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5641) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5651) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5661) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5661) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5681) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5681) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5681) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5691) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5701) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5701) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5721) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5741) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5741) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5741) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5751) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5761) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5771) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5781) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5781) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5791) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5801) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5811) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5821) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5821) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5841) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5841) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5851) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5861) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5881) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5891) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5901) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5901) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5911) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5921) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5931) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5941) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5941) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5951) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5961) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5961) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5961) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5971) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (5981) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (5981) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (5991) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6001) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6021) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6031) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6041) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6041) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6051) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6061) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6061) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6071) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6081) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6081) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6101) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6101) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6111) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6111) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6121) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6121) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6141) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6161) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6161) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6161) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6171) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6181) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6191) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6201) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6211) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6221) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6221) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6221) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6231) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6241) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6241) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6251) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6261) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6261) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6281) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6281) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6281) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6291) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6301) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6311) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6311) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6321) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6321) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6331) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6341) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6341) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6351) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6361) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6361) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6371) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6381) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6381) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6401) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6401) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6401) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6411) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6421) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6421) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6431) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6431) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6441) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6441) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6451) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6461) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6461) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6471) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6481) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6481) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6491) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6501) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6521) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6521) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6531) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6541) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6541) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6551) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6561) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6561) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6571) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6581) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6581) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6581) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6591) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6601) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6601) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6611) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6621) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6621) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6641) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6641) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6641) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6651) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6661) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6661) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6671) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6681) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6681) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6691) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6701) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6701) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6711) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6721) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6721) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6731) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6741) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6741) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6761) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6771) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6781) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6791) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6791) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6801) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6821) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6821) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6841) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6841) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6861) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6881) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6891) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6901) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6911) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6911) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6921) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6941) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6941) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6951) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6951) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6961) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (6961) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (6981) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (6981) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7001) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7001) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7001) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7011) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7021) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7031) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7031) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7041) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7051) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7061) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7061) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7071) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7081) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7081) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7101) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7101) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7121) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7121) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7131) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7141) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7141) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7151) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7151) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7161) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7161) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7171) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7181) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7181) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7191) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7201) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7201) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7211) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7221) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7221) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7241) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7241) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7241) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7251) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7261) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7261) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7271) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7271) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7281) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7281) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7291) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7301) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7301) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7311) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7311) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7321) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7321) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7331) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7341) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7361) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7361) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7371) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7381) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7381) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7391) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7401) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7401) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7411) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7421) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7421) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7431) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7431) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7441) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7441) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7451) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7461) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7481) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7481) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7481) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7491) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7501) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7511) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7521) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7531) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7541) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7541) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7561) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7561) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7581) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7581) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7591) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7591) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7601) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7611) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7621) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7621) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7631) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7641) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7641) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7651) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7661) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7661) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7681) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7681) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7681) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7691) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7701) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7701) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7721) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7731) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7731) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7741) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7751) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7761) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7771) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7781) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7781) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7791) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7801) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7811) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7821) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7821) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7841) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7841) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7851) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7861) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7861) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7871) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7881) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7891) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7891) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7901) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7911) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7921) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7921) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7931) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7941) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7941) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7951) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7951) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7961) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7961) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7971) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (7981) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (7981) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (7991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (7991) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8001) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8001) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8011) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8021) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8031) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8031) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8041) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8051) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8061) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8061) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8061) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8071) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8081) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8081) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8091) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8101) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8101) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8111) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8121) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8121) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8131) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8141) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8141) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8151) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8161) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8161) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8171) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8171) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8181) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8191) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8201) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8201) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8211) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8221) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8221) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8221) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8231) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8241) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8241) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8251) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8251) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8261) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8261) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8271) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8281) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8281) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8291) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8301) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8311) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8311) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8321) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8321) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8331) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8331) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8351) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8361) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8361) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8371) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8381) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8381) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8391) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8401) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8401) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8411) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8421) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8421) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8431) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8431) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8441) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8441) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8451) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8461) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8471) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8471) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8481) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8491) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8501) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8501) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8511) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8521) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8531) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8531) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8541) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8541) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8561) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8561) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (8571) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (8581) BMI270: Erreur lecture gyroscope[0m
+[1;31mE (8581) i2c.master: I2C transaction unexpected nack detected[0m

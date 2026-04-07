@@ -21,15 +21,17 @@ void test_stabilisation_simple(void)
     ESP_LOGI(TAG, "");
     
     // Initialisation du capteur
-    float offset[3] = {0};
+    float gyro_offset[3] = {0};
+    float accel_offset[2] = {0};
     
-    if (stabinit(offset) != 0) {
+    if (stabinit(gyro_offset, accel_offset) != 0) {
         ESP_LOGE(TAG, "Echec initialisation capteur!");
         return;
     }
     
     ESP_LOGI(TAG, "Capteur initialise");
-    ESP_LOGI(TAG, "Offsets gyro: X=%.2f Y=%.2f Z=%.2f", offset[0], offset[1], offset[2]);
+    ESP_LOGI(TAG, "Offsets gyro: X=%.2f Y=%.2f Z=%.2f", gyro_offset[0], gyro_offset[1], gyro_offset[2]);
+    ESP_LOGI(TAG, "Offsets accel: Roll=%.2f Pitch=%.2f", accel_offset[0], accel_offset[1]);
     ESP_LOGI(TAG, "");
     
     vTaskDelay(pdMS_TO_TICKS(500));
@@ -51,12 +53,21 @@ void test_stabilisation_simple(void)
     // Boucle infinie d'affichage des angles
     while (1) {
         // Lecture des capteurs
-        if (printgyro(data, gyro, dt, offset) != 0 || 
-            printaccel(data, accel) != 0) {
+        if (printgyro(data, gyro, dt, gyro_offset) != 0 || 
+            printaccel(data, accel, accel_offset) != 0) {
             ESP_LOGE(TAG, "Erreur lecture capteurs");
             vTaskDelay(pdMS_TO_TICKS(100));
             continue;
         }
+        
+        // DEBUG: Afficher les valeurs brutes accel pour diagnostic
+        // data contient les 6 octets de l'accéléromètre après printaccel
+        int16_t raw_x = (int16_t)(data[0] | (data[1] << 8));
+        int16_t raw_y = (int16_t)(data[2] | (data[3] << 8));
+        int16_t raw_z = (int16_t)(data[4] | (data[5] << 8));
+        float ax = raw_x / 16384.0f;
+        float ay = raw_y / 16384.0f;
+        float az = raw_z / 16384.0f;
         
         // Fusion Kalman pour Roll et Pitch
         kalmanfilter(gyro[0], accel[0], &P_roll, &angle_roll);
@@ -69,9 +80,9 @@ void test_stabilisation_simple(void)
         if (yaw > 180.0f) yaw -= 360.0f;
         if (yaw < -180.0f) yaw += 360.0f;
         
-        // Affichage des angles actuels
-        ESP_LOGI(TAG, "Roll: %7.2f°  |  Pitch: %7.2f°  |  Yaw: %7.2f°", 
-                 angle_roll, angle_pitch, yaw);
+        // Affichage des angles actuels + valeurs brutes accel
+        ESP_LOGI(TAG, "R:%6.1f P:%6.1f Y:%6.1f | Accel: X=%.2fg Y=%.2fg Z=%.2fg", 
+                 angle_roll, angle_pitch, yaw, ax, ay, az);
         
         vTaskDelay(pdMS_TO_TICKS(100));  // 10Hz affichage
     }

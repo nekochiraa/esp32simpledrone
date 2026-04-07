@@ -1,50 +1,99 @@
-# Documentation technique — ESP32 Simple Drone
+# ESP32 Simple Drone — Documentation
+
+Contrôleur de vol pour quadricopter basé sur ESP32, utilisant ESP-IDF.
 
 ## Table des matières
 
-1. [Architecture générale](#architecture-générale)
-2. [Fichiers sources](#fichiers-sources)
-3. [Module PID (`pid.c` / `pid.h`)](#module-pid)
-4. [Module moteur (`motor.c` / `motor.h`)](#module-moteur)
-5. [Module stabilisation (`stabilization.c` / `stabilization.h`)](#module-stabilisation)
-6. [Contrôleur de vol (`flight_controller.c` / `flight_controller.h`)](#contrôleur-de-vol)
-7. [Récepteur iBUS (`controller.c` / `controller.h`)](#récepteur-ibus)
-8. [Programme principal (`main.c`)](#programme-principal)
-9. [Cartographie des broches](#cartographie-des-broches)
-10. [Réglage des PID](#réglage-des-pid)
+1. [Fonctionnalités](#fonctionnalités)
+2. [Matériel requis](#matériel-requis)
+3. [Cartographie des broches](#cartographie-des-broches)
+4. [Compilation et flash](#compilation-et-flash)
+5. [Architecture](#architecture)
+6. [Fichiers sources](#fichiers-sources)
+7. [Modules détaillés](#modules-détaillés)
+8. [Réglage des PID](#réglage-des-pid)
+9. [Mode test](#mode-test)
+10. [Configuration BMI270](#configuration-bmi270)
+11. [Dépannage I2C](#dépannage-i2c)
+12. [Mise en vol](#mise-en-vol)
 
 ---
 
-## Architecture générale
+## Fonctionnalités
+
+- **Stabilisation PID** sur 3 axes (roll, pitch, yaw)
+- **Lecture IMU** BMI270 (accéléromètre + gyroscope) via I2C
+- **Réception iBUS** depuis un récepteur FlySky via UART
+- **Pilotage de 4 ESC** via MCPWM (signal servo 50 Hz)
+- **Filtre de Kalman** pour la fusion accéléromètre/gyroscope
+- **Anti-windup** sur les PID et sécurités d'armement
+- **Affichage des inputs télécommande** dans les logs série
+
+---
+
+## Matériel requis
+
+- ESP32-S3 (ou variante compatible)
+- BMI270 (IMU accéléromètre + gyroscope)
+- 4 × ESC + moteurs brushless
+- Récepteur iBUS (FlySky FS-iA6B ou similaire)
+- Émetteur RC (FlySky FS-i6 ou similaire)
+
+---
+
+## Cartographie des broches
+
+| Périphérique      | GPIO  | Notes                        |
+|-------------------|-------|------------------------------|
+| **ESC Front Right** | 15  | MCPWM0A                      |
+| **ESC Front Left**  | 16  | MCPWM0B                      |
+| **ESC Back Right**  | 17  | MCPWM1A                      |
+| **ESC Back Left**   | 18  | MCPWM1B                      |
+| **iBUS RX**         | 5   | UART1 RX                     |
+| **iBUS TX**         | 4   | UART1 TX                     |
+| **BMI270 SDA**      | 20  | I2C0 SDA                     |
+| **BMI270 SCL**      | 21  | I2C0 SCL                     |
+
+> **Note** : Les GPIOs sont maintenant distincts entre ESC et I2C.
+
+---
+
+## Compilation et flash
+
+```bash
+# Configurer l'environnement ESP-IDF
+. $IDF_PATH/export.sh
+
+# Compiler
+idf.py build
+
+# Flasher (remplacer PORT par votre port série)
+idf.py -p PORT flash
+
+# Moniteur série (affiche les inputs télécommande)
+idf.py -p PORT monitor
+```
+
+---
+
+## Architecture
 
 ```
- Récepteur RC (iBUS)          IMU (MPU6050)
-       │                           │
-       │  UART1                    │  I2C0
-       ▼                           ▼
- ┌──────────┐              ┌──────────────┐
- │ channel  │              │ stabilization│
- │ handler  │              │ (accel+gyro  │
- │          │              │  + filtre)   │
- └────┬─────┘              └──────┬───────┘
-      │ consignes                 │ mesures
-      │ (roll,pitch,yaw,throttle) │ (roll,pitch)
-      ▼                           ▼
- ┌─────────────────────────────────────┐
- │         flight_controller           │
- │  ┌─────┐  ┌─────┐  ┌─────┐         │
- │  │ PID │  │ PID │  │ PID │         │
- │  │Roll │  │Pitch│  │ Yaw │         │
- │  └──┬──┘  └──┬──┘  └──┬──┘         │
- │     └────┬────┘────────┘            │
- │          ▼  mixage quadricopter     │
- └──────────┬──────────────────────────┘
-            │ FR, FL, BR, BL (0-100 %)
-            ▼
- ┌─────────────────┐
- │   motor (MCPWM) │
- │  4 × ESC 50 Hz  │
- └─────────────────┘
+Récepteur RC (iBUS) ──► Consignes (roll, pitch, yaw, throttle)
+                                │
+BMI270 (I2C) ──► Filtre ──► Mesures (roll, pitch)
+                                │
+                    ┌───────────▼──────────┐
+                    │   3 × PID            │
+                    │   (roll, pitch, yaw)  │
+                    └───────────┬──────────┘
+                                │
+                    ┌───────────▼──────────┐
+                    │  Mixage quadricopter │
+                    │  (configuration X)   │
+                    └───────────┬──────────┘
+                                │
+                    4 × ESC (MCPWM 50 Hz)
 ```
 
 Le système fonctionne en boucle fermée à ~100 Hz (10 ms par itération).
@@ -53,125 +102,66 @@ Le système fonctionne en boucle fermée à ~100 Hz (10 ms par itération).
 
 ## Fichiers sources
 
-| Fichier                | Rôle                                          |
-|------------------------|-----------------------------------------------|
-| `main.c`               | Point d'entrée, boucle de contrôle principale |
-| `pid.c` / `pid.h`      | Contrôleur PID générique réutilisable         |
-| `flight_controller.c/h`| Mixage quadricopter + gestion armement        |
-| `motor.c` / `motor.h`  | Pilotage ESC via MCPWM                        |
-| `stabilization.c/h`    | Lecture MPU6050, filtrage, calibration         |
-| `controller.c/h`       | Exemple de lecture iBUS (debug)               |
-| `main.h`               | Includes communs (non utilisé directement)    |
+| Fichier                 | Rôle                                          |
+|-------------------------|-----------------------------------------------|
+| `main.c`                | Point d'entrée, boucle de contrôle principale |
+| `pid.c` / `pid.h`       | Contrôleur PID générique réutilisable         |
+| `flight_controller.c/h` | Mixage quadricopter + gestion armement        |
+| `motor.c` / `motor.h`   | Pilotage ESC via MCPWM                        |
+| `stabilization.c/h`     | Lecture BMI270, filtrage Kalman, calibration  |
+| `controller.c/h`        | Utilitaire debug iBUS                         |
+| `bmi270_config.h`       | Firmware BMI270 (données de configuration)    |
+| `test_stabilisation.c`  | Tests de stabilisation                        |
 
 ---
 
-## Module PID
+## Modules détaillés
 
-**Fichiers :** `pid.h`, `pid.c`
-
-### Structure `pid_controller_t`
+### Module PID (`pid.c` / `pid.h`)
 
 ```c
 typedef struct {
-    float kp;              // gain proportionnel
-    float ki;              // gain intégral
-    float kd;              // gain dérivé
-    float integral;        // accumulation de l'erreur × dt
-    float prev_error;      // erreur au pas précédent
-    float integral_limit;  // anti-windup (borne |integral|)
-    float output_limit;    // borne |sortie|
+    float kp, ki, kd;
+    float integral, prev_error;
+    float integral_limit, output_limit;
 } pid_controller_t;
 ```
 
-### API
-
 | Fonction | Description |
 |----------|-------------|
-| `pid_init(pid, kp, ki, kd, i_lim, o_lim)` | Initialise les gains et remet à zéro |
-| `pid_reset(pid)` | Remet intégrale et erreur précédente à 0 |
-| `pid_compute(pid, setpoint, measure, dt)` | Calcule la correction PID |
+| `pid_init(...)` | Initialise les gains et limites |
+| `pid_reset(pid)` | Remet intégrale et erreur à 0 |
+| `pid_compute(pid, setpoint, measure, dt)` | Calcule la correction |
 
-### Formule
-
-```
-erreur     = consigne − mesure
-P          = Kp × erreur
-I         += erreur × dt           (borné à ±integral_limit)
-D          = Kd × (erreur − erreur_précédente) / dt
-sortie     = P + I + D             (borné à ±output_limit)
-```
-
-L'anti-windup empêche le terme intégral de croître indéfiniment quand l'erreur est saturée (ex: drone au sol avec consigne de roll élevée).
-
----
-
-## Module moteur
-
-**Fichiers :** `motor.h`, `motor.c`
-
-### API
+### Module moteur (`motor.c` / `motor.h`)
 
 | Fonction | Description |
 |----------|-------------|
 | `pwminit(void)` | Configure MCPWM 50 Hz et arme les ESC |
-| `frontright(float percent)` | Commande moteur avant droit (0-100 %) |
-| `frontleft(float percent)` | Commande moteur avant gauche |
-| `backright(float percent)` | Commande moteur arrière droit |
-| `backleft(float percent)` | Commande moteur arrière gauche |
+| `frontright(percent)` | Commande moteur avant droit (0-100 %) |
+| `frontleft(percent)` | Commande moteur avant gauche |
+| `backright(percent)` | Commande moteur arrière droit |
+| `backleft(percent)` | Commande moteur arrière gauche |
 
-### Conversion pourcentage → duty cycle
+**Conversion :** `duty = percent / 20 + 5` (0% → 1ms, 100% → 2ms)
 
-```
-duty = percent / 20 + 5
-```
+### Module stabilisation (`stabilization.c/h`)
 
-- 0 % → duty 5 % → ~1.0 ms (moteur arrêté)
-- 100 % → duty 10 % → ~2.0 ms (plein gaz)
-
-### Séquence d'armement
-
-1. Attente de 5 s pour la stabilisation alimentation
-2. Envoi de 5 % duty (1 ms) pendant 2 s
-3. Envoi de 10 % duty (2 ms) pendant 2 s
-4. ESC prêts
-
----
-
-## Module stabilisation
-
-**Fichiers :** `stabilization.h`, `stabilization.c`
-
-### Capteur : MPU6050 (I2C)
-
-- Accéléromètre : ±2 g, sensibilité 16384 LSB/g
-- Gyroscope : ±250 °/s, sensibilité 131 LSB/(°/s)
-
-### API
+**Capteur BMI270 :**
+- Accéléromètre : ±2g, sensibilité 16384 LSB/g
+- Gyroscope : ±250°/s, sensibilité 131.072 LSB/(°/s)
+- ODR : 200 Hz
 
 | Fonction | Description |
 |----------|-------------|
-| `stabinit(float *offset)` | Init I2C + MPU6050 + calibration gyro |
-| `printaccel(data, xyz)` | Lit l'accéléromètre, calcule roll/pitch en degrés |
-| `printgyro(data, xyz, dt, offset)` | Intègre le gyroscope sur dt |
-| `complementaryFilter(gyro, accel)` | Fusion : 0.996 × gyro + 0.004 × accel |
-| `pidcontroll(mesure, consigne, dt, pid)` | PID legacy (remplacé par `pid.c`) |
+| `stabinit(offset)` | Init I2C + BMI270 + calibration gyro |
+| `printaccel(data, xyz)` | Lit accéléromètre → roll/pitch (°) |
+| `printgyro(data, xyz, dt, offset)` | Intègre gyroscope |
+| `kalmanfilter(gyro, accel, P, X)` | Fusion Kalman |
 
-### Filtre complémentaire
+### Contrôleur de vol (`flight_controller.c/h`)
 
-Le filtre complémentaire fusionne les données accéléromètre (fiable à basse fréquence mais bruité) et gyroscope (fiable à haute fréquence mais dérive). Le coefficient 0.996 donne un poids élevé au gyroscope pour des réponses rapides.
-
-### Calibration gyroscope
-
-Au démarrage, `stabinit()` prend 1000 mesures gyroscope avec le drone immobile et calcule la moyenne. Cette moyenne (offset) est soustraite à chaque lecture pour compenser le biais de repos.
-
----
-
-## Contrôleur de vol
-
-**Fichiers :** `flight_controller.h`, `flight_controller.c`
-
-### Mixage quadricopter (configuration X)
-
+**Mixage quadricopter (configuration X) :**
 ```
    FL (CCW)    FR (CW)
        \      /
@@ -179,7 +169,6 @@ Au démarrage, `stabinit()` prend 1000 mesures gyroscope avec le drone immobile 
          \/
          /\
         /  \
-       /    \
    BL (CW)    BR (CCW)
 ```
 
@@ -190,99 +179,27 @@ Au démarrage, `stabinit()` prend 1000 mesures gyroscope avec le drone immobile 
 | Back Right  | throttle − roll + pitch + yaw |
 | Back Left   | throttle + roll + pitch − yaw |
 
-Les corrections roll/pitch/yaw sont ajoutées ou soustraites au throttle de base. Chaque sortie est bornée à [0, 100] %.
+**Armement :** CH5 > 1500 ET throttle > 5%
 
-### Armement
-
-Le contrôleur ne commande les moteurs que si :
-1. `fc.armed == true` (CH5 iBUS > 1500)
-2. `throttle > 5 %` (sécurité anti-démarrage accidentel)
-
-Si l'une des conditions est fausse, tous les moteurs sont à 0 % et les PID sont réinitialisés.
-
-### API
-
-| Fonction | Description |
-|----------|-------------|
-| `flight_ctrl_init(fc)` | Initialise les 3 PID avec les gains par défaut |
-| `ibus_to_angle(raw, max)` | Convertit iBUS [1000..2000] en [-max..+max] |
-| `ibus_to_percent(raw)` | Convertit iBUS [1000..2000] en [0..100] % |
-| `flight_ctrl_update(...)` | Calcule PID + mixage → 4 sorties moteur |
-
----
-
-## Récepteur iBUS
-
-**Fichiers :** `controller.h`, `controller.c`
-
-Module utilitaire qui affiche les 14 canaux iBUS en mode debug. Utile pour vérifier le câblage avant intégration complète.
-
-### Canaux iBUS standard
+### Canaux iBUS
 
 | Canal | Fonction | Plage |
 |-------|----------|-------|
-| CH1   | Roll (aileron) | 1000-2000, centre 1500 |
-| CH2   | Pitch (profondeur) | 1000-2000, centre 1500 |
-| CH3   | Throttle (gaz) | 1000-2000 |
-| CH4   | Yaw (lacet) | 1000-2000, centre 1500 |
-| CH5   | Armement (interrupteur) | 1000/2000 |
-
----
-
-## Programme principal
-
-**Fichier :** `main.c`
-
-### Boucle de contrôle (`app_main`)
-
-1. Initialisation de la stabilisation (I2C + MPU6050 + calibration)
-2. Initialisation de l'iBUS (UART1)
-3. Armement des ESC (MCPWM)
-4. Initialisation du contrôleur de vol (3 PID)
-5. **Boucle à 100 Hz :**
-   - Calcul du `dt` réel via `esp_timer_get_time()`
-   - Lecture accéléromètre → roll/pitch
-   - Intégration gyroscope → roll/pitch
-   - Fusion complémentaire
-   - Lecture des consignes iBUS (throttle, roll, pitch, yaw)
-   - Vérification armement (CH5)
-   - Calcul PID + mixage quadricopter
-   - Commande des 4 moteurs
-
----
-
-## Cartographie des broches
-
-| Périphérique | Broche | GPIO |
-|-------------|--------|------|
-| ESC Front Right | MCPWM0A | GPIO 17 |
-| ESC Front Left  | MCPWM0B | GPIO 19 |
-| ESC Back Right  | MCPWM1A | GPIO 20 |
-| ESC Back Left   | MCPWM1B | GPIO 21 |
-| iBUS RX | UART1 RX | GPIO 5 |
-| iBUS TX | UART1 TX | GPIO 4 |
-| MPU6050 SCL | I2C0 SCL | GPIO 20 |
-| MPU6050 SDA | I2C0 SDA | GPIO 21 |
-
-> ⚠️ **Conflit de broches** : GPIO 20 et 21 sont utilisés à la fois pour les ESC arrière et l'I2C du MPU6050. Modifiez les GPIOs ESC ou I2C selon votre câblage réel.
+| CH1 | Roll (aileron) | 1000-2000 (centre 1500) |
+| CH2 | Pitch (profondeur) | 1000-2000 (centre 1500) |
+| CH3 | Throttle (gaz) | 1000-2000 |
+| CH4 | Yaw (lacet) | 1000-2000 (centre 1500) |
+| CH5 | Armement | 1000/2000 |
 
 ---
 
 ## Réglage des PID
 
-### Méthode recommandée
+### Méthode
 
-1. **Commencer avec Kp seul** (Ki=0, Kd=0)
-   - Augmenter Kp jusqu'à ce que le drone oscille légèrement
-   - Réduire Kp de ~30 %
-
-2. **Ajouter Kd**
-   - Augmenter Kd pour amortir les oscillations
-   - Trop de Kd → vibrations haute fréquence
-
-3. **Ajouter Ki** (optionnel)
-   - Ki corrige les erreurs statiques (dérive lente)
-   - Commencer très petit (0.01) et augmenter doucement
+1. **Kp seul** : augmenter jusqu'à oscillations légères, puis réduire de 30%
+2. **Ajouter Kd** : amortir les oscillations
+3. **Ajouter Ki** (optionnel) : corriger erreurs statiques (commencer à 0.01)
 
 ### Gains par défaut
 
@@ -292,13 +209,99 @@ Module utilitaire qui affiche les 14 canaux iBUS en mode debug. Utile pour véri
 | Pitch | 1.0 | 0.0 | 0.0 |
 | Yaw   | 2.0 | 0.0 | 0.0 |
 
-Ces gains sont des **valeurs de départ** conservatrices. Chaque châssis/moteur/hélice nécessite un réglage spécifique.
-
-### Limites de sécurité
+### Limites
 
 | Paramètre | Valeur | Rôle |
 |-----------|--------|------|
-| `PID_INTEGRAL_LIMIT` | 30.0 | Anti-windup : borne l'intégrale |
-| `PID_OUTPUT_LIMIT` | 40.0 | Correction max par axe (% moteur) |
-| `MAX_THROTTLE` | 100.0 | Puissance max envoyée aux ESC |
-| `THROTTLE_MIN_PCT` | 5.0 | En dessous, PID désactivé |
+| `PID_INTEGRAL_LIMIT` | 30.0 | Anti-windup |
+| `PID_OUTPUT_LIMIT` | 40.0 | Correction max (%) |
+| `THROTTLE_MIN_PCT` | 5.0 | Seuil activation PID |
+
+---
+
+## Mode test
+
+Pour tester la stabilisation sans moteurs ni télécommande :
+
+1. Ouvrir `main/main.c`
+2. Décommenter `#define MODE_TEST`
+3. Compiler et flasher
+
+Le mode test affiche les angles en temps réel et vérifie le bon fonctionnement du BMI270.
+
+---
+
+## Configuration BMI270
+
+### Paramètres optimaux
+
+| Capteur | Plage | Sensibilité | ODR |
+|---------|-------|-------------|-----|
+| Accel | ±2g | 16384 LSB/g | 200 Hz |
+| Gyro | ±250°/s | 131.072 LSB/(°/s) | 200 Hz |
+
+### Filtre de Kalman
+
+```c
+Q = 0.003  // Confiance gyro (faible drift BMI270)
+R = 0.030  // Confiance accel
+```
+
+### Adresse I2C
+
+- `0x69` si SDO → GND (par défaut dans le code)
+- `0x68` si SDO → VCC
+
+Modifier `BMI270_ADDR` dans `stabilization.c` si nécessaire.
+
+---
+
+## Dépannage I2C
+
+### Erreur "NACK detected"
+
+1. Vérifier connexions SDA/SCL
+2. Vérifier alimentation 3.3V
+3. Tester adresse 0x68 si 0x69 ne répond pas
+4. Ajouter pull-ups externes 4.7kΩ si nécessaire
+
+### CHIP_ID incorrect
+
+- Attendu : `0x24`
+- Vérifier que c'est bien un BMI270 et pas un MPU6050
+
+### Timeout I2C
+
+- Réduire fréquence à 100 kHz
+- Câbles plus courts (<10 cm)
+- Ajouter condensateur 100nF sur VCC
+
+---
+
+## Mise en vol
+
+### Checklist
+
+1. **Vérifier le sens des moteurs** (configuration X)
+2. **Vérifier le sens des corrections PID** (inverser si le drone s'emballe)
+3. **Vérifier la séquence d'armement ESC**
+
+### Premier vol
+
+1. Throttle à 0, armer avec CH5
+2. Monter les gaz **très doucement**
+3. Si oscillations → baisser Kp
+4. Si instable → augmenter Kp
+
+---
+
+## Dépendances
+
+- [ESP-IDF](https://github.com/espressif/esp-idf) >= 5.0
+- [zorxx/ibus](https://components.espressif.com/components/zorxx/ibus) ^1.0.0
+
+---
+
+## Licence
+
+MIT

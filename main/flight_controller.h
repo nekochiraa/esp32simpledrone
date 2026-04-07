@@ -10,7 +10,7 @@
 #define IBUS_CH_PITCH    1  // CH2 : profondeur
 #define IBUS_CH_THROTTLE 2  // CH3 : gaz
 #define IBUS_CH_YAW      3  // CH4 : lacet
-#define IBUS_CH_ARM      4  // CH5 : armement (interrupteur aux)
+#define IBUS_CH_LIMITER  4  // CH5 : bride gaz (1000=0%, 2000=100% débridé)
 
 /* Plage iBUS brute */
 #define IBUS_MIN  1000
@@ -18,8 +18,8 @@
 #define IBUS_MID  1500
 
 /* Seuils */
-#define ARM_THRESHOLD     1500  // CH5 > seuil → armé
-#define THROTTLE_MIN_PCT  5.0f  // gaz minimum pour activer le PID
+#define THROTTLE_MIN_PCT  5.0f   // gaz minimum pour activer le PID
+#define THROTTLE_MAX_PCT  80.0f  // limite max pour garder marge de stabilisation
 
 /* Sortie moteur */
 typedef struct {

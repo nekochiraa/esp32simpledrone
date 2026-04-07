@@ -14,15 +14,15 @@
 // MODE TEST: Décommentez la ligne ci-dessous pour lancer les tests
 // au lieu du mode drone normal
 // ========================================
-// #define MODE_TEST
+//#define MODE_TEST
 // ========================================
 
 #define IBUS_UART   UART_NUM_1
 #define IBUS_TX_PIN 4
 #define IBUS_RX_PIN 5
-#define MAX_ROLL_ANGLE   30.0f  // consigne max roll (degrés)
-#define MAX_PITCH_ANGLE  30.0f  // consigne max pitch (degrés)
-#define MAX_YAW_RATE    180.0f  // consigne max yaw (deg/s)
+#define MAX_ROLL_ANGLE   15.0f  // consigne max roll (degrés)
+#define MAX_PITCH_ANGLE  15.0f  // consigne max pitch (degrés)
+#define MAX_YAW_RATE    90.0f  // consigne max yaw (deg/s)
 #define LOOP_PERIOD_MS    10    // période de la boucle de contrôle
 #define FAILSAFE_TIMEOUT_US 500000 // 500 ms sans signal iBUS → arrêt moteurs
 
@@ -55,9 +55,10 @@ void app_main(void)
     ESP_LOGI(TAG, "=== ESP32 Simple Drone ===");
     ESP_ERROR_CHECK(esp_event_loop_create_default());
 
-    /* Initialisation IMU + calibration gyroscope */
-    float gyro_offset[3] = {0.0f, 0.0f, 0.0f};
-    if (stabinit(gyro_offset) != 0) {
+    /* Initialisation IMU + calibration gyroscope et accéléromètre */
+    float gyro_offset[3]  = {0.0f, 0.0f, 0.0f};
+    float accel_offset[2] = {0.0f, 0.0f};  // roll, pitch offset
+    if (stabinit(gyro_offset, accel_offset) != 0) {
         ESP_LOGE(TAG, "Échec init stabilisation, arrêt.");
         return;
     }
@@ -79,6 +80,7 @@ void app_main(void)
     /* Initialisation contrôleur de vol */
     flight_ctrl_t fc;
     flight_ctrl_init(&fc);
+    fc.armed = true;  // toujours armé, la bride CH5 contrôle la puissance
 
     /* Variables de la boucle */
     uint8_t imu_data[6]    = {0};
@@ -88,6 +90,12 @@ void app_main(void)
     float angle_pitch      = 0.0f;
     float kalman_P[2]      = {1.0f, 1.0f};         // covariance Kalman (roll, pitch)
     motor_output_t motors  = {0};
+
+    /* Consignes iBUS persistantes (gardent leur valeur entre les trames) */
+    float throttle = 0.0f;
+    float roll_sp  = 0.0f;
+    float pitch_sp = 0.0f;
+    float yaw_sp   = 0.0f;
 
     int64_t prev_time = esp_timer_get_time();
 
@@ -100,7 +108,7 @@ void app_main(void)
         prev_time = now;
 
         /* Lecture IMU */
-        printaccel(imu_data, accel_rp);
+        printaccel(imu_data, accel_rp, accel_offset);
         printgyro(imu_data, gyro_rp, dt, gyro_offset);
 
         /* Fusion Kalman (remplace le filtre complémentaire) */
@@ -111,26 +119,24 @@ void app_main(void)
         bool signal_lost = (now - last_ibus_time) > FAILSAFE_TIMEOUT_US;
         if (signal_lost) {
             fc.armed = false;
+            throttle = 0.0f;
             if ((now - last_ibus_time) < FAILSAFE_TIMEOUT_US + 1000000) {
                 ESP_LOGW(TAG, "FAILSAFE: signal perdu, moteurs coupés");
             }
         }
 
-        /* Lecture des consignes iBUS */
-        float throttle = 0.0f;
-        float roll_sp  = 0.0f;
-        float pitch_sp = 0.0f;
-        float yaw_sp   = 0.0f;
-
+        /* Mise à jour des consignes iBUS (seulement quand nouvelle trame reçue) */
         if (channels_updated) {
             channels_updated = false;
 
-            throttle = ibus_to_percent(last_channels[IBUS_CH_THROTTLE].value);
+            /* Calcul de la bride : CH5 définit le throttle max autorisé */
+            float limiter = ibus_to_percent(last_channels[IBUS_CH_LIMITER].value);
+            float raw_throttle = ibus_to_percent(last_channels[IBUS_CH_THROTTLE].value);
+            throttle = raw_throttle * limiter / 100.0f;
+
             roll_sp  = ibus_to_angle(last_channels[IBUS_CH_ROLL].value, MAX_ROLL_ANGLE);
             pitch_sp = ibus_to_angle(last_channels[IBUS_CH_PITCH].value, MAX_PITCH_ANGLE);
             yaw_sp   = ibus_to_angle(last_channels[IBUS_CH_YAW].value, MAX_YAW_RATE);
-
-            fc.armed = (last_channels[IBUS_CH_ARM].value > ARM_THRESHOLD);
         }
 
         /* Calcul PID + mixage */
@@ -145,10 +151,10 @@ void app_main(void)
         backright(motors.back_right);
         backleft(motors.back_left);
 
-        ESP_LOGD(TAG, "R=%.1f P=%.1f T=%.0f%% | FR=%.0f FL=%.0f BR=%.0f BL=%.0f",
-                 angle_roll, angle_pitch, throttle,
+        /* Affichage du % envoyé aux moteurs */
+        ESP_LOGI(TAG, "MOTEURS: FR=%.1f%% FL=%.1f%% BR=%.1f%% BL=%.1f%% | Armed=%d",
                  motors.front_right, motors.front_left,
-                 motors.back_right, motors.back_left);
+                 motors.back_right, motors.back_left, fc.armed);
 
         vTaskDelay(pdMS_TO_TICKS(LOOP_PERIOD_MS));
     }

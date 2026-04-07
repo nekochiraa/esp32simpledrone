@@ -1,10 +1,10 @@
 #include "motor.h"
 
 #define TAG                  "motor"
-#define ESC_FRONT_RIGHT_GPIO 17
-#define ESC_FRONT_LEFT_GPIO  19
-#define ESC_BACK_RIGHT_GPIO  20
-#define ESC_BACK_LEFT_GPIO   21
+#define ESC_FRONT_RIGHT_GPIO 15
+#define ESC_FRONT_LEFT_GPIO  16
+#define ESC_BACK_RIGHT_GPIO  17
+#define ESC_BACK_LEFT_GPIO   18
 #define MAX_THROTTLE         100.0f
 
 static float percent_to_duty(float percent)
@@ -30,7 +30,6 @@ void pwminit(void)
     };
 
     ESP_LOGI(TAG, "Armement des ESC...");
-    vTaskDelay(pdMS_TO_TICKS(5000));
 
     mcpwm_init(MCPWM_UNIT_0, MCPWM_TIMER_0, &pwm_config);
     mcpwm_init(MCPWM_UNIT_0, MCPWM_TIMER_1, &pwm_config);

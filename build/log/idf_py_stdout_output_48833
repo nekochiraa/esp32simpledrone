@@ -1,0 +1,1970 @@
+Command: /home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python /home/nekochira/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/nekochira/code/esp32simpledrone/build/hello_world.elf /home/nekochira/code/esp32simpledrone/build/bootloader/bootloader.elf -m '/home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python' '/home/nekochira/esp/esp-idf/tools/idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0d1f8h ( 53752) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001d220 vaddr=3fc93900 size=029f8h ( 10744) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001fc20 vaddr=40374000 size=003f8h (  1016) load[0m
+[0;32mI (101) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1cc88h (117896) map[0m
+[0;32mI (129) esp_image: segment 4: paddr=0003ccb0 vaddr=403743f8 size=0f4c8h ( 62664) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=0004c180 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (161) cpu_start: Multicore app[0m
+[0;32mI (170) cpu_start: Pro cpu start user code[0m
+[0;32mI (170) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (170) app_init: Project name:     hello_world[0m
+[0;32mI (175) app_init: App version:      1992420-dirty[0m
+[0;32mI (179) app_init: Compile time:     Mar 24 2026 12:45:40[0m
+[0;32mI (184) app_init: ELF file SHA256:  4d864c4c5...[0m
+[0;32mI (188) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (192) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (196) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (200) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (204) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (210) heap_init: At 3FC96C48 len 00052AC8 (330 KiB): RAM[0m
+[0;32mI (215) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (220) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (226) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (232) spi_flash: detected chip: generic[0m
+[0;32mI (235) spi_flash: flash io: dio[0m
+[0;33mW (238) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (250) mcpwm(legacy): legacy driver is deprecated, please migrate to `driver/mcpwm_prelude.h`[0m
+[0;32mI (258) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (271) main_task: Started on CPU0[0m
+[0;32mI (281) main_task: Calling app_main()[0m
+[0;32mI (281) drone: === ESP32 Simple Drone ===[0m
+[0;32mI (281) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (341) BMI270: CHIP_ID = 0x24 (attendu 0x24)[0m
+[0;32mI (341) BMI270: Chargement firmware BMI270 (8192 bytes)...[0m
+[0;32mI (1311) BMI270: Firmware chargé avec succès[0m
+[0;32mI (1461) BMI270: Status interne: 0x01 (init OK)[0m
+[0;32mI (1511) BMI270: BMI270 initialisé avec succès (±2g, ±250°/s @ 200Hz)[0m
+[0;32mI (1511) BMI270: Calibration gyroscope BMI270 (2000 échantillons)...[0m
+[0;32mI (3321) BMI270: Offsets calculés: X=-10.89 Y=55.31 Z=0.05[0m
+[0;32mI (3321) motor: Armement des ESC...[0m
+[0;32mI (12321) motor: ESC armés[0m
+[0;32mI (12321) drone: Boucle de contrôle démarrée (10 ms)[0m
+[1;31mE (12421) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (12421) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (12421) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (12521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (12521) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (12631) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (12631) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (12631) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (12731) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (12731) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (12841) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (12841) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (12841) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (12941) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (12941) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (13051) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (13051) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (13051) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (13151) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (13151) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (13261) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (13261) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (13261) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (13361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (13361) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (13471) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (13471) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (13471) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (13571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (13571) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (13681) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (13681) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (13681) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (13781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (13781) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (13891) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (13891) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (13891) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (13991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (13991) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (14101) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (14101) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (14101) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (14201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (14201) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (14311) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (14311) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (14311) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (14411) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (14411) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (14521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (14521) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (14521) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (14621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (14621) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (14731) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (14731) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (14731) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (14831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (14831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (14941) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (14941) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (14941) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (15041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (15041) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (15151) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (15151) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (15151) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (15251) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (15251) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (15361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (15361) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (15361) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (15461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (15461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (15571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (15571) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (15571) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (15671) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (15671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (15781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (15781) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (15781) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (15881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (15881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (15991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (15991) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (15991) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (16091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (16091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (16201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (16201) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (16201) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (16301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (16301) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (16411) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (16411) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (16411) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (16511) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (16511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (16621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (16621) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (16621) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (16721) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (16721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (16831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (16831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (16831) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (16931) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (16931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (17041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (17041) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (17041) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (17141) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (17141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (17251) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (17251) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (17251) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (17351) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (17351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (17461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (17461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (17461) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (17561) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (17561) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (17671) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (17671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (17671) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (17771) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (17771) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (17881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (17881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (17881) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (17981) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (17981) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (18091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (18091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (18091) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (18191) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (18191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (18301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (18301) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (18301) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (18401) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (18401) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (18511) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (18511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (18511) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (18611) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (18611) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (18721) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (18721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (18721) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (18821) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (18821) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (18931) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (18931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (18931) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (19031) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (19031) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (19141) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (19141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (19141) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (19241) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (19241) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (19351) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (19351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (19351) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (19451) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (19451) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (19561) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (19561) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (19561) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (19661) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (19661) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (19771) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (19771) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (19771) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (19871) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (19871) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (19981) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (19981) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (19981) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (20081) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (20081) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (20191) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (20191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (20191) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (20291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (20291) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (20401) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (20401) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (20401) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (20501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (20501) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (20611) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (20611) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (20611) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (20711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (20711) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (20821) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (20821) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (20821) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (20921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (20921) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (21031) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (21031) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (21031) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (21131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (21131) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (21241) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (21241) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (21241) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (21341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (21341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (21451) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (21451) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (21451) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (21551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (21551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (21661) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (21661) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (21661) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (21761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (21761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (21871) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (21871) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (21871) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (21971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (21971) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (22081) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (22081) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (22081) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (22181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (22181) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (22291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (22291) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (22291) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (22391) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (22391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (22501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (22501) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (22501) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (22601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (22601) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (22711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (22711) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (22711) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (22811) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (22811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (22921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (22921) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (22921) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (23021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (23021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (23131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (23131) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (23131) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (23231) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (23231) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (23341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (23341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (23341) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (23441) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (23441) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (23551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (23551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (23551) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (23651) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (23651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (23761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (23761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (23761) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (23861) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (23861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (23971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (23971) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (23971) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (24071) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (24071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (24181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (24181) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (24181) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (24281) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (24281) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (24391) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (24391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (24391) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (24491) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (24491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (24601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (24601) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (24601) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (24701) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (24701) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (24811) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (24811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (24811) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (24911) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (24911) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (25021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (25021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (25021) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (25121) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (25121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (25231) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (25231) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (25231) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (25331) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (25331) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (25441) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (25441) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (25441) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (25541) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (25541) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (25651) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (25651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (25651) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (25751) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (25751) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (25861) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (25861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (25861) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (25961) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (25961) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (26071) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (26071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (26071) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (26171) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (26171) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (26281) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (26281) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (26281) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (26381) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (26381) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (26491) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (26491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (26491) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (26591) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (26591) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (26701) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (26701) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (26701) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (26801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (26801) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (26911) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (26911) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (26911) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (27011) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (27011) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (27121) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (27121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (27121) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (27221) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (27221) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (27331) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (27331) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (27331) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (27431) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (27431) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (27541) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (27541) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (27541) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (27641) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (27641) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (27751) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (27751) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (27751) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (27851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (27851) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (27961) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (27961) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (27961) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (28061) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (28061) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (28171) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (28171) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (28171) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (28271) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (28271) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (28381) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (28381) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (28381) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (28481) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (28481) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (28591) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (28591) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (28591) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (28691) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (28691) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (28801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (28801) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (28801) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (28901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (28901) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (29011) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (29011) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (29011) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (29111) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (29111) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (29221) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (29221) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (29221) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (29321) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (29321) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (29431) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (29431) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (29431) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (29531) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (29531) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (29641) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (29641) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (29641) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (29741) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (29741) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (29851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (29851) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (29851) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (29951) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (29951) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (30061) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (30061) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (30061) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (30161) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (30161) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (30271) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (30271) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (30271) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (30371) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (30371) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (30481) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (30481) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (30481) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (30581) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (30581) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (30691) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (30691) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (30691) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (30791) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (30791) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (30901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (30901) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (30901) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (31001) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (31001) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (31111) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (31111) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (31111) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (31211) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (31211) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (31321) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (31321) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (31321) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (31421) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (31421) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (31531) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (31531) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (31531) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (31631) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (31631) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (31741) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (31741) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (31741) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (31841) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (31841) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (31951) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (31951) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (31951) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (32051) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (32051) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (32161) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (32161) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (32161) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (32261) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (32261) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (32371) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (32371) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (32371) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (32471) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (32471) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (32581) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (32581) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (32581) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (32681) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (32681) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (32791) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (32791) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (32791) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (32891) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (32891) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (33001) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (33001) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (33001) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (33101) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (33101) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (33211) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (33211) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (33211) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (33311) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (33311) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (33421) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (33421) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (33421) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (33521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (33521) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (33631) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (33631) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (33631) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (33731) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (33731) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (33841) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (33841) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (33841) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (33941) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (33941) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (34051) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (34051) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (34051) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (34151) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (34151) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (34261) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (34261) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (34261) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (34361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (34361) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (34471) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (34471) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (34471) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (34571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (34571) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (34681) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (34681) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (34681) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (34781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (34781) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (34891) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (34891) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (34891) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (34991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (34991) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (35101) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (35101) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (35101) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (35201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (35201) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (35311) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (35311) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (35311) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (35411) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (35411) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (35521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (35521) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (35521) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (35621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (35621) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (35731) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (35731) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (35731) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (35831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (35831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (35941) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (35941) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (35941) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (36041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (36041) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (36151) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (36151) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (36151) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (36251) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (36251) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (36361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (36361) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (36361) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (36461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (36461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (36571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (36571) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (36571) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (36671) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (36671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (36781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (36781) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (36781) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (36881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (36881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (36991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (36991) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (36991) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (37091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (37091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (37201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (37201) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (37201) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (37301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (37301) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (37411) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (37411) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (37411) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (37511) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (37511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (37621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (37621) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (37621) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (37721) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (37721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (37831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (37831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (37831) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (37931) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (37931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (38041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (38041) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (38041) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (38141) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (38141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (38251) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (38251) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (38251) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (38351) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (38351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (38461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (38461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (38461) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (38561) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (38561) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (38671) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (38671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (38671) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (38771) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (38771) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (38881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (38881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (38881) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (38981) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (38981) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (39091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (39091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (39091) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (39191) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (39191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (39301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (39301) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (39301) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (39401) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (39401) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (39511) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (39511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (39511) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (39611) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (39611) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (39721) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (39721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (39721) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (39821) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (39821) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (39931) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (39931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (39931) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (40031) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (40031) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (40141) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (40141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (40141) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (40241) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (40241) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (40351) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (40351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (40351) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (40451) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (40451) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (40561) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (40561) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (40561) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (40661) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (40661) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (40771) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (40771) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (40771) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (40871) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (40871) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (40981) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (40981) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (40981) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (41081) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (41081) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (41191) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (41191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (41191) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (41291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (41291) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (41401) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (41401) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (41401) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (41501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (41501) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (41611) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (41611) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (41611) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (41711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (41711) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (41821) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (41821) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (41821) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (41921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (41921) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (42031) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (42031) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (42031) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (42131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (42131) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (42241) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (42241) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (42241) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (42341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (42341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (42451) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (42451) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (42451) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (42551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (42551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (42661) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (42661) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (42661) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (42761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (42761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (42871) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (42871) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (42871) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (42971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (42971) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (43081) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (43081) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (43081) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (43181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (43181) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (43291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (43291) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (43291) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (43391) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (43391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (43501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (43501) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (43501) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (43601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (43601) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (43711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (43711) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (43711) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (43811) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (43811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (43921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (43921) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (43921) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (44021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (44021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (44131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (44131) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (44131) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (44231) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (44231) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (44341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (44341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (44341) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (44441) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (44441) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (44551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (44551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (44551) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (44651) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (44651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (44761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (44761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (44761) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (44861) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (44861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (44971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (44971) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (44971) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (45071) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (45071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (45181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (45181) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (45181) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (45281) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (45281) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (45391) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (45391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (45391) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (45491) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (45491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (45601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (45601) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (45601) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (45701) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (45701) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (45811) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (45811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (45811) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (45911) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (45911) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (46021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (46021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (46021) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (46121) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (46121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (46231) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (46231) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (46231) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (46331) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (46331) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (46441) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (46441) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (46441) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (46541) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (46541) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (46651) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (46651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (46651) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (46751) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (46751) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (46861) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (46861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (46861) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (46961) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (46961) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (47071) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (47071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (47071) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (47171) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (47171) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (47281) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (47281) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (47281) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (47381) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (47381) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (47491) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (47491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (47491) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (47591) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (47591) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (47701) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (47701) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (47701) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (47801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (47801) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (47911) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (47911) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (47911) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (48011) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (48011) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (48121) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (48121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (48121) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (48221) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (48221) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (48331) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (48331) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (48331) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (48431) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (48431) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (48541) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (48541) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (48541) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (48641) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (48641) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (48751) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (48751) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (48751) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (48851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (48851) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (48961) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (48961) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (48961) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (49061) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (49061) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (49171) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (49171) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (49171) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (49271) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (49271) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (49381) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (49381) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (49381) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (49481) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (49481) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (49591) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (49591) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (49591) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (49691) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (49691) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (49801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (49801) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (49801) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (49901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (49901) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (50011) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (50011) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (50011) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (50111) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (50111) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (50221) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (50221) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (50221) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (50321) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (50321) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (50431) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (50431) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (50431) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (50531) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (50531) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (50641) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (50641) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (50641) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (50741) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (50741) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (50851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (50851) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (50851) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (50951) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (50951) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (51061) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (51061) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (51061) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (51161) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (51161) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (51271) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (51271) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (51271) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (51371) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (51371) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (51481) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (51481) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (51481) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (51581) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (51581) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (51691) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (51691) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (51691) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (51791) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (51791) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (51901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (51901) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (51901) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (52001) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (52001) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (52111) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (52111) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (52111) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (52211) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (52211) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (52321) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (52321) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (52321) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (52421) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (52421) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (52531) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (52531) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (52531) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (52631) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (52631) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (52741) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (52741) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (52741) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (52841) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (52841) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (52951) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (52951) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (52951) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (53051) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (53051) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (53161) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (53161) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (53161) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (53261) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (53261) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (53371) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (53371) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (53371) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (53471) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (53471) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (53581) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (53581) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (53581) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (53681) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (53681) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (53791) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (53791) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (53791) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (53891) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (53891) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (54001) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (54001) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (54001) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (54101) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (54101) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (54211) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (54211) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (54211) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (54311) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (54311) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (54421) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (54421) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (54421) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (54521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (54521) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (54631) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (54631) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (54631) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (54731) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (54731) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (54841) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (54841) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (54841) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (54941) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (54941) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (55051) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (55051) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (55051) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (55151) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (55151) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (55261) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (55261) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (55261) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (55361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (55361) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (55471) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (55471) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (55471) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (55571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (55571) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (55681) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (55681) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (55681) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (55781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (55781) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (55891) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (55891) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (55891) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (55991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (55991) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (56101) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (56101) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (56101) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (56201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (56201) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (56311) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (56311) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (56311) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (56411) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (56411) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (56521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (56521) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (56521) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (56621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (56621) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (56731) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (56731) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (56731) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (56831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (56831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (56941) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (56941) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (56941) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (57041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (57041) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (57151) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (57151) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (57151) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (57251) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (57251) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (57361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (57361) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (57361) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (57461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (57461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (57571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (57571) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (57571) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (57671) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (57671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (57781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (57781) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (57781) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (57881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (57881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (57991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (57991) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (57991) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (58091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (58091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (58201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (58201) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (58201) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (58301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (58301) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (58411) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (58411) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (58411) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (58511) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (58511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (58621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (58621) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (58621) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (58721) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (58721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (58831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (58831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (58831) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (58931) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (58931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (59041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (59041) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (59041) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (59141) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (59141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (59251) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (59251) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (59251) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (59351) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (59351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (59461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (59461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (59461) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (59561) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (59561) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (59671) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (59671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (59671) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (59771) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (59771) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (59881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (59881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (59881) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (59981) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (59981) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (60091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (60091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (60091) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (60191) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (60191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (60301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (60301) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (60301) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (60401) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (60401) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (60511) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (60511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (60511) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (60611) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (60611) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (60721) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (60721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (60721) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (60821) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (60821) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (60931) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (60931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (60931) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (61031) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (61031) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (61141) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (61141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (61141) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (61241) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (61241) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (61351) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (61351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (61351) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (61451) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (61451) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (61561) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (61561) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (61561) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (61661) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (61661) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (61771) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (61771) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (61771) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (61871) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (61871) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (61981) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (61981) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (61981) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (62081) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (62081) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (62191) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (62191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (62191) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (62291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (62291) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (62401) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (62401) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (62401) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (62501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (62501) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (62611) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (62611) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (62611) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (62711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (62711) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (62821) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (62821) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (62821) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (62921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (62921) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (63031) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (63031) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (63031) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (63131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (63131) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (63241) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (63241) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (63241) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (63341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (63341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (63451) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (63451) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (63451) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (63551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (63551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (63661) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (63661) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (63661) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (63761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (63761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (63871) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (63871) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (63871) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (63971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (63971) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (64081) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (64081) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (64081) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (64181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (64181) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (64291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (64291) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (64291) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (64391) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (64391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (64501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (64501) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (64501) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (64601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (64601) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (64711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (64711) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (64711) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (64811) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (64811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (64921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (64921) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (64921) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (65021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (65021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (65131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (65131) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (65131) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (65231) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (65231) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (65341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (65341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (65341) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (65441) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (65441) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (65551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (65551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (65551) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (65651) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (65651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (65761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (65761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (65761) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (65861) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (65861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (65971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (65971) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (65971) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (66071) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (66071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (66181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (66181) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (66181) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (66281) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (66281) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (66391) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (66391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (66391) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (66491) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (66491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (66601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (66601) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (66601) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (66701) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (66701) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (66811) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (66811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (66811) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (66911) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (66911) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (67021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (67021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (67021) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (67121) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (67121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (67231) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (67231) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (67231) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (67331) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (67331) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (67441) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (67441) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (67441) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (67541) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (67541) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (67651) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (67651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (67651) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (67751) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (67751) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (67861) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (67861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (67861) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (67961) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (67961) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (68071) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (68071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (68071) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (68171) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (68171) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (68281) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (68281) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (68281) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (68381) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (68381) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (68491) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (68491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (68491) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (68591) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (68591) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (68701) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (68701) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (68701) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (68801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (68801) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (68911) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (68911) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (68911) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (69011) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (69011) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (69121) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (69121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (69121) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (69221) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (69221) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (69331) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (69331) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (69331) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (69431) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (69431) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (69541) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (69541) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (69541) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (69641) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (69641) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (69751) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (69751) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (69751) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (69851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (69851) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (69961) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (69961) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (69961) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (70061) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (70061) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (70171) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (70171) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (70171) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (70271) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (70271) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (70381) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (70381) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (70381) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (70481) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (70481) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (70591) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (70591) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (70591) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (70691) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (70691) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (70801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (70801) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (70801) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (70901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (70901) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (71011) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (71011) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (71011) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (71111) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (71111) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (71221) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (71221) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (71221) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (71321) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (71321) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (71431) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (71431) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (71431) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (71531) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (71531) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (71641) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (71641) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (71641) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (71741) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (71741) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (71851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (71851) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (71851) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (71951) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (71951) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (72061) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (72061) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (72061) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (72161) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (72161) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (72271) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (72271) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (72271) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (72371) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (72371) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (72481) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (72481) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (72481) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (72581) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (72581) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (72691) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (72691) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (72691) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (72791) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (72791) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (72901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (72901) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (72901) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (73001) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (73001) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (73111) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (73111) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (73111) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (73211) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (73211) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (73321) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (73321) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (73321) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (73421) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (73421) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (73531) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (73531) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (73531) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (73631) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (73631) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (73741) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (73741) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (73741) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (73841) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (73841) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (73951) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (73951) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (73951) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (74051) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (74051) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (74161) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (74161) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (74161) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (74261) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (74261) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (74371) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (74371) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (74371) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (74471) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (74471) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (74581) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (74581) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (74581) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (74681) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (74681) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (74791) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (74791) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (74791) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (74891) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (74891) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (75001) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (75001) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (75001) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (75101) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (75101) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (75211) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (75211) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (75211) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (75311) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (75311) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (75421) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (75421) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (75421) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (75521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (75521) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (75631) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (75631) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (75631) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (75731) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (75731) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (75841) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (75841) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (75841) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (75941) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (75941) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (76051) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (76051) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (76051) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (76151) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (76151) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (76261) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (76261) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (76261) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (76361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (76361) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (76471) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (76471) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (76471) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (76571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (76571) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (76681) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (76681) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (76681) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (76781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (76781) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (76891) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (76891) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (76891) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (76991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (76991) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (77101) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (77101) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (77101) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (77201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (77201) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (77311) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (77311) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (77311) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (77411) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (77411) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (77521) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (77521) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (77521) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (77621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (77621) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (77731) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (77731) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (77731) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (77831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (77831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (77941) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (77941) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (77941) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (78041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (78041) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (78151) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (78151) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (78151) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (78251) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (78251) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (78361) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (78361) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (78361) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (78461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (78461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (78571) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (78571) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (78571) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (78671) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (78671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (78781) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (78781) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (78781) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (78881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (78881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (78991) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (78991) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (78991) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (79091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (79091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (79201) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (79201) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (79201) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (79301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (79301) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (79411) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (79411) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (79411) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (79511) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (79511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (79621) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (79621) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (79621) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (79721) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (79721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (79831) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (79831) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (79831) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (79931) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (79931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (80041) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (80041) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (80041) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (80141) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (80141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (80251) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (80251) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (80251) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (80351) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (80351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (80461) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (80461) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (80461) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (80561) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (80561) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (80671) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (80671) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (80671) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (80771) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (80771) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (80881) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (80881) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (80881) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (80981) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (80981) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (81091) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (81091) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (81091) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (81191) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (81191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (81301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (81301) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (81301) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (81401) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (81401) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (81511) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (81511) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (81511) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (81611) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (81611) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (81721) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (81721) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (81721) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (81821) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (81821) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (81931) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (81931) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (81931) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (82031) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (82031) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (82141) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (82141) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (82141) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (82241) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (82241) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (82351) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (82351) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (82351) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (82451) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (82451) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (82561) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (82561) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (82561) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (82661) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (82661) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (82771) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (82771) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (82771) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (82871) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (82871) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (82981) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (82981) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (82981) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (83081) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (83081) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (83191) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (83191) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (83191) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (83291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (83291) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (83401) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (83401) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (83401) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (83501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (83501) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (83611) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (83611) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (83611) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (83711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (83711) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (83821) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (83821) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (83821) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (83921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (83921) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (84031) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (84031) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (84031) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (84131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (84131) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (84241) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (84241) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (84241) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (84341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (84341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (84451) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (84451) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (84451) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (84551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (84551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (84661) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (84661) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (84661) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (84761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (84761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (84871) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (84871) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (84871) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (84971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (84971) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (85081) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (85081) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (85081) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (85181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (85181) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (85291) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (85291) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (85291) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (85391) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (85391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (85501) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (85501) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (85501) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (85601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (85601) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (85711) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (85711) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (85711) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (85811) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (85811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (85921) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (85921) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (85921) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (86021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (86021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (86131) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (86131) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (86131) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (86231) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (86231) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (86341) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (86341) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (86341) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (86441) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (86441) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (86551) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (86551) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (86551) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (86651) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (86651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (86761) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (86761) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (86761) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (86861) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (86861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (86971) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (86971) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (86971) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (87071) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (87071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (87181) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (87181) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (87181) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (87281) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (87281) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (87391) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (87391) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (87391) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (87491) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (87491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (87601) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (87601) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (87601) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (87701) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (87701) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (87811) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (87811) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (87811) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (87911) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (87911) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (88021) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (88021) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (88021) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (88121) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (88121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (88231) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (88231) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (88231) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (88331) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (88331) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (88441) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (88441) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (88441) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (88541) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (88541) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (88651) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (88651) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (88651) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (88751) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (88751) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (88861) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (88861) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (88861) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (88961) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (88961) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (89071) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (89071) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (89071) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (89171) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (89171) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (89281) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (89281) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (89281) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (89381) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (89381) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (89491) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (89491) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (89491) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (89591) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (89591) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (89701) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (89701) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (89701) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (89801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (89801) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (89911) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (89911) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (89911) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (90011) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (90011) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (90121) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (90121) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (90121) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (90221) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (90221) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (90331) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (90331) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (90331) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (90431) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (90431) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (90541) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (90541) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (90541) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (90641) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (90641) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (90751) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (90751) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (90751) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (90851) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (90851) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (90961) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (90961) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (90961) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (91061) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (91061) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (91171) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (91171) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (91171) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (91271) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (91271) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (91381) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (91381) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (91381) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (91481) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (91481) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (91591) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (91591) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (91591) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (91691) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (91691) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (91801) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (91801) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (91801) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (91901) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (91901) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (92011) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (92011) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m
+[1;31mE (92011) BMI270: Erreur lecture accéléromètre[0m
+[1;31mE (92111) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (92111) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed[0m

@@ -1,23 +1,25 @@
 #include "flight_controller.h"
 
 /*
- * Gains PID par défaut — à ajuster selon le châssis et les moteurs.
- * Commencer par Kp seul (Ki=Kd=0), puis augmenter progressivement.
+ * Gains PID — réglés pour environnement avec vibrations.
+ * Kp modéré = correction progressive
+ * Ki faible = évite l'accumulation d'erreurs dues aux vibrations
+ * Kd très faible = CRUCIAL - le terme dérivé amplifie les vibrations !
  */
-#define ROLL_KP   1.0f
-#define ROLL_KI   0.0f
-#define ROLL_KD   0.0f
+#define ROLL_KP   0.25f
+#define ROLL_KI   0.01f
+#define ROLL_KD   0.001f   // Très faible pour ignorer les vibrations
 
-#define PITCH_KP  1.0f
-#define PITCH_KI  0.0f
-#define PITCH_KD  0.0f
+#define PITCH_KP  0.25f
+#define PITCH_KI  0.01f
+#define PITCH_KD  0.001f   // Très faible pour ignorer les vibrations
 
-#define YAW_KP    2.0f
-#define YAW_KI    0.0f
-#define YAW_KD    0.0f
+#define YAW_KP    0.4f
+#define YAW_KI    0.005f
+#define YAW_KD    0.01f   // Très faible
 
-#define PID_INTEGRAL_LIMIT  30.0f
-#define PID_OUTPUT_LIMIT    40.0f  // correction max en % moteur
+#define PID_INTEGRAL_LIMIT  8.0f    // anti-windup réduit
+#define PID_OUTPUT_LIMIT    8.0f    // correction max douce
 
 static float clampf(float val, float lo, float hi)
 {
@@ -45,8 +47,9 @@ float ibus_to_angle(uint16_t raw, float max_angle)
 
 float ibus_to_percent(uint16_t raw)
 {
-    float pct = ((float)raw - (float)IBUS_MIN) / ((float)IBUS_MAX - (float)IBUS_MIN) * 100.0f;
-    return clampf(pct, 0.0f, 100.0f);
+    /* Limite à THROTTLE_MAX_PCT pour garder marge de stabilisation */
+    float pct = ((float)raw - (float)IBUS_MIN) / ((float)IBUS_MAX - (float)IBUS_MIN) * THROTTLE_MAX_PCT;
+    return clampf(pct, 0.0f, THROTTLE_MAX_PCT);
 }
 
 /*

@@ -1,0 +1,49 @@
+Command: ninja all
+[1/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+In file included from /home/nekochira/code/esp32simpledrone/main/motor.h:4,
+                 from /home/nekochira/code/esp32simpledrone/main/main.c:8:
+/home/nekochira/esp/esp-idf/components/driver/deprecated/driver/mcpwm.h:15:2: warning: #warning "legacy MCPWM driver is deprecated, please migrate to the new driver (include driver/mcpwm_prelude.h)" [-Wcpp]
+   15 | #warning "legacy MCPWM driver is deprecated, please migrate to the new driver (include driver/mcpwm_prelude.h)"
+      |  ^~~~~~~
+[2/9] Linking C static library esp-idf/main/libmain.a
+[3/9] Performing build step for 'bootloader'
+[0/1] Re-running CMake...
+-- Minimal build - OFF
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /home/nekochira/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/nekochira/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/nekochira/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32s3
+-- Project sdkconfig file /home/nekochira/code/esp32simpledrone/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Adding linker script /home/nekochira/esp/esp-idf/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Bootloader project name: "bootloader" version: 1
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.wdt.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/bootloader/subproject/main/ld/esp32s3/bootloader.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/bootloader/subproject/main/ld/esp32s3/bootloader.rom.ld
+-- Components: bootloader bootloader_support efuse esp_app_format esp_bootloader_format esp_common esp_hw_support esp_rom esp_security esp_system esptool_py freertos hal log main micro-ecc newlib partition_table soc spi_flash xtensa
+-- Component paths: /home/nekochira/esp/esp-idf/components/bootloader /home/nekochira/esp/esp-idf/components/bootloader_support /home/nekochira/esp/esp-idf/components/efuse /home/nekochira/esp/esp-idf/components/esp_app_format /home/nekochira/esp/esp-idf/components/esp_bootloader_format /home/nekochira/esp/esp-idf/components/esp_common /home/nekochira/esp/esp-idf/components/esp_hw_support /home/nekochira/esp/esp-idf/components/esp_rom /home/nekochira/esp/esp-idf/components/esp_security /home/nekochira/esp/esp-idf/components/esp_system /home/nekochira/esp/esp-idf/components/esptool_py /home/nekochira/esp/esp-idf/components/freertos /home/nekochira/esp/esp-idf/components/hal /home/nekochira/esp/esp-idf/components/log /home/nekochira/esp/esp-idf/components/bootloader/subproject/main /home/nekochira/esp/esp-idf/components/bootloader/subproject/components/micro-ecc /home/nekochira/esp/esp-idf/components/newlib /home/nekochira/esp/esp-idf/components/partition_table /home/nekochira/esp/esp-idf/components/soc /home/nekochira/esp/esp-idf/components/spi_flash /home/nekochira/esp/esp-idf/components/xtensa
+-- Configuring done (5.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/nekochira/code/esp32simpledrone/build/bootloader
+[1/2] cd /home/nekochira/code/esp32simpledrone/build/bootloader/esp-idf/esptool_py && /home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python /home/nekochira/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/nekochira/code/esp32simpledrone/build/bootloader/bootloader.bin
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[4/9] No install step for 'bootloader'
+[5/9] Completed 'bootloader'

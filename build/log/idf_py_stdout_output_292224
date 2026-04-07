@@ -1,0 +1,165 @@
+Command: /home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python /home/nekochira/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/nekochira/code/esp32simpledrone/build/hello_world.elf /home/nekochira/code/esp32simpledrone/build/bootloader/bootloader.elf -m '/home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python' '/home/nekochira/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM1'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 21 2026 20:08:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bddch ( 48604) map[0m
+[0;32mI (95) esp_image: segment 1: paddr=0001be04 vaddr=3fc92700 size=028b8h ( 10424) load[0m
+[0;32mI (97) esp_image: segment 2: paddr=0001e6c4 vaddr=40374000 size=01954h (  6484) load[0m
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18c4ch (101452) map[0m
+[0;32mI (127) esp_image: segment 4: paddr=00038c74 vaddr=40375954 size=0cd98h ( 52632) load[0m
+[0;32mI (138) esp_image: segment 5: paddr=00045a14 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (144) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (144) boot: Disabling RNG early entropy source...[0m
+[0;32mI (156) cpu_start: Multicore app[0m
+[0;32mI (165) cpu_start: Pro cpu start user code[0m
+[0;32mI (165) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (165) app_init: Application information:[0m
+[0;32mI (165) app_init: Project name:     hello_world[0m
+[0;32mI (170) app_init: App version:      1992420-dirty[0m
+[0;32mI (174) app_init: Compile time:     Mar 24 2026 12:45:40[0m
+[0;32mI (179) app_init: ELF file SHA256:  8c71398c0...[0m
+[0;32mI (183) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (187) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (191) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (195) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (199) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (205) heap_init: At 3FC95840 len 00053ED0 (335 KiB): RAM[0m
+[0;32mI (210) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (215) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (221) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (226) spi_flash: detected chip: generic[0m
+[0;32mI (230) spi_flash: flash io: dio[0m
+[0;33mW (233) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (245) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (251) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (258) main_task: Started on CPU0[0m
+[0;32mI (268) main_task: Calling app_main()[0m
+[0;32mI (268) drone: === MODE TEST ACTIVÉ ===[0m
+[0;32mI (268) TEST_STAB: [0m
+[0;32mI (268) TEST_STAB: ========================================[0m
+[0;32mI (278) TEST_STAB:    AFFICHAGE ANGLES EN TEMPS REEL[0m
+[0;32mI (278) TEST_STAB: ========================================[0m
+[0;32mI (288) TEST_STAB: [0m
+[0;32mI (288) BMI270: Initialisation I2C (new i2c_master driver)...[0m
+[0;32mI (348) BMI270: CHIP_ID = 0x24 (attendu 0x24)[0m
+[0;32mI (348) BMI270: Chargement firmware BMI270 (8192 bytes)...[0m
+[0;32mI (1318) BMI270: Firmware chargé avec succès[0m
+[0;32mI (1468) BMI270: Status interne: 0x01 (init OK)[0m
+[0;32mI (1518) BMI270: BMI270 initialisé avec succès (±2g, ±250°/s @ 200Hz)[0m
+[0;32mI (1518) BMI270: Calibration gyroscope BMI270 (2000 échantillons)...[0m
+[0;32mI (3328) BMI270: Offsets calculés: X=-14.02 Y=48.24 Z=-4.55[0m
+[0;32mI (3328) TEST_STAB: Capteur initialise[0m
+[0;32mI (3328) TEST_STAB: Offsets gyro: X=-14.02 Y=48.24 Z=-4.55[0m
+[0;32mI (3328) TEST_STAB: [0m
+[0;32mI (3828) TEST_STAB: Lecture angles en continu (Ctrl+C pour arreter)[0m
+[0;32mI (3828) TEST_STAB: ----------------------------------------[0m
+[0;32mI (3828) TEST_STAB: R:  -4.4 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (3928) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (4028) TEST_STAB: R:  -4.6 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (4128) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (4228) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.00g Y=0.98g Z=-0.08g[0m
+[0;32mI (4328) TEST_STAB: R:  -4.5 P:  -0.3 Y:  -0.0 | Accel: X=0.00g Y=0.98g Z=-0.08g[0m
+[0;32mI (4428) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (4528) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (4628) TEST_STAB: R:  -4.6 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (4728) TEST_STAB: R:  -4.6 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (4828) TEST_STAB: R:  -4.6 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (4928) TEST_STAB: R:  -4.6 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (5028) TEST_STAB: R:  -4.6 P:  -0.4 Y:   0.0 | Accel: X=0.00g Y=0.98g Z=-0.08g[0m
+[0;32mI (5128) TEST_STAB: R:  -4.6 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (5228) TEST_STAB: R:  -4.6 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (5328) TEST_STAB: R:  -4.6 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (5428) TEST_STAB: R:  -4.6 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (5528) TEST_STAB: R:  -4.6 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (5628) TEST_STAB: R:  -4.6 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (5728) TEST_STAB: R:  -4.6 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (5828) TEST_STAB: R:  -4.6 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (5928) TEST_STAB: R:  -4.5 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (6028) TEST_STAB: R:  -4.5 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (6128) TEST_STAB: R:  -4.5 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (6228) TEST_STAB: R:  -4.5 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (6328) TEST_STAB: R:  -4.5 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (6428) TEST_STAB: R:  -4.5 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (6528) TEST_STAB: R:  -4.5 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (6628) TEST_STAB: R:  -4.5 P:  -0.4 Y:   0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (6728) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (6828) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (6928) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (7028) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (7128) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (7228) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (7328) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (7428) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (7528) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (7628) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (7728) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (7828) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (7928) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (8028) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (8128) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (8228) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (8328) TEST_STAB: R:  -4.6 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (8428) TEST_STAB: R:  -4.5 P:  -0.3 Y:  -0.0 | Accel: X=0.00g Y=0.98g Z=-0.08g[0m
+[0;32mI (8528) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (8628) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (8728) TEST_STAB: R:  -4.5 P:  -0.3 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (8828) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (8928) TEST_STAB: R:  -4.5 P:  -0.3 Y:  -0.0 | Accel: X=0.00g Y=0.98g Z=-0.08g[0m
+[0;32mI (9028) TEST_STAB: R:  -4.5 P:  -0.3 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (9128) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (9228) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (9328) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (9428) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (9528) TEST_STAB: R:  -4.5 P:  -0.3 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (9628) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (9728) TEST_STAB: R:  -4.5 P:  -0.3 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (9828) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (9928) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (10028) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (10128) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (10228) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (10328) TEST_STAB: R:  -4.4 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (10428) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (10528) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (10628) TEST_STAB: R:  -4.4 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (10728) TEST_STAB: R:  -4.4 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (10828) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (10928) TEST_STAB: R:  -4.4 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (11028) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (11128) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (11228) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (11328) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (11428) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (11528) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (11628) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (11728) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (11828) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (11928) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (12028) TEST_STAB: R:  -4.4 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (12128) TEST_STAB: R:  -4.4 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (12228) TEST_STAB: R:  -4.4 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (12328) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (12428) TEST_STAB: R:  -4.5 P:  -0.3 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+[0;32mI (12528) TEST_STAB: R:  -4.5 P:  -0.4 Y:  -0.0 | Accel: X=0.01g Y=0.98g Z=-0.08g[0m
+
