@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "hello_world",
-    "project_version":    "1992420-dirty",
+    "project_version":    "e78a4f1-dirty",
     "project_path":       "/home/nekochira/code/esp32simpledrone",
     "idf_path":           "/home/nekochira/esp/esp-idf",
     "build_dir":          "/home/nekochira/code/esp32simpledrone/build",

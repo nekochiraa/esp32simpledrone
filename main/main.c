@@ -14,7 +14,7 @@
 // MODE TEST: Décommentez la ligne ci-dessous pour lancer les tests
 // au lieu du mode drone normal
 // ========================================
-//#define MODE_TEST
+#define MODE_TEST
 // ========================================
 
 #define IBUS_UART   UART_NUM_1
@@ -73,7 +73,9 @@ void app_main(void)
     if (ctx != NULL) {
         ibus_set_channel_handler(ctx, channel_handler, NULL);
     }
-
+    for(;ibus_to_percent(last_channels[5].value)!=100.0;){
+    vTaskDelay(pdMS_TO_TICKS(10));
+    }
     /* Initialisation moteurs (arming ESC) */
     pwminit();
 

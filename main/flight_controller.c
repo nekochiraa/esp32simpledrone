@@ -6,11 +6,11 @@
  * Ki faible = évite l'accumulation d'erreurs dues aux vibrations
  * Kd très faible = CRUCIAL - le terme dérivé amplifie les vibrations !
  */
-#define ROLL_KP   0.25f
+#define ROLL_KP   0.025f
 #define ROLL_KI   0.01f
 #define ROLL_KD   0.001f   // Très faible pour ignorer les vibrations
 
-#define PITCH_KP  0.25f
+#define PITCH_KP  0.025f
 #define PITCH_KI  0.01f
 #define PITCH_KD  0.001f   // Très faible pour ignorer les vibrations
 

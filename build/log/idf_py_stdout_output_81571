@@ -1,0 +1,102 @@
+Command: ninja all
+[0/1] Re-running CMake...
+-- Minimal build - ON
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /home/nekochira/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/nekochira/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/nekochira/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32s3
+NOTICE: Processing 2 dependencies:
+NOTICE: [1/2] zorxx/ibus (1.0.0)
+NOTICE: [2/2] idf (5.5.1)
+-- Project sdkconfig file /home/nekochira/code/esp32simpledrone/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- USING O3
+-- App "hello_world" version: e78a4f1-dirty
+-- Adding linker script /home/nekochira/code/esp32simpledrone/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/nekochira/code/esp32simpledrone/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.wdt.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_master.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_50.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_smp.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_dtm.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_test.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_scan.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Components: app_update bootloader bootloader_support cxx driver efuse esp_app_format esp_bootloader_format esp_common esp_driver_ana_cmpr esp_driver_bitscrambler esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_tsens esp_driver_twai esp_driver_uart esp_driver_usb_serial_jtag esp_event esp_hw_support esp_mm esp_partition esp_pm esp_ringbuf esp_rom esp_security esp_system esp_timer esptool_py freertos hal heap log main mbedtls newlib partition_table pthread sdmmc soc spi_flash xtensa zorxx__ibus
+-- Component paths: /home/nekochira/esp/esp-idf/components/app_update /home/nekochira/esp/esp-idf/components/bootloader /home/nekochira/esp/esp-idf/components/bootloader_support /home/nekochira/esp/esp-idf/components/cxx /home/nekochira/esp/esp-idf/components/driver /home/nekochira/esp/esp-idf/components/efuse /home/nekochira/esp/esp-idf/components/esp_app_format /home/nekochira/esp/esp-idf/components/esp_bootloader_format /home/nekochira/esp/esp-idf/components/esp_common /home/nekochira/esp/esp-idf/components/esp_driver_ana_cmpr /home/nekochira/esp/esp-idf/components/esp_driver_bitscrambler /home/nekochira/esp/esp-idf/components/esp_driver_dac /home/nekochira/esp/esp-idf/components/esp_driver_gpio /home/nekochira/esp/esp-idf/components/esp_driver_gptimer /home/nekochira/esp/esp-idf/components/esp_driver_i2c /home/nekochira/esp/esp-idf/components/esp_driver_i2s /home/nekochira/esp/esp-idf/components/esp_driver_ledc /home/nekochira/esp/esp-idf/components/esp_driver_mcpwm /home/nekochira/esp/esp-idf/components/esp_driver_parlio /home/nekochira/esp/esp-idf/components/esp_driver_pcnt /home/nekochira/esp/esp-idf/components/esp_driver_rmt /home/nekochira/esp/esp-idf/components/esp_driver_sdio /home/nekochira/esp/esp-idf/components/esp_driver_sdm /home/nekochira/esp/esp-idf/components/esp_driver_sdmmc /home/nekochira/esp/esp-idf/components/esp_driver_sdspi /home/nekochira/esp/esp-idf/components/esp_driver_spi /home/nekochira/esp/esp-idf/components/esp_driver_tsens /home/nekochira/esp/esp-idf/components/esp_driver_twai /home/nekochira/esp/esp-idf/components/esp_driver_uart /home/nekochira/esp/esp-idf/components/esp_driver_usb_serial_jtag /home/nekochira/esp/esp-idf/components/esp_event /home/nekochira/esp/esp-idf/components/esp_hw_support /home/nekochira/esp/esp-idf/components/esp_mm /home/nekochira/esp/esp-idf/components/esp_partition /home/nekochira/esp/esp-idf/components/esp_pm /home/nekochira/esp/esp-idf/components/esp_ringbuf /home/nekochira/esp/esp-idf/components/esp_rom /home/nekochira/esp/esp-idf/components/esp_security /home/nekochira/esp/esp-idf/components/esp_system /home/nekochira/esp/esp-idf/components/esp_timer /home/nekochira/esp/esp-idf/components/esptool_py /home/nekochira/esp/esp-idf/components/freertos /home/nekochira/esp/esp-idf/components/hal /home/nekochira/esp/esp-idf/components/heap /home/nekochira/esp/esp-idf/components/log /home/nekochira/code/esp32simpledrone/main /home/nekochira/esp/esp-idf/components/mbedtls /home/nekochira/esp/esp-idf/components/newlib /home/nekochira/esp/esp-idf/components/partition_table /home/nekochira/esp/esp-idf/components/pthread /home/nekochira/esp/esp-idf/components/sdmmc /home/nekochira/esp/esp-idf/components/soc /home/nekochira/esp/esp-idf/components/spi_flash /home/nekochira/esp/esp-idf/components/xtensa /home/nekochira/code/esp32simpledrone/managed_components/zorxx__ibus
+-- Configuring done (9.8s)
+-- Generating done (0.5s)
+-- Build files have been written to: /home/nekochira/code/esp32simpledrone/build
+[1/12] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[2/12] Linking C static library esp-idf/esp_app_format/libesp_app_format.a
+[3/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/flight_controller.c.obj
+[4/12] Linking C static library esp-idf/main/libmain.a
+[5/12] Performing build step for 'bootloader'
+[0/1] Re-running CMake...
+-- Minimal build - OFF
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /home/nekochira/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/nekochira/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/nekochira/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32s3
+-- Project sdkconfig file /home/nekochira/code/esp32simpledrone/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Adding linker script /home/nekochira/esp/esp-idf/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Bootloader project name: "bootloader" version: 1
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.wdt.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/bootloader/subproject/main/ld/esp32s3/bootloader.ld
+-- Adding linker script /home/nekochira/esp/esp-idf/components/bootloader/subproject/main/ld/esp32s3/bootloader.rom.ld
+-- Components: bootloader bootloader_support efuse esp_app_format esp_bootloader_format esp_common esp_hw_support esp_rom esp_security esp_system esptool_py freertos hal log main micro-ecc newlib partition_table soc spi_flash xtensa
+-- Component paths: /home/nekochira/esp/esp-idf/components/bootloader /home/nekochira/esp/esp-idf/components/bootloader_support /home/nekochira/esp/esp-idf/components/efuse /home/nekochira/esp/esp-idf/components/esp_app_format /home/nekochira/esp/esp-idf/components/esp_bootloader_format /home/nekochira/esp/esp-idf/components/esp_common /home/nekochira/esp/esp-idf/components/esp_hw_support /home/nekochira/esp/esp-idf/components/esp_rom /home/nekochira/esp/esp-idf/components/esp_security /home/nekochira/esp/esp-idf/components/esp_system /home/nekochira/esp/esp-idf/components/esptool_py /home/nekochira/esp/esp-idf/components/freertos /home/nekochira/esp/esp-idf/components/hal /home/nekochira/esp/esp-idf/components/log /home/nekochira/esp/esp-idf/components/bootloader/subproject/main /home/nekochira/esp/esp-idf/components/bootloader/subproject/components/micro-ecc /home/nekochira/esp/esp-idf/components/newlib /home/nekochira/esp/esp-idf/components/partition_table /home/nekochira/esp/esp-idf/components/soc /home/nekochira/esp/esp-idf/components/spi_flash /home/nekochira/esp/esp-idf/components/xtensa
+-- Configuring done (4.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/nekochira/code/esp32simpledrone/build/bootloader
+[1/2] cd /home/nekochira/code/esp32simpledrone/build/bootloader/esp-idf/esptool_py && /home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python /home/nekochira/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/nekochira/code/esp32simpledrone/build/bootloader/bootloader.bin
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[6/12] No install step for 'bootloader'
+[7/12] Completed 'bootloader'
+[8/12] Generating esp-idf/esp_system/ld/sections.ld
+[9/12] Linking CXX executable hello_world.elf
+[10/12] Generating binary image from built executable
+esptool.py v4.11.dev2
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated /home/nekochira/code/esp32simpledrone/build/hello_world.bin
+[11/12] cd /home/nekochira/code/esp32simpledrone/build/esp-idf/esptool_py && /home/nekochira/.espressif/python_env/idf5.5_py3.14_env/bin/python /home/nekochira/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/nekochira/code/esp32simpledrone/build/partition_table/partition-table.bin /home/nekochira/code/esp32simpledrone/build/hello_world.bin
+hello_world.bin binary size 0x3c5c0 bytes. Smallest app partition is 0x100000 bytes. 0xc3a40 bytes (76%) free.
